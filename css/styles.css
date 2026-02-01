@@ -1,0 +1,293 @@
+:root {
+    --bg-primary: #080c15;
+    /* Deep dark blue */
+    --bg-secondary: #0f1623;
+    /* Slightly lighter for sections/gradients */
+    --accent: #d4af68;
+    /* Gold color */
+    --text-main: #ffffff;
+    --text-muted: #8ba0b9;
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    --font-main: 'Montserrat', sans-serif;
+
+    --container-width: 1200px;
+    --header-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    /* Rounded pill shape */
+    font-weight: 600;
+    text-transform: lowercase;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #e6e6e6;
+    /* Light button from screenshot */
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* Header */
+.header {
+    padding: 20px 0;
+    position: absolute;
+    /* Overlay on hero */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-text h1 {
+    font-size: 20px;
+    /* JASTERS */
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.2;
+    max-width: 150px;
+    border-left: 1px solid var(--text-muted);
+    padding-left: 10px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--text-main);
+}
+
+.header-contacts {
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.contact-phones div {
+    margin-bottom: 2px;
+}
+
+.socials {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.socials a {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* Full viewport height */
+    padding-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically */
+    position: relative;
+    background: radial-gradient(circle at 60% 50%, #1a253a 0%, var(--bg-primary) 60%);
+    overflow: hidden;
+}
+
+.hero .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center the inner content block */
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Align items to center */
+    width: 100%;
+    flex-grow: 1;
+    /* Allow content to fill space */
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 14px;
+    max-width: 400px;
+}
+
+.scales-icon {
+    margin-top: 40px;
+    opacity: 0.8;
+}
+
+.hero-stats {
+    max-width: 40%;
+    text-align: right;
+    /* Or left depending on exact layout, looks like items aligned to right side block */
+}
+
+.stat-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.hero-cta {
+    margin-top: 30px;
+}
+
+/* Floating Elements */
+.background-shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+    font-size: 400px;
+    /* Placeholder for big SVG */
+}
+
+/* Bottom Features Strip */
+.features-strip {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    width: 100%;
+    /* margin-top: auto; handled by flex-grow of content above */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    position: relative;
+    z-index: 10;
+}
+
+.feature-box {
+    flex: 1;
+    padding: 0 20px;
+    border-right: 1px solid var(--border-color);
+}
+
+.feature-box:last-child {
+    border-right: none;
+}
+
+.feature-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.feature-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Call Button Sticky */
+.call-btn-fixed {
+    position: fixed;
+    bottom: 100px;
+    left: 50px;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+}

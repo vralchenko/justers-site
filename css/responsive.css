@@ -1,0 +1,139 @@
+/* Mobile Responsive Styles */
+@media (max-width: 900px) {
+    :root {
+        --container-width: 100%;
+        --header-height: 70px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header */
+    .header .container {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .burger-menu {
+        display: block !important;
+        order: 2;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        order: 4;
+        margin-top: 20px;
+        background: #0f1623;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-contacts {
+        display: none;
+        /* Simplify header for mobile */
+    }
+
+    .logo-block {
+        flex: 1;
+    }
+
+    /* Hero */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        margin: 0 auto 30px;
+    }
+
+    .hero-stats {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .scales-icon {
+        display: none;
+        /* Hide large decoration on mobile */
+    }
+
+    /* Features Strip */
+    .features-strip {
+        flex-direction: column;
+        gap: 30px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .feature-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+    }
+
+    .feature-box:last-child {
+        border-bottom: none;
+    }
+
+    /* Contacts */
+    #contacts .container>div {
+        flex-direction: column;
+    }
+
+    #contacts iframe {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .call-btn-fixed {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
