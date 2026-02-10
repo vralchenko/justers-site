@@ -237,32 +237,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const consultationForm = document.getElementById('consultationForm');
     const callbackForm = document.getElementById('callbackForm');
 
+    // IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
+    // Register at https://formspree.io/ to get one.
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdaddny';
+
     function handleFormSubmit(e, modalToClose, formType) {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const phone = formData.get('phone');
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
 
-        console.log(`${formType} form submitted:`, { name, phone });
+        // Show loading state
+        submitBtn.textContent = 'Надсилаю...';
+        submitBtn.disabled = true;
 
-        // Here you would normally send the data to your server
-        // For now, we'll just show an alert and close the modal
-        alert(`Дякуємо, ${name}! Ми зв'яжемося з вами найближчим часом.`);
+        const formData = new FormData(form);
 
-        closeModal(modalToClose);
-        e.target.reset();
+        // Add form type to data so you know which form was filled
+        formData.append('_subject', `Нова заявка: ${formType} (${formData.get('name')})`);
+
+        fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    const name = formData.get('name');
+                    alert(`Дякуємо, ${name}! Ваша заявка успішно надіслана. Ми зв'яжемося з вами найближчим часом.`);
+                    closeModal(modalToClose);
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Сталася помилка при відправці форми. Спробуйте пізніше або зателефонуйте нам.');
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Сталася помилка. Перевірте підключення до інтернету та спробуйте ще раз.');
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
     }
 
     if (consultationForm) {
         consultationForm.addEventListener('submit', (e) => {
-            handleFormSubmit(e, consultationModal, 'Consultation');
+            handleFormSubmit(e, consultationModal, 'Консультація');
         });
     }
 
     if (callbackForm) {
         callbackForm.addEventListener('submit', (e) => {
-            handleFormSubmit(e, callbackModal, 'Callback');
+            handleFormSubmit(e, callbackModal, 'Зворотній дзвінок');
         });
     }
 });
