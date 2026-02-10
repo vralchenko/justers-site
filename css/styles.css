@@ -269,7 +269,7 @@ h6 {
 .hero-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 100%;
     flex-grow: 1;
     margin-bottom: 40px;
@@ -281,7 +281,8 @@ h6 {
 }
 
 .hero-title {
-    font-size: 58px;
+    font-size: 56px;
+    margin-top: 20px;
     margin-bottom: 25px;
     line-height: 1.1;
     color: #fff;
@@ -291,7 +292,7 @@ h6 {
 
 .hero-description {
     color: var(--text-main);
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     font-size: 13px;
     line-height: 1.5;
     max-width: 420px;
@@ -302,7 +303,7 @@ h6 {
 .hero-stats {
     max-width: 40%;
     text-align: left;
-    padding-top: 138px;
+    padding-top: 0px;
 }
 
 .stat-item {
@@ -325,7 +326,7 @@ h6 {
     width: 100%;
     position: relative;
     z-index: 10;
-    margin-top: 160px;
+    margin-top: 215px;
 }
 
 .feature-box {
