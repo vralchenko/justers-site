@@ -26,11 +26,8 @@
     <header class="header" id="header">
         <div class="container">
             <div class="logo-block">
-                <div class="logo-icon">J</div>
-                <div class="logo-text">
-                    <h1>ДЖАСТЕРС</h1>
-                    <div class="logo-sub-text">АДВОКАТСЬКЕ ОБ'ЄДНАННЯ</div>
-                </div>
+                <img src="images/logo.png" alt="Justers Logo" class="logo-img">
+                <!-- Logo text removed as it is now part of the logo image -->
                 <div class="logo-divider"></div>
                 <div class="logo-sub">
                     команда адвокатів яка надає повний спектр юридичних послуг
@@ -56,11 +53,16 @@
                     <div>067 456 00 11</div>
                 </div>
                 <div class="socials">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1a1ibw41Ws/?mibextid=wwXIfr" target="_blank"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@justers_law_firm?_r=1&_t=ZS-93oNmrCP7wI" target="_blank"
+                        aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/justers_law_firm?igsh=bjkxZGYwbTJpMDdm" target="_blank"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/Justers_lawfirm" target="_blank" aria-label="Telegram"><i
+                            class="fa-brands fa-telegram"></i></a>
+                    <a href="https://wa.me/380673801777" target="_blank" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -71,7 +73,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">АДВОКАТСЬКИЙ<br><span class="text-accent">ЗАХИСТ</span></h1>
+                    <h1 class="hero-title">АДВОКАТСЬКИЙ<br>ЗАХИСТ</h1>
 
                     <div class="hero-description">
                         Взаємодія з «ДЖАСТЕРС»<br>
@@ -107,7 +109,7 @@
                 </div>
                 <div class="feature-box">
                     <h3 class="feature-title">СЕРВІС</h3>
-                    <p class="feature-desc">Наші адвокати на зв'язку 24/7 та завжди готові допомогти.</p>
+                    <p class="feature-desc">Наші адвокати на зв'язку 24/7<br>та завжди готові<br>допомогти.</p>
                 </div>
             </div>
         </div>
@@ -226,11 +228,16 @@
                     </div>
 
                     <div class="socials socials-centered">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1a1ibw41Ws/?mibextid=wwXIfr" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@justers_law_firm?_r=1&_t=ZS-93oNmrCP7wI" target="_blank"
+                            aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/justers_law_firm?igsh=bjkxZGYwbTJpMDdm" target="_blank"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://t.me/Justers_lawfirm" target="_blank" aria-label="Telegram"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="https://wa.me/380673801777" target="_blank" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -258,6 +265,38 @@
     <!-- Scroll Indicator -->
     <div class="scroll-indicator" id="scrollIndicator">
         <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <!-- Modal: Consultation Request -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="modal-title">ОТРИМАТИ<br>КОНСУЛЬТАЦІЮ</h2>
+            <form class="modal-form" id="consultationForm">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                <button type="submit" class="btn btn-primary">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Callback Request -->
+    <div class="modal" id="callbackModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="modal-title">передзвоніть<br>мені <i class="fa-solid fa-phone modal-phone-icon"></i></h2>
+            <form class="modal-form" id="callbackForm">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                <button type="submit" class="btn btn-primary">Надіслати</button>
+            </form>
+        </div>
     </div>
 
     <script src="js/script.js"></script>

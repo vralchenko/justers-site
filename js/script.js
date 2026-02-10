@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Indicator
     const scrollIndicator = document.getElementById('scrollIndicator');
-    
+
     if (scrollIndicator) {
         scrollIndicator.addEventListener('click', () => {
             const currentSection = getCurrentSection();
             const nextSection = getNextSection(currentSection);
-            
+
             if (nextSection) {
                 nextSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -99,14 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getNextSection(currentSection) {
         if (!currentSection) return sections[0];
-        
+
         const sectionsArray = Array.from(sections);
         const currentIndex = sectionsArray.indexOf(currentSection);
-        
+
         if (currentIndex < sectionsArray.length - 1) {
             return sectionsArray[currentIndex + 1];
         }
-        
+
         return null;
     }
 
@@ -132,4 +132,137 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // Modal Dialogs
+    const consultationModal = document.getElementById('consultationModal');
+    const callbackModal = document.getElementById('callbackModal');
+
+    // Get all buttons that open modals
+    const consultationBtn = document.querySelector('.hero-cta .btn-primary');
+    const callbackBtn = document.querySelector('.call-btn-mockup');
+
+    // Function to open modal
+    function openModal(modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close modal
+    function closeModal(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Open consultation modal
+    if (consultationBtn) {
+        consultationBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(consultationModal);
+        });
+    }
+
+    // Open callback modal
+    if (callbackBtn) {
+        callbackBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(callbackModal);
+        });
+    }
+
+    // Close modals when clicking overlay or close button
+    [consultationModal, callbackModal].forEach(modal => {
+        if (!modal) return;
+
+        const overlay = modal.querySelector('.modal-overlay');
+        const closeBtn = modal.querySelector('.modal-close');
+
+        if (overlay) {
+            overlay.addEventListener('click', () => closeModal(modal));
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => closeModal(modal));
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal(consultationModal);
+            closeModal(callbackModal);
+        }
+    });
+
+    // Phone number formatting
+    function formatPhoneNumber(input) {
+        let value = input.value.replace(/\D/g, '');
+
+        // Remove leading 38 if present
+        if (value.startsWith('38')) {
+            value = value.substring(2);
+        }
+
+        // Limit to 10 digits
+        value = value.substring(0, 10);
+
+        // Format as + 38 (XX) XX XX XXX
+        let formatted = '+ 38';
+        if (value.length > 0) {
+            formatted += ' (' + value.substring(0, 2);
+        }
+        if (value.length >= 3) {
+            formatted += ') ' + value.substring(2, 4);
+        }
+        if (value.length >= 5) {
+            formatted += ' ' + value.substring(4, 6);
+        }
+        if (value.length >= 7) {
+            formatted += ' ' + value.substring(6, 10);
+        }
+
+        input.value = formatted;
+    }
+
+    // Apply phone formatting to all phone inputs
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+        input.addEventListener('input', () => formatPhoneNumber(input));
+        input.addEventListener('focus', function () {
+            if (this.value === '') {
+                this.value = '+ 38 (';
+            }
+        });
+    });
+
+    // Handle form submissions
+    const consultationForm = document.getElementById('consultationForm');
+    const callbackForm = document.getElementById('callbackForm');
+
+    function handleFormSubmit(e, modalToClose, formType) {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+
+        console.log(`${formType} form submitted:`, { name, phone });
+
+        // Here you would normally send the data to your server
+        // For now, we'll just show an alert and close the modal
+        alert(`Дякуємо, ${name}! Ми зв'яжемося з вами найближчим часом.`);
+
+        closeModal(modalToClose);
+        e.target.reset();
+    }
+
+    if (consultationForm) {
+        consultationForm.addEventListener('submit', (e) => {
+            handleFormSubmit(e, consultationModal, 'Consultation');
+        });
+    }
+
+    if (callbackForm) {
+        callbackForm.addEventListener('submit', (e) => {
+            handleFormSubmit(e, callbackModal, 'Callback');
+        });
+    }
 });
