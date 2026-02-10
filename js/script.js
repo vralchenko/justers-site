@@ -169,8 +169,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Status Modal
+    const statusModal = document.getElementById('statusModal');
+    const statusIcon = document.getElementById('statusIcon');
+    const statusTitle = document.getElementById('statusTitle');
+    const statusMessageText = document.getElementById('statusMessageText');
+    const statusModalCloseBtn = document.getElementById('statusModalCloseBtn');
+
+    function showStatusModal(isSuccess, title, message) {
+        if (!statusModal) return;
+
+        // Reset classes
+        statusIcon.className = 'status-icon';
+        statusIcon.classList.add(isSuccess ? 'success' : 'error');
+
+        // icon content
+        statusIcon.innerHTML = isSuccess ? '<i class="fa-solid fa-check"></i>' : '<i class="fa-solid fa-circle-exclamation"></i>';
+
+        statusTitle.textContent = title;
+        statusMessageText.textContent = message;
+
+        openModal(statusModal);
+    }
+
+    // Close status modal button
+    if (statusModalCloseBtn) {
+        statusModalCloseBtn.addEventListener('click', () => {
+            closeModal(statusModal);
+        });
+    }
+
     // Close modals when clicking overlay or close button
-    [consultationModal, callbackModal].forEach(modal => {
+    // Include statusModal to fix close button not working
+    [consultationModal, callbackModal, statusModal].forEach(modal => {
         if (!modal) return;
 
         const overlay = modal.querySelector('.modal-overlay');
@@ -190,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             closeModal(consultationModal);
             closeModal(callbackModal);
+            closeModal(statusModal);
         }
     });
 
@@ -225,17 +257,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply phone formatting to all phone inputs
     document.querySelectorAll('input[type="tel"]').forEach(input => {
-        input.addEventListener('input', () => formatPhoneNumber(input));
+        input.addEventListener('input', () => {
+            formatPhoneNumber(input);
+            // Clear error on input
+            clearError(input);
+        });
         input.addEventListener('focus', function () {
             if (this.value === '') {
                 this.value = '+ 38 (';
             }
         });
+        // Clear error on generic input
+        input.addEventListener('input', () => clearError(input));
     });
+
+    // Clear error function
+    function clearError(input) {
+        input.classList.remove('error');
+        const wrapper = input.parentElement;
+        if (wrapper.classList.contains('input-wrapper')) {
+            const errorMsg = wrapper.querySelector('.error-message');
+            if (errorMsg) {
+                errorMsg.classList.remove('active');
+            }
+        }
+    }
+
+    // Show error function
+    function showError(input, message) {
+        input.classList.add('error');
+        const wrapper = input.parentElement;
+
+        let errorMsg;
+        if (wrapper.classList.contains('input-wrapper')) {
+            errorMsg = wrapper.querySelector('.error-message');
+            if (!errorMsg) {
+                errorMsg = document.createElement('div');
+                errorMsg.className = 'error-message';
+                wrapper.appendChild(errorMsg);
+            }
+            errorMsg.textContent = message;
+            errorMsg.classList.add('active');
+        } else {
+            // If input is not wrapped, wrap it dynamically (fallback)
+            const newWrapper = document.createElement('div');
+            newWrapper.className = 'input-wrapper';
+            input.parentNode.insertBefore(newWrapper, input);
+            newWrapper.appendChild(input);
+
+            errorMsg = document.createElement('div');
+            errorMsg.className = 'error-message';
+            errorMsg.textContent = message;
+            newWrapper.appendChild(errorMsg);
+
+            // Re-focus to keep focus
+            input.focus();
+
+            setTimeout(() => errorMsg.classList.add('active'), 10);
+        }
+    }
 
     // Handle form submissions
     const consultationForm = document.getElementById('consultationForm');
     const callbackForm = document.getElementById('callbackForm');
+
+    // Add novalidate to forms to disable browser validation
+    if (consultationForm) consultationForm.setAttribute('novalidate', true);
+    if (callbackForm) callbackForm.setAttribute('novalidate', true);
+
+    // Add input event listeners to clear errors on all inputs
+    document.querySelectorAll('.modal-form input').forEach(input => {
+        input.addEventListener('input', () => clearError(input));
+    });
 
     // IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
     // Register at https://formspree.io/ to get one.
@@ -243,8 +336,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleFormSubmit(e, modalToClose, formType) {
         e.preventDefault();
-
         const form = e.target;
+
+        // Custom Validation
+        let isValid = true;
+        const inputs = form.querySelectorAll('input[required]');
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                showError(input, 'Це поле обов\'язкове для заповнення');
+            } else if (input.type === 'tel' && input.value.replace(/\D/g, '').length < 12) { // 38 + 10 digits
+                isValid = false;
+                showError(input, 'Введіть коректний номер телефону');
+            }
+        });
+
+        if (!isValid) return;
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
 
@@ -267,22 +376,22 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => {
                 if (response.ok) {
                     const name = formData.get('name');
-                    alert(`Дякуємо, ${name}! Ваша заявка успішно надіслана. Ми зв'яжемося з вами найближчим часом.`);
                     closeModal(modalToClose);
+                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно надіслана. Ми зв'яжемося з вами найближчим часом.`);
                     form.reset();
                 } else {
                     response.json().then(data => {
+                        let errorMessage = 'Сталася помилка при відправці форми.';
                         if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Сталася помилка при відправці форми. Спробуйте пізніше або зателефонуйте нам.');
+                            errorMessage = data["errors"].map(error => error["message"]).join(", ");
                         }
+                        showStatusModal(false, 'Помилка!', errorMessage);
                     });
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Сталася помилка. Перевірте підключення до інтернету та спробуйте ще раз.');
+                showStatusModal(false, 'Помилка!', 'Сталася помилка. Перевірте підключення до інтернету та спробуйте ще раз.');
             })
             .finally(() => {
                 // Restore button state

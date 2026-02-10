@@ -276,8 +276,12 @@
             </button>
             <h2 class="modal-title">ОТРИМАТИ<br>КОНСУЛЬТАЦІЮ</h2>
             <form class="modal-form" id="consultationForm">
-                <input type="text" name="name" placeholder="Ваше ім'я" required>
-                <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                <div class="input-wrapper">
+                    <input type="text" name="name" placeholder="Ваше ім'я" required>
+                </div>
+                <div class="input-wrapper">
+                    <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                </div>
                 <button type="submit" class="btn btn-primary">Надіслати</button>
             </form>
         </div>
@@ -292,10 +296,30 @@
             </button>
             <h2 class="modal-title">передзвоніть<br>мені <i class="fa-solid fa-phone modal-phone-icon"></i></h2>
             <form class="modal-form" id="callbackForm">
-                <input type="text" name="name" placeholder="Ваше ім'я" required>
-                <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                <div class="input-wrapper">
+                    <input type="text" name="name" placeholder="Ваше ім'я" required>
+                </div>
+                <div class="input-wrapper">
+                    <input type="tel" name="phone" placeholder="+ 38 ( __ ) __ __" required>
+                </div>
                 <button type="submit" class="btn btn-primary">Надіслати</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Modal: Status Message -->
+    <div class="modal" id="statusModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content status-modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="status-icon" id="statusIcon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="status-title" id="statusTitle">Успішно!</h3>
+            <p class="status-message" id="statusMessageText"></p>
+            <button class="btn btn-primary status-btn" id="statusModalCloseBtn">Гаразд</button>
         </div>
     </div>
 
