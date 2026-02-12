@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
+
+        // Update Page Indicators
+        const indicators = document.querySelectorAll('.indicator-item');
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+            if (indicator.getAttribute('href') === `#${current}`) {
+                indicator.classList.add('active');
+            }
+        });
     });
 
     // Scroll Indicator
@@ -138,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const callbackModal = document.getElementById('callbackModal');
 
     // Get all buttons that open modals
-    const consultationBtn = document.querySelector('.hero-cta .btn-primary');
+    const consultationBtn = document.querySelector('.hero-cta .btn');
     const callbackBtn = document.querySelector('.call-btn-mockup');
 
     // Function to open modal
