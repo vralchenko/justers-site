@@ -18,9 +18,19 @@
 
     .hero-content {
         flex-direction: column;
-        gap: 40px;
-        margin-bottom: 60px;
+        gap: 30px;
         padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .hero-text {
+        max-width: 100% !important;
+    }
+
+    .hero-stats {
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        margin-top: 20px !important;
     }
 
     .hero-text,
@@ -162,15 +172,34 @@
     }
 
     .hero-page {
-        padding-top: 130px;
+        padding-top: 100px;
+        min-height: auto;
     }
 
     .hero-page::before {
         transform: none;
     }
 
+    .hero-content {
+        flex-direction: column !important;
+        gap: 25px;
+        padding-top: 10px;
+    }
+
+    .hero-text {
+        max-width: 100% !important;
+    }
+
+    .hero-stats {
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        margin-top: 10px !important;
+        min-width: auto !important;
+    }
+
     .hero-description {
         font-size: 14px;
+        max-width: 100%;
     }
 
     .section-title {
@@ -244,11 +273,29 @@
     }
 
     .hero-page {
-        padding-top: 110px;
+        padding-top: 90px;
+        min-height: auto;
     }
 
     .hero-page::before {
         transform: none;
+    }
+
+    .hero-content {
+        flex-direction: column !important;
+        gap: 20px;
+        padding-top: 5px;
+    }
+
+    .hero-text {
+        max-width: 100% !important;
+    }
+
+    .hero-stats {
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        margin-top: 5px !important;
+        min-width: auto !important;
     }
 
     .section-title {
@@ -257,6 +304,12 @@
 
     .hero-description {
         font-size: 13px;
+        max-width: 100%;
+    }
+
+    .stat-number-inline {
+        font-size: 24px;
+        width: 80px;
     }
 
     .stat-item {
