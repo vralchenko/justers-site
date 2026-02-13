@@ -345,21 +345,26 @@ h6 {
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    /* Flex layout for responsiveness */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+    /* Replaces absolute positioning top offsets */
 }
 
 .hero-text {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    max-width: 500px;
+    position: relative;
+    max-width: 55%;
+    /* Relative width to prevent overlap */
     z-index: 10;
 }
 
 .hero-title {
     font-size: 44px;
-    margin-top: 20px;
+    margin-top: 0;
+    /* Removing top margin as padding handles it */
     margin-bottom: 30px;
-    /* Increased from 15px */
     line-height: 1.1;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -371,19 +376,23 @@ h6 {
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.8);
     margin-top: 30px;
-    /* Increased from 20px */
-    width: 400px;
+    width: 100%;
+    /* Full width of parent */
+    max-width: 400px;
     z-index: 90;
     text-align: left;
     opacity: 1;
 }
 
 .hero-stats {
-    position: absolute;
-    top: 80px;
-    right: -60px;
-    /* Moved further to the right */
-    width: 380px;
+    position: relative;
+    margin-top: 40px;
+    /* Visual offset relative to text */
+    margin-right: -40px;
+    /* Pull slightly right */
+    width: auto;
+    min-width: 300px;
+    /* Prevent too much squishing */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -476,8 +485,8 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -80px;
-    /* Lowered by another 2% again */
+    bottom: -50px;
+    /* Raised from -80px as requested */
     z-index: 10;
 }
 
