@@ -20,6 +20,7 @@
         flex-direction: column;
         gap: 40px;
         margin-bottom: 60px;
+        padding-left: 0;
     }
 
     .hero-text,
@@ -32,6 +33,8 @@
         flex-direction: column;
         gap: 0;
         padding: 40px 0;
+        padding-left: 0;
+        margin-top: 40px;
     }
 
     .feature-box {
@@ -95,7 +98,7 @@
     }
 
     .hero-page::before {
-        transform: scale(0.8);
+        transform: none;
     }
 }
 
@@ -163,7 +166,7 @@
     }
 
     .hero-page::before {
-        transform: scale(0.9);
+        transform: none;
     }
 
     .hero-description {
@@ -245,7 +248,7 @@
     }
 
     .hero-page::before {
-        transform: scale(1);
+        transform: none;
     }
 
     .section-title {
