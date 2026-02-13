@@ -317,8 +317,7 @@ h6 {
     height: 100%;
     background-image: url('../images/background-hero.png');
     background-size: cover;
-    background-position: center 80%;
-    /* Moved scales higher, under the button */
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-attachment: scroll;
     /* Moves with the section */
