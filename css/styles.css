@@ -485,8 +485,7 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -50px;
-    /* Raised from -80px as requested */
+    bottom: -100px;
     z-index: 10;
 }
 
