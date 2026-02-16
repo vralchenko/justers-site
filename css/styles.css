@@ -487,7 +487,8 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -118px;
+    bottom: -90px;
+    /* Lowered slightly as requested */
     z-index: 10;
 }
 
@@ -509,8 +510,8 @@ h6 {
 
 
 .feature-title {
-    font-size: 22px;
-    /* Increased from 18px */
+    font-size: 20px;
+    /* Reduced size as requested */
     margin-bottom: 20px;
     /* Reduced to keep text closer but still below line after bottom shift */
     letter-spacing: 1px;
@@ -520,8 +521,8 @@ h6 {
 }
 
 .feature-desc {
-    font-size: 15px;
-    /* Increased from 12px */
+    font-size: 14px;
+    /* Reduced size as requested */
     color: #fff;
     line-height: 1.4;
     text-align: left;
