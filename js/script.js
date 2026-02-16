@@ -339,9 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', () => clearError(input));
     });
 
-    // IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
-    // Register at https://formspree.io/ to get one.
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdaddny';
+
 
     function handleFormSubmit(e, modalToClose, formType) {
         e.preventDefault();
@@ -363,50 +361,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isValid) return;
 
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-
-        // Show loading state
-        submitBtn.textContent = 'Надсилаю...';
-        submitBtn.disabled = true;
-
         const formData = new FormData(form);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
 
-        // Add form type to data so you know which form was filled
-        formData.append('_subject', `Нова заявка: ${formType} (${formData.get('name')})`);
+        // Email details
+        const emailTo = 'office@justers.io';
+        const subject = encodeURIComponent(`Нова заявка: ${formType} від ${name}`);
+        const body = encodeURIComponent(`Деталі заявки:\n\nІм'я: ${name}\nТелефон: ${phone}\nТип: ${formType}\n\nПовідомлення надіслано з сайту Justers.`);
 
-        fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => {
-                if (response.ok) {
-                    const name = formData.get('name');
-                    closeModal(modalToClose);
-                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно надіслана. Ми зв'яжемося з вами найближчим часом.`);
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        let errorMessage = 'Сталася помилка при відправці форми.';
-                        if (Object.hasOwn(data, 'errors')) {
-                            errorMessage = data["errors"].map(error => error["message"]).join(", ");
-                        }
-                        showStatusModal(false, 'Помилка!', errorMessage);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showStatusModal(false, 'Помилка!', 'Сталася помилка. Перевірте підключення до інтернету та спробуйте ще раз.');
-            })
-            .finally(() => {
-                // Restore button state
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-            });
+        // Create and trigger mailto link
+        const mailtoLink = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+
+        // UI Feedback
+        closeModal(modalToClose);
+        showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша поштова програма відкриється для підтвердження відправки листа.`);
+        form.reset();
     }
 
     if (consultationForm) {

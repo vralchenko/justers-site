@@ -882,14 +882,15 @@ h6 {
 
 .modal-content {
     position: relative;
-    background: linear-gradient(135deg, rgba(180, 150, 100, 0.9) 0%, rgba(140, 110, 70, 0.9) 100%);
-    padding: 60px 50px;
-    border-radius: 20px;
-    max-width: 450px;
+    background: linear-gradient(180deg, #b49664 0%, #8c6e46 100%);
+    padding: 50px 40px;
+    border-radius: 12px;
+    max-width: 400px;
     width: 90%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     animation: modalSlideIn 0.4s ease;
     z-index: 10001;
+    text-align: center;
 }
 
 @keyframes modalSlideIn {
@@ -933,21 +934,29 @@ h6 {
 }
 
 .modal-title {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     color: #000;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     line-height: 1.2;
     letter-spacing: 1px;
-    text-align: left;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 25px;
+    /* Moved icon closer to text */
 }
 
 .modal-phone-icon {
     font-size: 24px;
-    margin-left: 10px;
-    transform: rotate(-45deg);
-    display: inline-block;
+    /* Increased size */
+    position: absolute;
+    right: 0;
+    top: 44%;
+    /* Moved slightly higher as requested */
+    transform: translateY(-50%) rotate(-90deg);
+    color: #000;
 }
 
 .modal-form {
@@ -964,11 +973,11 @@ h6 {
 
 .modal-form input {
     width: 100%;
-    padding: 18px 25px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid transparent;
-    border-radius: 15px;
-    font-size: 16px;
+    padding: 15px 20px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
     font-family: var(--font-main);
     color: #000;
     transition: all 0.3s ease;
@@ -1019,21 +1028,22 @@ h6 {
 }
 
 .modal-form .btn {
-    margin-top: 10px;
-    background: #3b5998;
+    margin-top: 20px;
+    background: #1d46a4;
     color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 18px 40px;
-    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .modal-form .btn:hover {
-    background: #2d4373;
+    background: #163581;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(59, 89, 152, 0.3);
+    box-shadow: 0 6px 15px rgba(29, 70, 164, 0.3);
 }
 
 /* Status Modal Specifics */
