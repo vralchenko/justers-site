@@ -485,22 +485,22 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -100px;
+    bottom: -118px;
     z-index: 10;
 }
 
 .feature-box {
     flex: 0 1 auto;
-    max-width: 320px;
-    /* Increased from 260px */
-    /* Narrower for 3-4 lines of text */
-    padding: 0 40px;
+    max-width: 300px;
+    padding: 0 35px;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .feature-box:first-child {
     padding-left: 0;
 }
+
+
 
 .feature-title {
     font-size: 22px;
