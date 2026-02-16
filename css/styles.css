@@ -495,8 +495,11 @@ h6 {
     flex: 0 1 auto;
     max-width: 300px;
     padding: 0 35px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-box:last-child {
     border-right: none;
-    /* Removed vertical lines as requested */
 }
 
 .feature-box:first-child {
@@ -786,8 +789,8 @@ h6 {
     position: fixed;
     left: calc(50% - 700px + 40px);
     /* Positioned within the 20% column */
-    top: 400px;
-    /* Lowered for better balance */
+    top: 360px;
+    /* Moved slightly higher as requested */
     display: flex;
     flex-direction: column;
     gap: 30px;
