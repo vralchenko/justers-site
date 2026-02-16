@@ -60,7 +60,7 @@ h6 {
     color: var(--text-main);
     text-transform: uppercase;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.0;
 }
 
 .text-accent {
@@ -363,11 +363,11 @@ h6 {
 }
 
 .hero-title {
-    font-size: 44px;
+    font-size: 42px;
     margin-top: 0;
     /* Removing top margin as padding handles it */
     margin-bottom: 30px;
-    line-height: 1.1;
+    line-height: 1.0;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -541,7 +541,7 @@ h6 {
 }
 
 .section-title {
-    font-size: 36px;
+    font-size: 34px;
     /* Reduced from 48px */
     margin-bottom: 60px;
     letter-spacing: 3px;
