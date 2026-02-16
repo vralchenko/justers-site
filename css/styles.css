@@ -249,6 +249,8 @@ h6 {
     font-size: 21px;
     letter-spacing: 1px;
     margin-left: auto;
+    margin-right: 85px;
+    /* Aligned with the tip of the smaller left scales as requested */
 }
 
 .contact-phones div {
@@ -388,8 +390,8 @@ h6 {
     position: relative;
     margin-top: 40px;
     /* Visual offset relative to text */
-    margin-right: -40px;
-    /* Pull slightly right */
+    margin-right: 20px;
+    /* Moved slightly left as requested */
     width: auto;
     min-width: 300px;
     /* Prevent too much squishing */
@@ -493,7 +495,8 @@ h6 {
     flex: 0 1 auto;
     max-width: 300px;
     padding: 0 35px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: none;
+    /* Removed vertical lines as requested */
 }
 
 .feature-box:first-child {
@@ -726,8 +729,8 @@ h6 {
 .call-btn-mockup {
     position: fixed;
     /* Keep fixed to be persistent on left side */
-    bottom: 300px;
-    /* Moved further up onto blue background */
+    bottom: 110px;
+    /* Lowered to be closer to the bottom line */
     left: calc(50% - 700px + 60px);
     /* Positioned within the 20% column */
     right: auto;
@@ -783,8 +786,8 @@ h6 {
     position: fixed;
     left: calc(50% - 700px + 40px);
     /* Positioned within the 20% column */
-    top: 220px;
-    /* Lowered slightly for better balance */
+    top: 400px;
+    /* Lowered for better balance */
     display: flex;
     flex-direction: column;
     gap: 30px;
