@@ -390,14 +390,16 @@ h6 {
     position: relative;
     margin-top: 40px;
     /* Visual offset relative to text */
-    margin-right: 20px;
-    /* Moved slightly left as requested */
+    margin-right: 85px;
+    /* Aligned with header phones */
     width: auto;
     min-width: 300px;
     /* Prevent too much squishing */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-end;
+    /* Right aligned */
     z-index: 10;
 }
 
@@ -412,35 +414,34 @@ h6 {
 }
 
 .stat-number-inline {
-    width: 100px;
-    /* Increased from 85px */
+    width: 65px;
+    /* Reduced to fit smaller font */
     text-align: right;
     color: var(--accent);
     font-weight: 700;
-    font-size: 28px;
-    /* Increased from 20px */
+    font-size: 22px;
+    /* Reduced by 20% (from 28px) */
     flex-shrink: 0;
 }
 
 .stat-label-inline {
     text-align: left;
-    font-size: 22px;
-    /* Increased from 20px */
+    font-size: 18px;
+    /* Reduced by 20% (from 22px) */
     line-height: 1.2;
     font-weight: 400;
     color: #fff;
-    padding-top: 4px;
-    /* Align with larger numbers baseline */
+    padding-top: 2px;
+    /* Adjust for smaller font */
 }
 
 .hero-cta {
     margin-top: 15px;
     /* Reduced from 30px */
     display: flex;
-    justify-content: flex-start;
-    padding-left: 112px;
-    /* Adjusted to align with larger numbers (100px + gap) */
-    /* Align button with the start of the labels */
+    justify-content: flex-end;
+    /* Align with right-aligned stats */
+    padding-left: 0;
 }
 
 .btn-hero-cta {
@@ -583,21 +584,26 @@ h6 {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-right: 85px;
+    /* Aligned with header phones */
+    align-items: flex-end;
 }
 
 .about-stat-item {
-    text-align: center;
+    text-align: right;
 }
 
 .stat-number {
-    font-size: 64px;
+    font-size: 51px;
+    /* Reduced by 20% (from 64px) */
     font-weight: 700;
     color: var(--accent);
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 14px;
+    font-size: 11px;
+    /* Reduced by 20% (from 14px) */
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
