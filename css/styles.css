@@ -949,14 +949,28 @@ h6 {
 }
 
 .modal-phone-icon {
-    font-size: 24px;
-    /* Increased size */
-    position: absolute;
-    right: 0;
-    top: 44%;
-    /* Moved slightly higher as requested */
-    transform: translateY(-50%) rotate(-90deg);
+    display: none;
+    /* Hide the old absolute icon */
+}
+
+.modal-title-callback {
+    text-transform: none;
+    margin-bottom: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.modal-icon-callback {
+    font-size: 44px;
     color: #000;
+    margin: 10px 0 25px;
+    display: block;
+    text-align: center;
+}
+
+.modal-icon-callback i {
+    transform: rotate(265deg);
 }
 
 .modal-form {
@@ -1034,10 +1048,14 @@ h6 {
     font-size: 16px;
     font-weight: 700;
     padding: 15px 40px;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-form input {
+    border-radius: 12px;
 }
 
 .modal-form .btn:hover {
