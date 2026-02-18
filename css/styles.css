@@ -616,11 +616,18 @@ h6 {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    /* Changed from fixed */
+    padding-top: 40px;
+    /* Reduced from 60px */
+}
+
+.services-page .section-title {
+    margin-bottom: 30px;
+    /* Reduced from 60px */
 }
 
 .services-intro {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    /* Reduced from 60px */
 }
 
 .services-intro p {
@@ -632,12 +639,16 @@ h6 {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 25px;
+    /* Reduced from 40px */
 }
 
 .service-item {
-    padding: 20px 30px;
-    /* Reduced vertical padding by half to fit on one screen */
+    padding: 15px 25px;
+    /* Reduced from 20px 30px */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
     border-radius: 10px;
@@ -652,9 +663,11 @@ h6 {
 }
 
 .service-icon {
-    font-size: 48px;
+    font-size: 40px;
+    /* Reduced from 48px */
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    /* Reduced from 20px */
 }
 
 .service-title {
