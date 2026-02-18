@@ -390,16 +390,14 @@ h6 {
     position: relative;
     margin-top: 40px;
     /* Visual offset relative to text */
-    margin-right: 85px;
-    /* Aligned with header phones */
+    margin-right: 20px;
+    /* Moved slightly left as requested */
     width: auto;
     min-width: 300px;
     /* Prevent too much squishing */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
-    /* Right aligned */
     z-index: 10;
 }
 
@@ -414,34 +412,35 @@ h6 {
 }
 
 .stat-number-inline {
-    width: 65px;
-    /* Reduced to fit smaller font */
+    width: 100px;
+    /* Increased from 85px */
     text-align: right;
     color: var(--accent);
     font-weight: 700;
-    font-size: 22px;
-    /* Reduced by 20% (from 28px) */
+    font-size: 28px;
+    /* Increased from 20px */
     flex-shrink: 0;
 }
 
 .stat-label-inline {
     text-align: left;
-    font-size: 18px;
-    /* Reduced by 20% (from 22px) */
+    font-size: 22px;
+    /* Increased from 20px */
     line-height: 1.2;
     font-weight: 400;
     color: #fff;
-    padding-top: 2px;
-    /* Adjust for smaller font */
+    padding-top: 4px;
+    /* Align with larger numbers baseline */
 }
 
 .hero-cta {
     margin-top: 15px;
     /* Reduced from 30px */
     display: flex;
-    justify-content: flex-end;
-    /* Align with right-aligned stats */
-    padding-left: 0;
+    justify-content: flex-start;
+    padding-left: 112px;
+    /* Adjusted to align with larger numbers (100px + gap) */
+    /* Align button with the start of the labels */
 }
 
 .btn-hero-cta {
