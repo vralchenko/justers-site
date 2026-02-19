@@ -491,8 +491,8 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -90px;
-    /* Lowered slightly as requested */
+    bottom: -100px;
+    /* Adjusted slightly up for better balance */
     z-index: 10;
 }
 
