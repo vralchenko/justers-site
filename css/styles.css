@@ -807,6 +807,53 @@ h6 {
     transform: scale(1.2);
 }
 
+/* Reviews Section Styles */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.review-stars {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+}
+
 /* Page Indicators */
 .page-indicators {
     position: fixed;
