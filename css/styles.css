@@ -874,7 +874,8 @@ h6 {
 .review-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 12px;
     margin-bottom: 15px;
 }
 
@@ -882,11 +883,16 @@ h6 {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
+    flex: 1;
 }
 
 .review-stars {
     color: var(--accent);
     font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    gap: 2px;
 }
 
 .review-text {
@@ -897,6 +903,41 @@ h6 {
     flex: 1;
     /* Pushes content to fill card height evenly */
 }
+
+.reviews-cta {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-review i {
+    font-size: 16px;
+}
+
+.btn-review:hover {
+    background: var(--accent);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 104, 0.3);
+}
+
 
 /* Page Indicators */
 .page-indicators {
