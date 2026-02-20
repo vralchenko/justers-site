@@ -312,6 +312,9 @@
         bottom: 20px;
         flex-direction: row-reverse;
         align-items: center;
+        padding: 10px;
+        /* Touch target improvement */
+        min-height: 44px;
     }
 
     .call-btn-mockup span {
@@ -435,5 +438,76 @@
     .modal-form .btn {
         font-size: 16px;
         padding: 15px 30px;
+        min-height: 52px;
+    }
+
+    /* CTA button full width on very small screens */
+    .btn-hero-cta {
+        width: 100%;
+        white-space: normal;
+        font-size: 14px;
+        min-width: unset;
+    }
+}
+
+/* Extra small — iPhone SE (375px) and narrower */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 16px;
+        /* Guaranteed 16px gap from screen edges */
+    }
+
+    .hero-title {
+        font-size: 24px;
+        letter-spacing: 0.01em;
+        word-break: keep-all;
+        /* Prevent words from splitting awkwardly */
+        overflow-wrap: normal;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .stat-number-inline {
+        font-size: 20px;
+        width: 65px;
+    }
+
+    .stat-label-inline {
+        font-size: 14px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .service-title {
+        font-size: 14px;
+    }
+
+    .feature-title {
+        font-size: 13px;
+    }
+
+    .feature-desc {
+        font-size: 11px;
+    }
+
+    .contacts-map-small {
+        height: 280px;
+    }
+
+    /* Ensure contact info doesn't overflow */
+    .contact-text-block p {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 }
