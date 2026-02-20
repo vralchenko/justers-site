@@ -233,7 +233,7 @@ h6 {
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--accent);
     transition: width 0.3s ease;
 }
@@ -249,10 +249,11 @@ h6 {
 }
 
 .header-contacts {
-    text-align: right;
+    text-align: left;
     font-size: 17px;
     letter-spacing: 1px;
     white-space: nowrap;
+    margin-right: 0;
 }
 
 .contact-phones div {
@@ -275,7 +276,8 @@ h6 {
 .socials {
     margin-top: 8px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 15px;
     width: 100%;
 }
 
@@ -458,7 +460,7 @@ h6 {
     position: relative;
     margin-top: 40px;
     /* Visual offset relative to text */
-    margin-right: 15px;
+    margin-right: 0;
     /* Aligned with header contacts */
     width: auto;
     min-width: 300px;
@@ -466,8 +468,8 @@ h6 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
-    /* Right aligned */
+    align-items: flex-start;
+    /* Left aligned within the block */
     z-index: 10;
 }
 
@@ -484,7 +486,7 @@ h6 {
 .stat-number-inline {
     width: 65px;
     /* Reduced to fit smaller font */
-    text-align: right;
+    text-align: left;
     color: var(--accent);
     font-weight: 700;
     font-size: 22px;
