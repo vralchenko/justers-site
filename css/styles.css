@@ -217,8 +217,8 @@ h6 {
 }
 
 .nav a {
-    font-size: 16px;
-    /* Reverted to 16px */
+    font-size: 13px;
+    /* Reduced from 16px as requested */
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--text-muted);
