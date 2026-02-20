@@ -294,14 +294,10 @@ h6 {
     min-height: 100vh;
     display: block;
     position: relative;
-    padding: 60px 0 100px;
-    /* Reduced top padding by 30% (from 90px to 60px) */
-    /* Reduced from 120px to make gap smaller */
+    padding: 60px 0 60px;
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    scroll-margin-top: 80px;
-    /* Prevent fixed header from covering section title on anchor navigation */
 }
 
 /* Hero Page (Page 1) */
@@ -548,8 +544,7 @@ h6 {
 
 .section-title {
     font-size: 34px;
-    /* Reduced from 48px */
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     letter-spacing: 3px;
     position: relative;
     display: inline-block;
@@ -620,18 +615,14 @@ h6 {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding-top: 40px;
-    /* Reduced from 60px */
 }
 
 .services-page .section-title {
-    margin-bottom: 30px;
-    /* Reduced from 60px */
+    margin-bottom: 60px;
 }
 
 .services-intro {
-    margin-bottom: 30px;
-    /* Reduced from 60px */
+    margin-bottom: 20px;
 }
 
 .services-intro p {
