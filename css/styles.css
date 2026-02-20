@@ -203,14 +203,18 @@ h6 {
 
 .nav ul {
     display: flex;
-    justify-content: flex-end;
-    gap: 25px;
-    width: auto;
+    justify-content: space-evenly;
+    /* Distribute links evenly */
+    gap: 15px;
+    width: 100%;
     flex-wrap: nowrap;
 }
 
 .nav {
-    margin: 0;
+    margin: 0 40px;
+    /* Space between logo-sub and contacts */
+    flex-grow: 1;
+    /* Take up available space */
 }
 
 .nav a {
