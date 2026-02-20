@@ -49,6 +49,9 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
         }
 
         .pub-card:hover {
@@ -56,6 +59,15 @@
             border-color: var(--accent);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
+        }
+
+        .pub-card .stretched-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         .pub-card-category {
@@ -173,6 +185,7 @@
             <div class="pub-grid">
                 <!-- Article 1 -->
                 <div class="pub-card">
+                    <a href="publication-tck-court.html" class="stretched-link"></a>
                     <div>
                         <div class="pub-card-category">Огляд судової практики</div>
                         <h2 class="pub-card-title">Визнання протиправними дій ТЦК та СП з оголошення особи в розшук</h2>
@@ -180,13 +193,14 @@
                             <i class="fa-regular fa-calendar"></i> 20 лютого 2026
                         </div>
                     </div>
-                    <a href="publication-tck-court.html" class="btn-pub-read">
+                    <div class="btn-pub-read">
                         Читати статтю <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </div>
                 </div>
 
                 <!-- Article 2 -->
                 <div class="pub-card">
+                    <a href="publication-ogd-denial.html" class="stretched-link"></a>
                     <div>
                         <div class="pub-card-category">Юридична консультація</div>
                         <h2 class="pub-card-title">Відмова у виплаті ОГД за інвалідність: чому та як оскаржити?</h2>
@@ -194,9 +208,9 @@
                             <i class="fa-regular fa-calendar"></i> 20 лютого 2026
                         </div>
                     </div>
-                    <a href="publication-ogd-denial.html" class="btn-pub-read">
+                    <div class="btn-pub-read">
                         Читати статтю <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
