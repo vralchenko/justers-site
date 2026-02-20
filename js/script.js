@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Justers site loaded');
+    console.log('Justers site loaded at: ' + new Date().toLocaleTimeString());
 
     // Mobile Menu Toggle
     const burger = document.querySelector('.burger-menu');
@@ -144,11 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Dialogs
     const consultationModal = document.getElementById('consultationModal');
-    const callbackModal = document.getElementById('callbackModal');
 
     // Get all buttons that open modals
     const consultationBtn = document.querySelector('.hero-cta .btn');
-    const callbackBtn = document.querySelector('.call-btn-mockup');
 
     // Function to open modal
     function openModal(modal) {
@@ -170,13 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Open callback modal
-    if (callbackBtn) {
-        callbackBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal(callbackModal);
-        });
-    }
+
 
     // Status Modal
     const statusModal = document.getElementById('statusModal');
@@ -210,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close modals when clicking overlay or close button
     // Include statusModal to fix close button not working
-    [consultationModal, callbackModal, statusModal].forEach(modal => {
+    [consultationModal, statusModal].forEach(modal => {
         if (!modal) return;
 
         const overlay = modal.querySelector('.modal-overlay');
@@ -229,36 +221,45 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeModal(consultationModal);
-            closeModal(callbackModal);
             closeModal(statusModal);
         }
     });
 
     // Phone number formatting
     function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, '');
+        let value = input.value;
+        let digits = value.replace(/\D/g, '');
 
-        // Remove leading 38 if present
-        if (value.startsWith('38')) {
-            value = value.substring(2);
+        // Handle deletion: if the user is clearing the prefix, let the field be empty
+        // This solves the "can't delete" issue
+        if (value.length < 4 && (digits === '3' || digits === '38' || digits === '')) {
+            input.value = '';
+            return;
         }
 
-        // Limit to 10 digits
-        value = value.substring(0, 10);
+        // Strip the country code '38' if it's at the very beginning to avoid doubling
+        if (digits.startsWith('38')) {
+            digits = digits.substring(2);
+        }
 
-        // Format as + 38 (XX) XX XX XXX
-        let formatted = '+ 38';
-        if (value.length > 0) {
-            formatted += ' (' + value.substring(0, 2);
+        // Limit to the 10-digit subscriber number (0XX XXX XX XX)
+        digits = digits.substring(0, 10);
+
+        if (digits.length === 0) {
+            input.value = '+38 ';
+            return;
         }
-        if (value.length >= 3) {
-            formatted += ') ' + value.substring(2, 4);
+
+        // Construct the formatted string: +38 0XX XXX XX XX
+        let formatted = '+38 ' + digits.substring(0, 3);
+        if (digits.length >= 4) {
+            formatted += ' ' + digits.substring(3, 6);
         }
-        if (value.length >= 5) {
-            formatted += ' ' + value.substring(4, 6);
+        if (digits.length >= 7) {
+            formatted += ' ' + digits.substring(6, 8);
         }
-        if (value.length >= 7) {
-            formatted += ' ' + value.substring(6, 10);
+        if (digits.length >= 9) {
+            formatted += ' ' + digits.substring(8, 10);
         }
 
         input.value = formatted;
@@ -268,13 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('input[type="tel"]').forEach(input => {
         input.addEventListener('input', () => {
             formatPhoneNumber(input);
-            // Clear error on input
             clearError(input);
-        });
-        input.addEventListener('focus', function () {
-            if (this.value === '') {
-                this.value = '+ 38 (';
-            }
         });
         // Clear error on generic input
         input.addEventListener('input', () => clearError(input));
@@ -328,11 +323,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle form submissions
     const consultationForm = document.getElementById('consultationForm');
-    const callbackForm = document.getElementById('callbackForm');
 
     // Add novalidate to forms to disable browser validation
     if (consultationForm) consultationForm.setAttribute('novalidate', true);
-    if (callbackForm) callbackForm.setAttribute('novalidate', true);
 
     // Add input event listeners to clear errors on all inputs
     document.querySelectorAll('.modal-form input').forEach(input => {
@@ -386,9 +379,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (callbackForm) {
-        callbackForm.addEventListener('submit', (e) => {
-            handleFormSubmit(e, callbackModal, 'Зворотній дзвінок');
-        });
-    }
+
 });

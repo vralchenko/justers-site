@@ -488,8 +488,7 @@ h6 {
     padding: 20px 0;
     width: 100%;
     position: absolute;
-    bottom: -100px;
-    /* Adjusted slightly up for better balance */
+    bottom: -60px;
     z-index: 10;
 }
 
@@ -781,44 +780,7 @@ h6 {
     color: var(--text-main);
 }
 
-/* Call Button Mockup */
-.call-btn-mockup {
-    position: fixed;
-    /* Keep fixed to be persistent on left side */
-    bottom: 110px;
-    /* Lowered to be closer to the bottom line */
-    left: calc(50% - 700px + 60px);
-    /* Positioned within the 20% column */
-    right: auto;
-    color: #fff;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    z-index: 999;
-    transition: all 0.3s ease;
-    text-transform: lowercase;
-    font-weight: 400;
-}
 
-.call-btn-mockup:hover {
-    color: var(--accent);
-    transform: translateX(5px);
-}
-
-.call-btn-mockup span {
-    font-size: 16px;
-    /* Increased size */
-    line-height: 1.2;
-    text-align: left;
-    /* Aligned left */
-}
-
-.call-btn-mockup i {
-    font-size: 20px;
-    /* Increased size */
-    margin-top: 3px;
-    transform: rotate(-90deg);
-}
 
 /* Scroll Indicator */
 .scroll-indicator {
@@ -1098,25 +1060,7 @@ h6 {
     /* Hide the old absolute icon */
 }
 
-.modal-title-callback {
-    text-transform: none;
-    margin-bottom: 0;
-    padding: 0;
-    display: block;
-    width: 100%;
-}
 
-.modal-icon-callback {
-    font-size: 32px;
-    color: #000;
-    margin: 10px 0 25px;
-    display: block;
-    text-align: center;
-}
-
-.modal-icon-callback i {
-    transform: rotate(265deg);
-}
 
 .modal-form {
     display: flex;
