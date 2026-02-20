@@ -8,8 +8,8 @@
 
     --font-main: 'Montserrat', sans-serif;
 
-    --container-width: 1200px;
-    --header-height: 80px;
+    --container-width: 1400px;
+    --header-height: 90px;
 }
 
 * {
@@ -151,19 +151,19 @@ h6 {
 }
 
 .header-grid {
-    display: grid;
-    grid-template-columns: 20% 80%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
 .header-right {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    width: 100%;
-    gap: 40px;
-    /* Reduced from 80px */
+    flex-grow: 1;
+    gap: 25px;
+    /* Slightly reduced gap */
 }
 
 .logo-block {
@@ -190,7 +190,7 @@ h6 {
     color: #ffffff;
     /* Restored to white */
     line-height: 1.4;
-    max-width: 250px;
+    max-width: 220px;
     margin: 0;
     display: flex;
     align-items: center;
@@ -207,10 +207,10 @@ h6 {
 
 .nav ul {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    /* Reduced from 30px to fit 16px font */
+    justify-content: flex-end;
+    gap: 25px;
     width: auto;
+    flex-wrap: nowrap;
 }
 
 .nav {
@@ -249,13 +249,12 @@ h6 {
 }
 
 .header-contacts {
-    text-align: left;
-    /* Changed from right */
-    font-size: 21px;
+    text-align: right;
+    font-size: 17px;
+    /* Reduced by 4px as requested */
     letter-spacing: 1px;
-    margin-left: auto;
-    margin-right: 85px;
-    /* Aligned with the tip of the smaller left scales as requested */
+    margin-left: 20px;
+    white-space: nowrap;
 }
 
 .contact-phones div {
@@ -370,8 +369,7 @@ h6 {
 
 .hero-text {
     position: relative;
-    max-width: 55%;
-    /* Relative width to prevent overlap */
+    max-width: 600px;
     z-index: 10;
 }
 
@@ -462,8 +460,8 @@ h6 {
     position: relative;
     margin-top: 40px;
     /* Visual offset relative to text */
-    margin-right: 85px;
-    /* Aligned with header phones */
+    margin-right: 15px;
+    /* Aligned with header contacts */
     width: auto;
     min-width: 300px;
     /* Prevent too much squishing */
