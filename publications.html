@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Публікації - АО ДЖАСТЕРС</title>
+    <meta name="description"
+        content="Корисні матеріали, огляди судової практики та юридичні поради від адвокатського об'єднання ДЖАСТЕРС.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .publications-page-container {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            background: url('images/background-services.webp') no-repeat center center;
+            background-size: cover;
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pub-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .pub-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
+        }
+
+        .pub-card-category {
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pub-card-title {
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: none;
+        }
+
+        .pub-card-date {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-pub-read {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .pub-card:hover .btn-pub-read {
+            color: var(--accent);
+        }
+
+        .btn-pub-read i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .pub-card:hover .btn-pub-read i {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Same as index.html but with relative links) -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-grid">
+                <div class="header-left">
+                    <div class="logo-block">
+                        <a href="index.html#hero"><img src="images/logo.png" alt="Justers Logo" class="logo-img"></a>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="logo-sub">
+                        команда адвокатів<br>надає повний спектр<br>юридичних послуг
+                    </div>
+
+                    <!-- Mobile Burger -->
+                    <div class="burger-menu" id="burgerMenu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <nav class="nav" id="nav">
+                        <ul>
+                            <li><a href="index.html#about" class="nav-link">ПРО НАС</a></li>
+                            <li><a href="index.html#services" class="nav-link">ПОСЛУГИ</a></li>
+                            <li><a href="index.html#reviews" class="nav-link">ВІДГУКИ</a></li>
+                            <li><a href="publications.html" class="nav-link active">ПУБЛІКАЦІЇ</a></li>
+                            <li><a href="index.html#contacts" class="nav-link">КОНТАКТИ</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-contacts">
+                        <div class="contact-phones">
+                            <div><a href="tel:+380673801777">067 380 17 77</a></div>
+                            <div><a href="tel:+380674560011">067 456 00 11</a></div>
+                        </div>
+                        <div class="socials">
+                            <a href="https://www.facebook.com/share/1a1ibw41Ws/?mibextid=wwXIfr" target="_blank"
+                                aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.tiktok.com/@justers_law_firm?_r=1&_t=ZS-93oNmrCP7wI" target="_blank"
+                                aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.instagram.com/justers_law_firm?igsh=bjkxZGYwbTJpMDdm" target="_blank"
+                                aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://t.me/Justers_lawfirm" target="_blank" aria-label="Telegram"><i
+                                    class="fa-brands fa-telegram"></i></a>
+                            <a href="https://wa.me/380673801777" target="_blank" aria-label="WhatsApp"><i
+                                    class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="publications-page-container">
+        <div class="container">
+            <h1 class="section-title">ПУБЛІКАЦІЇ</h1>
+
+            <div class="pub-grid">
+                <!-- Article 1 -->
+                <div class="pub-card">
+                    <div>
+                        <div class="pub-card-category">Огляд судової практики</div>
+                        <h2 class="pub-card-title">Визнання протиправними дій ТЦК та СП з оголошення особи в розшук</h2>
+                        <div class="pub-card-date">
+                            <i class="fa-regular fa-calendar"></i> 20 лютого 2026
+                        </div>
+                    </div>
+                    <a href="publication-tck-court.html" class="btn-pub-read">
+                        Читати статтю <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="pub-card">
+                    <div>
+                        <div class="pub-card-category">Юридична консультація</div>
+                        <h2 class="pub-card-title">Відмова у виплаті ОГД за інвалідність: чому та як оскаржити?</h2>
+                        <div class="pub-card-date">
+                            <i class="fa-regular fa-calendar"></i> 20 лютого 2026
+                        </div>
+                    </div>
+                    <a href="publication-ogd-denial.html" class="btn-pub-read">
+                        Читати статтю <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
