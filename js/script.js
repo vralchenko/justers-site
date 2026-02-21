@@ -379,5 +379,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // -------------------------
+    // Comments API Integration (Vercel Postgres)
+    // -------------------------
+    const commentForm = document.getElementById('commentForm');
+    const commentsList = document.getElementById('commentsList');
+
+    if (commentForm && commentsList) {
+        // Extract article identifier from the hidden input
+        const articleInput = commentForm.querySelector('input[name="article"]');
+        const currentArticle = articleInput ? articleInput.value : null;
+
+        if (currentArticle) {
+            // Function to fetch and display comments
+            const fetchComments = async () => {
+                try {
+                    const response = await fetch(`/api/comments?article=${currentArticle}`);
+                    if (!response.ok) throw new Error('Помилка сервера. Дані можуть бути недоступні локально без Vercel CLI.');
+
+                    const comments = await response.json();
+
+                    if (comments.length === 0) {
+                        commentsList.innerHTML = '<p style="color:var(--text-muted);font-size:14px;padding:10px 0;">Ще немає коментарів. Залишіть свій відгук першим!</p>';
+                        return;
+                    }
+
+                    commentsList.innerHTML = comments.map(c => {
+                        const dateText = new Date(c.created_at).toLocaleDateString('uk-UA', {
+                            year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                        });
+                        return `
+                            <div class="comment-item">
+                                <div class="comment-author">${c.author} <span class="comment-date">${dateText}</span></div>
+                                <div class="comment-text">${c.comment_text}</div>
+                            </div>
+                        `;
+                    }).join('');
+                } catch (err) {
+                    console.error("Помилка завантаження коментарів:", err);
+                    commentsList.innerHTML = '<p style="color:var(--text-muted);font-size:14px;padding:10px 0;">Завантаження коментарів доступне після <a href="https://vercel.com/docs/storage/vercel-postgres" target="_blank" style="color:var(--accent);">деплою та налаштування Vercel Postgres</a>.</p>';
+                }
+            };
+
+            // Initial fetch
+            fetchComments();
+
+            // Function to post a new comment
+            commentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const submitBtn = commentForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerText;
+
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Відправка...';
+
+                const authorInput = commentForm.querySelector('input[name="author"]');
+                const textInput = commentForm.querySelector('textarea[name="text"]');
+
+                try {
+                    const response = await fetch('/api/comments', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            article: currentArticle,
+                            author: authorInput.value,
+                            text: textInput.value
+                        })
+                    });
+
+                    if (response.ok) {
+                        commentForm.reset();
+                        await fetchComments(); // Refresh list to show new comment
+                    } else {
+                        alert('Помилка при збереженні коментаря. Переконайтеся, що Vercel Postgres підключено.');
+                    }
+                } catch (err) {
+                    console.error("Помилка відправки:", err);
+                    alert('Для збереження необхідне підключення до бази даних Vercel Postgres (помилка запиту).');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+            });
+        }
+    }
 
 });

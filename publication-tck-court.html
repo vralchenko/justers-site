@@ -292,13 +292,14 @@
                     <!-- Comments Section -->
                     <div class="comments-section">
                         <h3 class="comments-title">Коментарі</h3>
-                        <form class="comment-form"
-                            onsubmit="event.preventDefault(); const t = this.querySelector('textarea'); const n = this.querySelector('input'); if(t.value && n.value) { const l = this.nextElementSibling; l.innerHTML = `<div class='comment-item'><div class='comment-author'>${n.value} <span class='comment-date'>Щойно</span></div><div class='comment-text'>${t.value}</div></div>` + l.innerHTML; this.reset(); }">
-                            <input type="text" placeholder="Ваше ім'я" required>
-                            <textarea placeholder="Ваш коментар" required></textarea>
+                        <form class="comment-form" id="commentForm">
+                            <input type="hidden" name="article" value="tck-court">
+                            <input type="text" name="author" placeholder="Ваше ім'я" required>
+                            <textarea name="text" placeholder="Ваш коментар" required></textarea>
                             <button type="submit" class="comment-btn">Залишити коментар</button>
                         </form>
-                        <div class="comments-list">
+                        <div class="comments-list" id="commentsList">
+                            <!-- JS will populate comments here -->
                         </div>
                     </div>
                 </div>
