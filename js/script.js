@@ -360,17 +360,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Email details
         const emailTo = 'office@justers.io';
-        const subject = encodeURIComponent(`Нова заявка: ${formType} від ${name}`);
-        const body = encodeURIComponent(`Деталі заявки:\n\nІм'я: ${name}\nТелефон: ${phone}\nТип: ${formType}\n\nПовідомлення надіслано з сайту Justers.`);
 
-        // Create and trigger mailto link
-        const mailtoLink = `mailto:${emailTo}?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
+        // Show loading state and replace standard alerts with status modal
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.innerText : 'Надіслати';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Відправка...';
+        }
 
-        // UI Feedback
-        closeModal(modalToClose);
-        showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша поштова програма відкриється для підтвердження відправки листа.`);
-        form.reset();
+        fetch(`https://formsubmit.co/ajax/${emailTo}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: `Нова заявка: Консультація від ${name}`,
+                _template: 'table',
+                "Ім'я": name,
+                "Телефон": phone,
+                "Тип запиту": formType,
+                "Джерело": "Сайт Justers"
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === 'true' || data.success === true) {
+                    closeModal(modalToClose);
+                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
+                    form.reset();
+                } else {
+                    showStatusModal(false, 'Помилка', 'Виникла помилка при відправці. Спробуйте пізніше.');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                showStatusModal(false, 'Помилка сервера', 'Не вдалося відправити заявку. Спробуйте пізніше.');
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+            });
     }
 
     if (consultationForm) {
