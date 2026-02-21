@@ -1,6 +1,6 @@
-import { sql } from '@vercel/postgres';
+const { sql } = require('@vercel/postgres');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     // Ensure the table exists (Ideally, you should run this once securely, not on every request, but for simplicity we do it here)
     try {
         await sql`
