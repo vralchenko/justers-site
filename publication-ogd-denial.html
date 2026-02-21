@@ -259,10 +259,59 @@
                         на користь громадянина.</p>
 
                     <p>Не втрачайте своє право на отримання ОГД та вчасно звертайтеся за юридичною консультацією.</p>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <h3 class="comments-title">Коментарі</h3>
+                        <form class="comment-form"
+                            onsubmit="event.preventDefault(); const t = this.querySelector('textarea'); const n = this.querySelector('input'); if(t.value && n.value) { const l = this.nextElementSibling; l.innerHTML = `<div class='comment-item'><div class='comment-author'>${n.value} <span class='comment-date'>Щойно</span></div><div class='comment-text'>${t.value}</div></div>` + l.innerHTML; this.reset(); }">
+                            <input type="text" placeholder="Ваше ім'я" required>
+                            <textarea placeholder="Ваш коментар" required></textarea>
+                            <button type="submit" class="comment-btn">Залишити коментар</button>
+                        </form>
+                        <div class="comments-list">
+                        </div>
+                    </div>
                 </div>
             </article>
         </div>
     </main>
+
+    <!-- Modal: Consultation Request -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="modal-title">ОТРИМАТИ<br>КОНСУЛЬТАЦІЮ</h2>
+            <form class="modal-form" id="consultationForm">
+                <div class="input-wrapper">
+                    <input type="text" name="name" placeholder="Ваше ім'я" required>
+                </div>
+                <div class="input-wrapper">
+                    <input type="tel" name="phone" placeholder="+380" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Status Message -->
+    <div class="modal" id="statusModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content status-modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="status-icon" id="statusIcon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="status-title" id="statusTitle">Успішно!</h3>
+            <p class="status-message" id="statusMessageText"></p>
+            <button class="btn btn-primary status-btn" id="statusModalCloseBtn">Гаразд</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

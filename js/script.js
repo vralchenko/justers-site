@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const consultationModal = document.getElementById('consultationModal');
 
     // Get all buttons that open modals
-    const consultationBtn = document.querySelector('.hero-cta .btn');
+    const consultationBtns = document.querySelectorAll('.hero-cta .btn, .consult-btn-trigger');
 
     // Function to open modal
     function openModal(modal) {
@@ -161,12 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Open consultation modal
-    if (consultationBtn) {
-        consultationBtn.addEventListener('click', (e) => {
+    consultationBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
             e.preventDefault();
             openModal(consultationModal);
         });
-    }
+    });
 
 
 

@@ -259,6 +259,11 @@
         font-size: 20px;
     }
 
+    .call-btn-fixed {
+        left: 20px;
+        bottom: 80px;
+    }
+
     .features-strip {
         position: relative !important;
         bottom: auto !important;

@@ -213,8 +213,64 @@
                     </div>
                 </div>
             </div>
+
+            <h1 class="section-title" style="margin-top: 80px;">ОСОБИСТА КОЛОНКА</h1>
+
+            <div class="pub-grid">
+                <!-- Personal Column Article -->
+                <div class="pub-card" style="border-color: var(--accent);">
+                    <a href="#" class="stretched-link"></a>
+                    <div>
+                        <div class="pub-card-category" style="color: #fff;">Особиста колонка</div>
+                        <h2 class="pub-card-title">Як зміни в законодавстві вплинуть на захист прав військовослужбовців
+                            у 2026 році: думка адвоката</h2>
+                        <div class="pub-card-date">
+                            <i class="fa-regular fa-calendar"></i> 21 лютого 2026
+                        </div>
+                    </div>
+                    <div class="btn-pub-read">
+                        Читати статтю <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Modal: Consultation Request -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="modal-title">ОТРИМАТИ<br>КОНСУЛЬТАЦІЮ</h2>
+            <form class="modal-form" id="consultationForm">
+                <div class="input-wrapper">
+                    <input type="text" name="name" placeholder="Ваше ім'я" required>
+                </div>
+                <div class="input-wrapper">
+                    <input type="tel" name="phone" placeholder="+380" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Status Message -->
+    <div class="modal" id="statusModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content status-modal-content">
+            <button class="modal-close" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="status-icon" id="statusIcon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="status-title" id="statusTitle">Успішно!</h3>
+            <p class="status-message" id="statusMessageText"></p>
+            <button class="btn btn-primary status-btn" id="statusModalCloseBtn">Гаразд</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
