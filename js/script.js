@@ -451,12 +451,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (response.ok) {
                         commentForm.reset();
                         await fetchComments(); // Refresh list to show new comment
+                        showStatusModal(true, 'Успішно', 'Ваш коментар було успішно додано.');
                     } else {
-                        alert('Виникла помилка при збереженні коментаря.');
+                        showStatusModal(false, 'Помилка', 'Виникла помилка при збереженні коментаря.');
                     }
                 } catch (err) {
                     console.error("Помилка відправки:", err);
-                    alert('Сталася серверна помилка. Будь ласка, спробуйте пізніше.');
+                    showStatusModal(false, 'Помилка сервера', 'Сталася серверна помилка. Будь ласка, спробуйте пізніше.');
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.innerText = originalBtnText;
