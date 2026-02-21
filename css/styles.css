@@ -887,7 +887,7 @@ h6 {
 
 .call-btn-fixed i {
     font-size: 20px;
-    transform: scaleX(-1) rotate(-90deg);
+    transform: scaleX(-1);
 }
 
 /* Scroll Indicator */
