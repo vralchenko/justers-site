@@ -863,7 +863,7 @@ h6 {
 /* Call Button Fixed */
 .call-btn-fixed {
     position: fixed;
-    bottom: 80px;
+    bottom: 110px;
     left: calc(50% - 700px + 40px);
     color: #fff;
     font-size: 14px;
@@ -887,7 +887,7 @@ h6 {
 
 .call-btn-fixed i {
     font-size: 20px;
-    transform: scaleX(-1) rotate(-45deg);
+    transform: scaleX(-1) rotate(-90deg);
 }
 
 /* Scroll Indicator */
