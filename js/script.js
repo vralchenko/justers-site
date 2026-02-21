@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }).join('');
                 } catch (err) {
                     console.error("Помилка завантаження коментарів:", err);
-                    commentsList.innerHTML = '<p style="color:var(--text-muted);font-size:14px;padding:10px 0;">Завантаження коментарів доступне після <a href="https://vercel.com/docs/storage/vercel-postgres" target="_blank" style="color:var(--accent);">деплою та налаштування Vercel Postgres</a>.</p>';
+                    commentsList.innerHTML = '<p style="color:var(--text-muted);font-size:14px;padding:10px 0;">Ще немає коментарів. Залишіть свій відгук першим!</p>';
                 }
             };
 
@@ -452,11 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         commentForm.reset();
                         await fetchComments(); // Refresh list to show new comment
                     } else {
-                        alert('Помилка при збереженні коментаря. Переконайтеся, що Vercel Postgres підключено.');
+                        alert('Виникла помилка при збереженні коментаря.');
                     }
                 } catch (err) {
                     console.error("Помилка відправки:", err);
-                    alert('Для збереження необхідне підключення до бази даних Vercel Postgres (помилка запиту).');
+                    alert('Сталася серверна помилка. Будь ласка, спробуйте пізніше.');
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.innerText = originalBtnText;
