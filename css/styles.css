@@ -172,7 +172,8 @@ h6 {
 }
 
 .logo-img {
-    height: 32px;
+    height: 35px;
+    /* Increased by ~10% from 32px */
     width: auto;
     object-fit: contain;
 }
@@ -266,7 +267,8 @@ h6 {
 
 .contact-phones div {
     margin-bottom: 6px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.305em;
+    /* Increased to align with icons below */
     line-height: 1.0;
     color: #ffffff;
 }
