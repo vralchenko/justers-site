@@ -234,13 +234,24 @@
     }
     .menu-overlay.active { display: block; }
 
+    /* On mobile: stats before publications */
+    .hero-text {
+        display: contents;
+    }
+    .hero-stats {
+        order: 1;
+    }
+    .hero-publications {
+        order: 2;
+    }
+
     /* Hide desktop-only fixed elements, show mobile FAB */
     .page-indicators { display: none; }
     .call-btn-fixed { display: none; }
     .mobile-call-fab {
         display: flex;
         position: fixed;
-        bottom: 20px;
+        bottom: 80px;
         right: 20px;
         width: 56px;
         height: 56px;
