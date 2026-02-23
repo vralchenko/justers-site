@@ -4,19 +4,59 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const burger = document.querySelector('.burger-menu');
     const nav = document.querySelector('.nav');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMobileMenu() {
+        if (!nav) return;
+        nav.classList.add('active');
+        if (menuOverlay) menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        if (!nav) return;
+        nav.classList.remove('active');
+        if (menuOverlay) menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
     if (burger && nav) {
         burger.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            if (nav.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
-        // Close menu when clicking a link
+        // Close menu when clicking a nav link
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                nav.classList.remove('active');
+                closeMobileMenu();
             });
         });
     }
+
+    // Close menu on overlay click
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav && nav.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu on resize above 960px
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && nav && nav.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
 
     // Header Scroll Effect
     const header = document.getElementById('header');
@@ -164,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     consultationBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            closeMobileMenu();
             openModal(consultationModal);
         });
     });
