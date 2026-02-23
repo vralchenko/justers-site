@@ -121,6 +121,36 @@
         .pub-card:hover .btn-pub-read i {
             transform: translateX(5px);
         }
+
+        @media (max-width: 768px) {
+            .publications-page-container {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .pub-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pub-card {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .publications-page-container {
+                padding-top: 90px;
+            }
+
+            .pub-card {
+                padding: 20px 16px;
+            }
+
+            .pub-card-title {
+                font-size: 17px;
+            }
+        }
     </style>
 </head>
 

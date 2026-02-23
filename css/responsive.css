@@ -201,6 +201,17 @@
         padding-bottom: 20px;
     }
 
+    /* Grid: switch to single column, hide empty side columns */
+    .hero-grid,
+    .split-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-side-col,
+    .side-col {
+        display: none;
+    }
+
     .hero-grid {
         height: auto !important;
         min-height: auto !important;
@@ -251,17 +262,19 @@
         padding: 30px 20px;
     }
 
-
-
     .scroll-indicator {
         bottom: 20px;
         right: 20px;
         font-size: 20px;
     }
 
+    /* Hide page indicators and fixed call button on mobile */
+    .page-indicators {
+        display: none;
+    }
+
     .call-btn-fixed {
-        left: 20px;
-        bottom: 80px;
+        display: none;
     }
 
     .features-strip {
@@ -290,9 +303,24 @@
         line-height: 1.5;
     }
 
+    /* About section */
+    .about-content {
+        gap: 30px;
+    }
+
     .about-stats {
         flex-direction: column;
         gap: 30px;
+    }
+
+    /* Contacts: stack vertically */
+    .contacts-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contacts-map-small {
+        height: 300px;
     }
 
     .contacts-map-large {
@@ -303,7 +331,30 @@
         min-height: 300px;
     }
 
+    /* Reviews: single column */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .review-card {
+        padding: 24px 20px;
+    }
+
+    /* Socials font size */
+    .socials-centered a {
+        font-size: 22px;
+    }
+
+    .contacts-footer-text {
+        font-size: 13px;
+    }
+
+    /* Touch targets */
+    .btn,
+    .btn-hero-cta,
+    .btn-primary {
+        min-height: 44px;
+    }
 }
 
 /* Small Mobile */
@@ -401,6 +452,14 @@
 
     .service-desc {
         font-size: 13px;
+    }
+
+    .socials-centered a {
+        font-size: 20px;
+    }
+
+    .contacts-footer-text {
+        font-size: 12px;
     }
 
     /* Modal responsive */
