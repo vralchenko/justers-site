@@ -209,6 +209,7 @@
         font-size: 18px;
         padding: 12px 0;
         border-bottom: none;
+        white-space: nowrap;
     }
     .nav-mobile-socials {
         display: flex;
@@ -427,6 +428,10 @@
         gap: 30px;
     }
 
+    .contacts-map-col {
+        width: 100%;
+    }
+
     .contacts-map-small {
         height: 300px;
     }
@@ -448,9 +453,14 @@
         padding: 24px 20px;
     }
 
-    /* Socials font size */
+    /* Socials: larger tap zones */
     .socials-centered a {
         font-size: 22px;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contacts-footer-text {
@@ -632,6 +642,31 @@
     .pub-card-title {
         font-size: 17px;
     }
+}
+
+/* Landscape mode — phones rotated horizontally */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Hero: compact to fit viewport */
+    .hero-page { min-height: 100svh; }
+    .hero-grid { align-content: center; }
+    .hero-title { font-size: clamp(24px, 5vw, 36px); }
+    .hero-subtitle { font-size: 14px; }
+    .hero-stats { gap: 20px; }
+    .stat-number { font-size: 28px; }
+
+    /* Header: tighter */
+    .header { padding: 8px 0; }
+
+    /* Modal: scrollable */
+    .modal-content {
+        padding: 30px 25px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    /* Sections: reduced spacing */
+    .page { padding: 40px 0; }
+    .section-title { font-size: 24px; margin-bottom: 20px; }
 }
 
 /* Extra small — iPhone SE (375px) and narrower */

@@ -131,15 +131,13 @@ h6 {
     top: 0;
     left: 0;
     z-index: 100;
-    background: url('../images/background-header.webp') no-repeat center center;
-    background-size: cover;
+    background: #161920;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    background: url('../images/background-header.webp') no-repeat center center;
-    background-size: cover;
+    background: #161920;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -278,6 +276,7 @@ h6 {
 .contact-phones a {
     color: #ffffff;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .contact-phones a:hover {
@@ -348,6 +347,7 @@ h6 {
     background-attachment: scroll;
     z-index: 0;
     pointer-events: none;
+    opacity: 0.04;
 }
 
 .hero-page .container {
@@ -835,6 +835,7 @@ h6 {
 .contact-text-block a {
     color: var(--text-muted);
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .contact-text-block a:hover {
@@ -957,6 +958,7 @@ h6 {
     white-space: nowrap;
     flex-shrink: 0;
     display: flex;
+    flex-wrap: nowrap;
     gap: 2px;
 }
 
@@ -1200,7 +1202,8 @@ h6 {
 
 .modal-content {
     position: relative;
-    background: linear-gradient(180deg, #b49664 0%, #8c6e46 100%);
+    background: #131a28;
+    border: 1px solid rgba(212, 175, 104, 0.25);
     padding: 50px 40px;
     border-radius: 12px;
     max-width: 400px;
@@ -1229,7 +1232,7 @@ h6 {
     right: 20px;
     background: transparent;
     border: none;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 28px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1242,8 +1245,8 @@ h6 {
 }
 
 .modal-close:hover {
-    color: #000;
-    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
     transform: rotate(90deg);
 }
 
@@ -1254,7 +1257,7 @@ h6 {
 .modal-title {
     font-size: 20px;
     font-weight: 700;
-    color: #000;
+    color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 35px;
     line-height: 1.2;
@@ -1288,19 +1291,19 @@ h6 {
 .modal-form input {
     width: 100%;
     padding: 15px 20px;
-    background: #fff;
-    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
     font-size: 15px;
     font-family: var(--font-main);
-    color: #000;
+    color: #fff;
     transition: all 0.3s ease;
     outline: none;
 }
 
 .modal-form input.error {
     border-color: #ff4d4d;
-    background: #fff0f0;
+    background: rgba(255, 77, 77, 0.1);
 }
 
 .error-message {
@@ -1332,19 +1335,19 @@ h6 {
 }
 
 .modal-form input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .modal-form input:focus {
-    background: #fff;
-    border-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(212, 175, 104, 0.5);
+    box-shadow: 0 0 0 2px rgba(212, 175, 104, 0.15);
 }
 
 .modal-form .btn {
     margin-top: 20px;
-    background: #1d46a4;
-    color: #fff;
+    background: var(--accent);
+    color: #000;
     font-size: 16px;
     font-weight: 700;
     padding: 15px 40px;
@@ -1363,9 +1366,9 @@ h6 {
 }
 
 .modal-form .btn:hover {
-    background: #163581;
+    background: #e0c080;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(29, 70, 164, 0.3);
+    box-shadow: 0 6px 15px rgba(212, 175, 104, 0.3);
 }
 
 /* Status Modal Specifics */
