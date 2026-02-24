@@ -324,6 +324,7 @@
         height: 120vh;
         background-size: cover;
         background-position: center center;
+        z-index: 1;
     }
 
     .hero-page::after {
