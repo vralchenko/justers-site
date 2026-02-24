@@ -644,18 +644,50 @@
     }
 }
 
-/* Landscape mode — phones rotated horizontally */
-@media (orientation: landscape) and (max-height: 500px) {
-    /* Hero: compact to fit viewport */
-    .hero-page { min-height: 100svh; }
-    .hero-grid { align-content: center; }
-    .hero-title { font-size: clamp(24px, 5vw, 36px); }
-    .hero-subtitle { font-size: 14px; }
-    .hero-stats { gap: 20px; }
-    .stat-number { font-size: 28px; }
+/* Landscape mode — phones/tablets rotated horizontally */
+@media (orientation: landscape) and (max-height: 600px) {
+    /* Hero: let content flow naturally, no fixed height */
+    .hero-page {
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+
+    .hero-grid {
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .hero-content {
+        height: auto !important;
+        gap: 20px;
+    }
+
+    .hero-title { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; }
+    .hero-description { margin-top: 8px; font-size: 13px; }
+    .hero-stats { margin-top: 10px !important; }
+    .hero-cta { margin-top: 10px; }
+    .hero-publications { margin-top: 20px; }
+
+    /* Features strip: flow under hero, no absolute positioning */
+    .features-strip {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 20px;
+    }
+
+    .feature-box { padding: 15px 25px !important; }
+    .feature-title { font-size: 16px; margin-bottom: 8px; }
+    .feature-desc { font-size: 12px; }
 
     /* Header: tighter */
     .header { padding: 8px 0; }
+
+    /* Hide fixed elements that overlap in landscape */
+    .page-indicators { display: none !important; }
+    .call-btn-fixed { display: none !important; }
 
     /* Modal: scrollable */
     .modal-content {
