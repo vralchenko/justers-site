@@ -322,7 +322,7 @@
         transform: none;
         height: 120vh;
         background-size: cover;
-        background-position: center center;
+        background-position: center 75%;
     }
 
     .hero-content {
@@ -346,6 +346,7 @@
         font-size: 14px;
         max-width: 100%;
         margin-top: 10px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }
 
     .section-title {
@@ -495,7 +496,7 @@
 
     .hero-page::before {
         background-size: cover;
-        background-position: center center;
+        background-position: center 80%;
     }
 
     .hero-content {
@@ -528,10 +529,12 @@
     .stat-number-inline {
         font-size: 24px;
         width: 80px;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
     }
 
     .stat-item {
         font-size: 16px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }
 
     .stat-number {
