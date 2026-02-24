@@ -351,7 +351,7 @@ h6 {
     background-attachment: scroll;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.15;
+    opacity: 0.25;
 }
 
 .hero-page .container {
