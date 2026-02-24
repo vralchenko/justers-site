@@ -684,8 +684,9 @@
     .feature-title { font-size: 16px; margin-bottom: 8px; }
     .feature-desc { font-size: 12px; }
 
-    /* Header: tighter */
+    /* Header: tighter, hide logo-sub to prevent overlap */
     .header { padding: 8px 0; }
+    .logo-sub { display: none; }
 
     /* Hide fixed elements that overlap in landscape */
     .page-indicators { display: none !important; }
