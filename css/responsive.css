@@ -251,7 +251,7 @@
     .mobile-call-fab {
         display: flex;
         position: fixed;
-        bottom: 30%;
+        bottom: 30px;
         right: 16px;
         width: 56px;
         height: 56px;
