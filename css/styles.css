@@ -346,12 +346,24 @@ h6 {
     height: 100%;
     background-image: url('../images/background-hero-v4.png');
     background-size: cover;
-    background-position: center center;
+    background-position: 62% center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     z-index: 0;
     pointer-events: none;
     opacity: 0.7;
+}
+
+.hero-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(8, 12, 21, 0.6) 0%, rgba(8, 12, 21, 0.3) 60%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .hero-page .container {
