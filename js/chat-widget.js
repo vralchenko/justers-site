@@ -206,6 +206,9 @@
             '      <span class="justers-chat-header-title">JUSTERS</span>' +
             '      <span class="justers-chat-header-sub">Онлайн-помічник</span>' +
             '    </div>' +
+            '    <button id="justers-chat-reset" aria-label="На початок" title="На початок">' +
+            '      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>' +
+            '    </button>' +
             '    <button id="justers-chat-close" aria-label="Закрити чат">&times;</button>' +
             '  </div>' +
             '  <div id="justers-chat-messages"></div>' +
@@ -229,6 +232,7 @@
         var messagesEl = document.getElementById('justers-chat-messages');
         var inputEl = document.getElementById('justers-chat-input');
         var sendBtn = document.getElementById('justers-chat-send');
+        var resetBtn = document.getElementById('justers-chat-reset');
         var isOpen = false;
 
         function openChat() {
@@ -245,6 +249,12 @@
             isOpen = false;
             chatWindow.classList.remove('open');
             fab.classList.remove('hidden');
+        }
+
+        function resetChat() {
+            messagesEl.innerHTML = '';
+            showWelcome();
+            inputEl.focus();
         }
 
         function showWelcome() {
@@ -371,6 +381,7 @@
         // Event listeners
         fab.addEventListener('click', openChat);
         closeBtn.addEventListener('click', closeChat);
+        resetBtn.addEventListener('click', resetChat);
         sendBtn.addEventListener('click', handleSend);
 
         inputEl.addEventListener('keydown', function (e) {

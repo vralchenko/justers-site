@@ -1703,11 +1703,11 @@ h6 {
 #justers-chat-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 14px 18px;
     background: #161920;
     border-bottom: 1px solid rgba(212, 175, 104, 0.15);
     flex-shrink: 0;
+    gap: 8px;
 }
 
 .justers-chat-header-info {
@@ -1731,15 +1731,30 @@ h6 {
     letter-spacing: 0.5px;
 }
 
-#justers-chat-close {
+#justers-chat-header .justers-chat-header-info ~ button {
     background: none;
     border: none;
-    color: #8ba0b9;
-    font-size: 24px;
     cursor: pointer;
     padding: 0 4px;
     line-height: 1;
     transition: color 0.2s;
+}
+
+#justers-chat-reset {
+    color: #8ba0b9;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+#justers-chat-reset:hover {
+    color: #d4af68;
+}
+
+#justers-chat-close {
+    color: #8ba0b9;
+    font-size: 24px;
 }
 
 #justers-chat-close:hover {
