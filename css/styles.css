@@ -164,7 +164,7 @@ h6 {
 
 .logo-block {
     position: absolute;
-    left: 0;
+    left: -20px;
     top: 50%;
     transform: translateY(-50%);
     white-space: nowrap;
