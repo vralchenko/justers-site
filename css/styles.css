@@ -148,7 +148,7 @@ h6 {
 .header .container {
     display: block;
     position: relative;
-    padding: 0 40px;
+    padding: 0 40px 0 20px;
 }
 
 .header-grid {
@@ -884,7 +884,7 @@ h6 {
 .call-btn-fixed {
     position: fixed;
     bottom: 110px;
-    left: calc(50% - 700px + 40px);
+    left: calc(50% - 700px + 20px);
     color: #fff;
     font-size: 14px;
     display: flex;
@@ -1115,8 +1115,8 @@ h6 {
 /* Page Indicators */
 .page-indicators {
     position: fixed;
-    left: calc(50% - 700px + 40px);
-    /* Positioned within the 20% column */
+    left: calc(50% - 700px + 20px);
+    /* Positioned within the 12% column */
     top: 300px;
     /* Moved higher + reduced gap between numbers */
     display: flex;
