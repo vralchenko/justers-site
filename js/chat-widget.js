@@ -234,6 +234,12 @@
         var sendBtn = document.getElementById('justers-chat-send');
         var resetBtn = document.getElementById('justers-chat-reset');
         var isOpen = false;
+        var hasInteracted = false;
+
+        function updateResetBtn() {
+            resetBtn.style.display = hasInteracted ? 'flex' : 'none';
+        }
+        updateResetBtn();
 
         function openChat() {
             isOpen = true;
@@ -253,6 +259,8 @@
 
         function resetChat() {
             messagesEl.innerHTML = '';
+            hasInteracted = false;
+            updateResetBtn();
             showWelcome();
             inputEl.focus();
         }
@@ -341,6 +349,8 @@
         }
 
         function handleQuery(query, displayText) {
+            hasInteracted = true;
+            updateResetBtn();
             addUserMessage(displayText || query);
 
             var results = searchKB(query);
