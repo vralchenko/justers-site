@@ -164,7 +164,7 @@ h6 {
 
 .logo-block {
     position: absolute;
-    left: -40px;
+    left: -55px;
     top: 50%;
     transform: translateY(-50%);
     white-space: nowrap;
@@ -896,7 +896,7 @@ h6 {
 .call-btn-fixed {
     position: fixed;
     bottom: 110px;
-    left: calc(50% - 700px + 20px);
+    left: calc(50% - 700px + 5px);
     color: #fff;
     font-size: 14px;
     display: flex;
@@ -1127,7 +1127,7 @@ h6 {
 /* Page Indicators */
 .page-indicators {
     position: fixed;
-    left: calc(50% - 700px + 20px);
+    left: calc(50% - 700px + 5px);
     /* Positioned within the 12% column */
     top: 300px;
     /* Moved higher + reduced gap between numbers */
