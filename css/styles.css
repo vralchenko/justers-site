@@ -153,10 +153,21 @@ h6 {
 
 .header-grid {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
+    grid-template-columns: 12% 88%;
     align-items: center;
     width: 100%;
+}
+
+.header-left {
+    position: relative;
+}
+
+.logo-block {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
 }
 
 .header-right {
