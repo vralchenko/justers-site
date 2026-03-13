@@ -277,9 +277,11 @@ h6 {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 15px;
-    background: #1e2a3a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    background: rgba(13, 18, 32, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 104, 0.15);
+    border-radius: 12px;
     padding: 6px 0;
     min-width: 200px;
     opacity: 0;
@@ -287,7 +289,7 @@ h6 {
     transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
     transform: translateX(-50%) translateY(8px);
     z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .nav-dropdown-wrap:hover .nav-dropdown {
