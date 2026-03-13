@@ -558,6 +558,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------
+    // Nav dropdown → open civil submenu on page
+    // -------------------------
+    document.querySelectorAll('.nav-dropdown-item[data-service="civil"]').forEach(navItem => {
+        navItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+            // Open civil dropdown after scroll
+            setTimeout(() => {
+                if (civilItem && serviceDropdown && !serviceDropdown.classList.contains('open')) {
+                    serviceDropdown.style.maxHeight = serviceDropdown.scrollHeight + 'px';
+                    serviceDropdown.classList.add('open');
+                    civilItem.classList.add('active');
+                }
+            }, 600);
+        });
+    });
+
+    // -------------------------
     // Comments API Integration (Vercel Postgres)
     // -------------------------
     const commentForm = document.getElementById('commentForm');
