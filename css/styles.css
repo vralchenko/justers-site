@@ -331,7 +331,7 @@ h6 {
     min-height: 100vh;
     display: block;
     position: relative;
-    padding: 60px 0 60px;
+    padding: 140px 0 60px;
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -645,7 +645,6 @@ h6 {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding-top: 140px;
 }
 
 .section-title {
@@ -721,8 +720,6 @@ h6 {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding-top: 40px;
-    padding-bottom: 30px;
 }
 
 .services-page .section-title {
