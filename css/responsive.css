@@ -103,10 +103,6 @@
         gap: 30px;
     }
 
-    .service-dropdown-inner {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .contacts-content {
         flex-direction: column;
         gap: 40px;
@@ -384,14 +380,6 @@
 
     .service-item {
         padding: 30px 20px;
-    }
-
-    .service-dropdown-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .service-more {
-        opacity: 1;
     }
 
     .scroll-indicator {
