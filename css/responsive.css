@@ -103,7 +103,7 @@
         gap: 30px;
     }
 
-    .service-detail-grid {
+    .service-dropdown-inner {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -386,12 +386,8 @@
         padding: 30px 20px;
     }
 
-    .service-detail-grid {
+    .service-dropdown-inner {
         grid-template-columns: 1fr;
-    }
-
-    .service-detail-title {
-        font-size: 20px;
     }
 
     .service-more {

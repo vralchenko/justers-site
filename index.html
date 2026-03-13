@@ -250,14 +250,13 @@
                     </div>
 
                     <div class="services-grid" id="servicesGrid">
-                        <div class="service-item" data-service="criminal">
+                        <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa-solid fa-gavel"></i>
                             </div>
                             <h3 class="service-title">Кримінальні справи</h3>
                             <p class="service-desc">Захист прав та інтересів у кримінальних провадженнях на всіх стадіях
                                 процесу.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
 
                         <div class="service-item" data-service="civil">
@@ -267,57 +266,55 @@
                             <h3 class="service-title">Цивільні справи</h3>
                             <p class="service-desc">Представництво інтересів у майнових, спадкових, житлових та сімейних
                                 спорах.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
+                            <span class="service-more">Детальніше <i class="fa-solid fa-chevron-down"></i></span>
                         </div>
 
-                        <div class="service-item" data-service="commercial">
+                        <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa-solid fa-briefcase"></i>
                             </div>
                             <h3 class="service-title">Господарські справи</h3>
                             <p class="service-desc">Досудове врегулювання спорів, представництво та захист у суді,
                                 взаємодія з податковою службою.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
 
-                        <div class="service-item" data-service="mobilization">
+                        <!-- Dropdown for Цивільні справи -->
+                        <div class="service-dropdown" id="serviceDropdown">
+                            <div class="service-dropdown-inner" id="serviceDropdownInner"></div>
+                            <div class="service-dropdown-prices" id="serviceDropdownPrices">
+                                <div class="service-dropdown-prices-icon"><i class="fa-solid fa-tag"></i></div>
+                                <h3>Ціни</h3>
+                                <p>Вартість послуг визначається індивідуально після консультації з адвокатом, залежно від складності справи.</p>
+                                <a href="#contacts" class="service-dropdown-prices-btn">Отримати консультацію</a>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa-solid fa-file-signature"></i>
                             </div>
                             <h3 class="service-title">Мобілізація</h3>
                             <p class="service-desc">Взаємодія з ТЦК та СП, захист прав при мобілізації, супровід при
                                 ВЛК, оскарження рішень до ЦВЛК ЗСУ та судів, питання бронювання персоналу.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
 
-                        <div class="service-item" data-service="appeal">
+                        <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa-solid fa-building-columns"></i>
                             </div>
                             <h3 class="service-title">Оскарження рішень</h3>
                             <p class="service-desc">Оскарження рішень, дій чи бездіяльності органів державної влади та
                                 їх посадових осіб, в тому числі органах Міністерства внутрішніх справ.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
 
-                        <div class="service-item" data-service="military">
+                        <div class="service-item">
                             <div class="service-icon">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <h3 class="service-title">Допомога військовослужбовцям та їх сім’ям</h3>
                             <p class="service-desc">Звільнення з військової служби, допомога з питань отримання
                                 компенсацій, виплат ОГД, виплат за травму, каліцтво, втрату працездатності на війні.</p>
-                            <span class="service-more">Детальніше <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
-                    </div>
-
-                    <!-- Service Detail Panels -->
-                    <div class="service-detail" id="serviceDetail" style="display:none;">
-                        <button class="service-detail-back" id="serviceDetailBack">
-                            <i class="fa-solid fa-arrow-left"></i> Усі послуги
-                        </button>
-                        <h2 class="service-detail-title" id="serviceDetailTitle"></h2>
-                        <div class="service-detail-grid" id="serviceDetailGrid"></div>
                     </div>
                 </div>
             </div>
