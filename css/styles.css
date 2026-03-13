@@ -281,7 +281,7 @@ h6 {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 10px 0;
-    min-width: 280px;
+    min-width: 220px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
@@ -299,9 +299,8 @@ h6 {
 .nav-dropdown-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    font-size: 13px !important;
+    padding: 8px 18px;
+    font-size: 12px !important;
     color: var(--text-muted) !important;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -316,13 +315,6 @@ h6 {
 .nav-dropdown-item:hover {
     color: #fff !important;
     background: rgba(255, 255, 255, 0.05);
-}
-
-.nav-dropdown-item i:first-child {
-    width: 20px;
-    text-align: center;
-    color: var(--accent);
-    font-size: 14px;
 }
 
 .nav-dropdown-arrow {
