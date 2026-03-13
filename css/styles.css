@@ -326,6 +326,16 @@ h6 {
     color: var(--accent) !important;
 }
 
+.nav-dropdown-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 4px 14px;
+}
+
+.nav-dropdown-prices {
+    color: var(--accent) !important;
+}
+
 .header-contacts {
     display: flex;
     flex-direction: column;
