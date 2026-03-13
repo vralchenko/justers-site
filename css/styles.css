@@ -339,6 +339,21 @@ h6 {
 /* Nav Submenu (Цивільні справи) */
 .nav-has-submenu {
     position: relative;
+    cursor: pointer;
+}
+
+.nav-has-submenu > a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.nav-has-submenu > a::after {
+    display: none !important;
+}
+
+.nav-has-submenu:hover > a {
+    color: #fff;
 }
 
 .nav-submenu {
