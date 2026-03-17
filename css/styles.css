@@ -50,7 +50,7 @@ ul {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 5vw 0 max(5vw, 100px);
+    padding: 0 5vw;
 }
 
 /* Typography */
@@ -148,7 +148,7 @@ h6 {
 .header .container {
     display: block;
     position: relative;
-    padding: 0 5vw 0 max(5vw, 100px);
+    padding: 0 5vw;
 }
 
 .header-grid {
@@ -595,7 +595,7 @@ h6 {
     z-index: 1;
     height: 100%;
     width: 100%;
-    padding: 0 5vw 0 max(5vw, 100px);
+    padding: 0 5vw;
     display: flex;
     flex-direction: column;
 }
