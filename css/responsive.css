@@ -1,11 +1,31 @@
+/* Ultra-wide screens (2K+) */
+@media (min-width: 1921px) {
+    .hero-title { font-size: 86px; }
+    .hero-description { font-size: 30px; }
+    .hero-tagline span { font-size: 38px; }
+    .feature-title { font-size: 36px; }
+    .feature-desc { font-size: 18px; }
+    .section-title { font-size: 42px; }
+    .about-text p { font-size: 22px; }
+    .service-title { font-size: 18px; }
+    .service-desc { font-size: 14px; }
+}
+
 /* Large desktop / small laptop — header compression */
 @media (max-width: 1200px) {
-    .header-grid { grid-template-columns: 15% 85%; }
+    .header-grid { grid-template-columns: auto 1fr; }
     .header-right { gap: 15px; }
     .nav { margin: 0 15px; }
     .nav a { font-size: 12px; }
     .logo-sub { font-size: 12px; max-width: 180px; }
     .contact-phones div { letter-spacing: 0.15em; font-size: 15px; }
+
+    .hero-title { font-size: 56px; }
+    .hero-description { font-size: 22px; }
+    .hero-tagline span { font-size: 26px; }
+    .feature-title { font-size: 26px; }
+    .feature-desc { font-size: 14px; }
+    .btn-hero-cta { font-size: 18px; padding: 14px 30px; }
 }
 
 /* Tablet */
@@ -15,7 +35,11 @@
     }
 
     .hero-title {
-        font-size: 38px;
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 18px;
     }
 
     .section-title {
@@ -23,22 +47,23 @@
     }
 
     .hero-page {
-        padding-top: 150px;
         height: auto !important;
         min-height: auto !important;
         overflow: visible !important;
     }
 
-    .hero-grid {
-        height: auto !important;
+    .hero-fullwidth {
+        padding: 0 30px;
+        height: auto;
     }
 
     .hero-content {
         flex-direction: column;
         gap: 30px;
         padding-left: 0;
-        padding-top: 20px;
+        padding-top: calc(var(--header-height) + 30px);
         height: auto;
+        flex: none;
         justify-content: flex-start;
     }
 
@@ -46,25 +71,21 @@
         max-width: 100% !important;
     }
 
-    .hero-stats {
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        margin-top: 20px !important;
+    .hero-tagline {
+        padding-top: 0;
+        padding-right: 0;
     }
 
-    .hero-text,
-    .hero-stats {
-        max-width: 100%;
+    .hero-tagline span {
+        font-size: 22px;
         text-align: left;
     }
 
     .features-strip {
-        position: relative !important;
-        bottom: auto !important;
         flex-direction: column;
         gap: 0;
         padding: 30px 0;
-        margin-top: 60px;
+        margin-top: 40px;
         background: rgba(8, 12, 21, 0.9);
     }
 
@@ -78,6 +99,14 @@
     .feature-box:last-child {
         border-bottom: none;
         padding-bottom: 0;
+    }
+
+    .feature-title {
+        font-size: 22px;
+    }
+
+    .feature-desc {
+        font-size: 14px;
     }
 
     .about-content {
@@ -134,18 +163,21 @@
     }
 
     /* Grid: switch to single column, hide empty side columns */
-    .hero-grid,
     .split-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-side-col,
     .side-col {
         display: none;
     }
 
     .hero-page::before {
         transform: none;
+    }
+
+    .btn-hero-cta {
+        font-size: 16px;
+        padding: 14px 28px;
     }
 }
 
@@ -170,6 +202,10 @@
 
     .hero-cta {
         margin-top: 30px;
+    }
+
+    .hero-tagline {
+        display: none;
     }
 
     /* Fullscreen nav */
@@ -240,17 +276,6 @@
     }
     .menu-overlay.active { display: block; }
 
-    /* On mobile: stats before publications */
-    .hero-text {
-        display: contents;
-    }
-    .hero-stats {
-        order: 1;
-    }
-    .hero-publications {
-        order: 2;
-    }
-
     /* Hide desktop-only fixed elements, show mobile FAB */
     .page-indicators { display: none; }
     .call-btn-fixed { display: none; }
@@ -299,24 +324,20 @@
     }
 
     .hero-page {
-        padding-top: 100px;
         padding-bottom: 20px;
     }
 
+    .hero-fullwidth {
+        padding: 0 20px;
+    }
+
     /* Grid: switch to single column, hide empty side columns */
-    .hero-grid,
     .split-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-side-col,
     .side-col {
         display: none;
-    }
-
-    .hero-grid {
-        height: auto !important;
-        min-height: auto !important;
     }
 
     .hero-page::before {
@@ -343,22 +364,15 @@
     .hero-content {
         flex-direction: column !important;
         gap: 25px;
-        padding-top: 10px;
+        padding-top: calc(var(--header-height) + 10px);
     }
 
     .hero-text {
         max-width: 100% !important;
     }
 
-    .hero-stats {
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        margin-top: 10px !important;
-        min-width: auto !important;
-    }
-
     .hero-description {
-        font-size: 14px;
+        font-size: 16px;
         max-width: 100%;
         margin-top: 10px;
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
@@ -389,8 +403,6 @@
     }
 
     .features-strip {
-        position: relative !important;
-        bottom: auto !important;
         margin-top: 40px;
         padding: 25px 15px;
         flex-direction: column;
@@ -405,7 +417,7 @@
     }
 
     .feature-title {
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 10px;
     }
 
@@ -476,6 +488,11 @@
         min-height: 44px;
     }
 
+    .btn-hero-cta {
+        font-size: 16px;
+        padding: 14px 24px;
+    }
+
     /* Publications page */
     .publications-page-container {
         padding-top: 100px;
@@ -514,8 +531,11 @@
     }
 
     .hero-page {
-        padding-top: 90px;
         min-height: auto;
+    }
+
+    .hero-fullwidth {
+        padding: 0 15px;
     }
 
     .hero-page::before {
@@ -526,18 +546,11 @@
     .hero-content {
         flex-direction: column !important;
         gap: 20px;
-        padding-top: 5px;
+        padding-top: calc(var(--header-height) + 5px);
     }
 
     .hero-text {
         max-width: 100% !important;
-    }
-
-    .hero-stats {
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        margin-top: 5px !important;
-        min-width: auto !important;
     }
 
     .section-title {
@@ -545,20 +558,9 @@
     }
 
     .hero-description {
-        font-size: 13px;
+        font-size: 14px;
         max-width: 100%;
         margin-top: 8px;
-    }
-
-    .stat-number-inline {
-        font-size: 24px;
-        width: 80px;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
-    }
-
-    .stat-item {
-        font-size: 16px;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }
 
     .stat-number {
@@ -566,7 +568,7 @@
     }
 
     .feature-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .feature-desc {
@@ -653,35 +655,33 @@
         height: auto !important;
         min-height: auto !important;
         overflow: visible !important;
-        padding-top: 80px;
         padding-bottom: 20px;
     }
 
-    .hero-grid {
-        height: auto !important;
-        min-height: auto !important;
+    .hero-fullwidth {
+        height: auto;
     }
 
     .hero-content {
         height: auto !important;
+        flex: none;
         gap: 20px;
+        padding-top: calc(var(--header-height) + 10px);
     }
 
     .hero-title { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; }
-    .hero-description { margin-top: 8px; font-size: 13px; }
-    .hero-stats { margin-top: 10px !important; }
+    .hero-description { margin-top: 8px; font-size: 14px; }
     .hero-cta { margin-top: 10px; }
-    .hero-publications { margin-top: 20px; }
 
-    /* Features strip: flow under hero, no absolute positioning */
+    .hero-tagline { display: none; }
+
+    /* Features strip: flow under hero */
     .features-strip {
-        position: relative !important;
-        bottom: auto !important;
         margin-top: 20px;
     }
 
     .feature-box { padding: 15px 25px !important; }
-    .feature-title { font-size: 16px; margin-bottom: 8px; }
+    .feature-title { font-size: 18px; margin-bottom: 8px; }
     .feature-desc { font-size: 12px; }
 
     /* Header: tighter, hide logo-sub to prevent overlap */
@@ -710,6 +710,10 @@
         padding: 0 16px;
     }
 
+    .hero-fullwidth {
+        padding: 0 16px;
+    }
+
     .hero-title {
         font-size: 24px;
         letter-spacing: 0.01em;
@@ -726,16 +730,6 @@
         letter-spacing: 1px;
     }
 
-    .stat-number-inline {
-        font-size: 20px;
-        width: auto;
-        min-width: 50px;
-    }
-
-    .stat-label-inline {
-        font-size: 14px;
-    }
-
     .about-text p {
         font-size: 16px;
         line-height: 1.6;
@@ -746,7 +740,7 @@
     }
 
     .feature-title {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .feature-desc {
