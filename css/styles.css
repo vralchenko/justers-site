@@ -9,7 +9,7 @@
     --font-main: 'Montserrat', sans-serif;
 
     --container-width: 1400px;
-    --header-height: 110px;
+    --header-height: 130px;
 }
 
 * {
@@ -129,7 +129,7 @@ h6 {
 
 /* Header */
 .header {
-    padding: 25px 0;
+    padding: 30px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -570,7 +570,7 @@ h6 {
     height: 100%;
     background-image: url('../images/background-hero-v5.png');
     background-size: cover;
-    background-position: 62% 80%;
+    background-position: 62% 92%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     z-index: 0;
@@ -585,7 +585,7 @@ h6 {
     left: 0;
     width: 55%;
     height: 100%;
-    background: linear-gradient(to right, rgba(8, 12, 21, 0.4) 0%, rgba(8, 12, 21, 0.15) 60%, transparent 100%);
+    background: none;
     z-index: 0;
     pointer-events: none;
 }
@@ -725,9 +725,9 @@ h6 {
     width: 100%;
     z-index: 10;
     margin-top: auto;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 25px;
+    padding-top: 30px;
 }
 
 .feature-box {
