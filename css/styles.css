@@ -563,13 +563,13 @@ h6 {
 .hero-page::before {
     content: '';
     position: absolute;
-    top: 80px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 80px);
+    height: 100%;
     background-image: url('../images/background-hero-v5.png');
     background-size: cover;
-    background-position: 62% 100%;
+    background-position: 62% calc(100% + 80px);
     background-repeat: no-repeat;
     background-attachment: scroll;
     z-index: 0;
