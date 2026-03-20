@@ -96,6 +96,10 @@
         max-width: 100%;
     }
 
+    .feature-box:not(:last-child)::after {
+        display: none;
+    }
+
     .feature-box:last-child {
         border-bottom: none;
         padding-bottom: 0;

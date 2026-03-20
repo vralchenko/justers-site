@@ -732,11 +732,18 @@ h6 {
 .feature-box {
     flex: 1;
     padding: 25px 35px;
-    border-right: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
 }
 
-.feature-box:last-child {
-    border-right: none;
+.feature-box:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .feature-box:first-child {
