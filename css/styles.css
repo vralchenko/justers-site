@@ -236,11 +236,10 @@ h6 {
 
 .nav a {
     font-size: 13px;
-    /* Reduced from 16px as requested */
-    letter-spacing: 0.5px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #ffffff;
-    /* Restored to white for visibility */
+    opacity: 0.8;
     position: relative;
 }
 
@@ -632,7 +631,7 @@ h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: 0.04em;
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .hero-description {
@@ -644,7 +643,7 @@ h6 {
     max-width: 600px;
     z-index: 90;
     text-align: left;
-    opacity: 0.85;
+    opacity: 0.69;
     font-weight: 400;
     letter-spacing: 0.01em;
 }
@@ -665,9 +664,9 @@ h6 {
 .hero-tagline span {
     font-size: 32px;
     font-weight: 500;
-    color: #ffffff;
-    opacity: 0.85;
-    letter-spacing: 0.04em;
+    color: #6A798C;
+    opacity: 0.6;
+    letter-spacing: 0.01em;
     line-height: 1.3;
     text-align: right;
     text-transform: uppercase;
