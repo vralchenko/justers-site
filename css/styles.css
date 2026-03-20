@@ -750,9 +750,12 @@ h6 {
     padding-left: 10px;
 }
 
-.feature-box:nth-child(2) .feature-desc,
-.feature-box:nth-child(3) .feature-desc {
+.feature-box:nth-child(2) .feature-desc {
     max-width: 360px;
+}
+
+.feature-box:nth-child(3) .feature-desc {
+    max-width: 420px;
 }
 
 .feature-title {
