@@ -2,7 +2,7 @@
 @media (min-width: 1921px) {
     .hero-title { font-size: 86px; }
     .hero-description { font-size: 30px; }
-    .hero-tagline span { font-size: 64px; }
+    .hero-tagline span { font-size: 48px; }
     .feature-title { font-size: 36px; }
     .feature-desc { font-size: 18px; }
     .section-title { font-size: 42px; }
@@ -22,7 +22,7 @@
 
     .hero-title { font-size: 56px; }
     .hero-description { font-size: 22px; }
-    .hero-tagline span { font-size: 44px; }
+    .hero-tagline span { font-size: 32px; }
     .feature-title { font-size: 26px; }
     .feature-desc { font-size: 14px; }
     .btn-hero-cta { font-size: 18px; padding: 14px 30px; }
