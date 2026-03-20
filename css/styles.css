@@ -585,7 +585,7 @@ h6 {
     left: 0;
     width: 55%;
     height: 100%;
-    background: linear-gradient(to right, rgba(8, 12, 21, 0.6) 0%, rgba(8, 12, 21, 0.3) 60%, transparent 100%);
+    background: linear-gradient(to right, rgba(8, 12, 21, 0.4) 0%, rgba(8, 12, 21, 0.15) 60%, transparent 100%);
     z-index: 0;
     pointer-events: none;
 }
@@ -665,8 +665,8 @@ h6 {
 .hero-tagline span {
     font-size: 32px;
     font-weight: 500;
-    color: #4A798C;
-    opacity: 0.4;
+    color: #d4af68;
+    opacity: 0.7;
     letter-spacing: 0.04em;
     line-height: 1.3;
     text-align: right;
@@ -693,7 +693,7 @@ h6 {
     font-size: 22px;
     font-weight: 500;
     line-height: 1.3;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 16px 40px;
     letter-spacing: 0.04em;
     text-transform: none;
