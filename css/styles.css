@@ -724,15 +724,15 @@ h6 {
     width: 100%;
     z-index: 10;
     margin-top: auto;
-    padding-bottom: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: none;
+    padding-top: 50px;
 }
 
 .feature-box {
     flex: 1;
     padding: 25px 35px;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .feature-box:last-child {
