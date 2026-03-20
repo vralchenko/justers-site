@@ -750,10 +750,6 @@ h6 {
     padding-left: 10px;
 }
 
-.feature-box:first-child .feature-desc {
-    max-width: 330px;
-}
-
 .feature-title {
     font-size: 32px;
     margin-bottom: 20px;
