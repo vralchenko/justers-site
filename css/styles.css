@@ -759,6 +759,17 @@ h6 {
     text-align: center;
 }
 
+.feature-box:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.feature-box:nth-child(3) .feature-title,
+.feature-box:nth-child(3) .feature-desc {
+    text-align: left;
+}
+
 .feature-title {
     font-size: 32px;
     margin-bottom: 20px;
