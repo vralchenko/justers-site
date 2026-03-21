@@ -113,6 +113,10 @@
         font-size: 14px;
     }
 
+    .feature-desc br {
+        display: none;
+    }
+
     .about-content {
         flex-direction: column;
         gap: 40px;
