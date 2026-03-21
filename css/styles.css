@@ -751,7 +751,12 @@ h6 {
 }
 
 .feature-box:nth-child(2) {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-box:nth-child(2) .feature-inner {
+    width: fit-content;
 }
 
 .feature-box:nth-child(2) .feature-title,
