@@ -754,9 +754,12 @@ h6 {
     text-align: center;
 }
 
-.feature-box:nth-child(2) .feature-title,
-.feature-box:nth-child(2) .feature-desc {
+.feature-box:nth-child(2) .feature-title {
     text-align: center;
+}
+
+.feature-box:nth-child(2) .feature-desc {
+    text-align: left;
 }
 
 .feature-box:nth-child(3) {
