@@ -761,8 +761,11 @@ h6 {
 
 .feature-box:nth-child(3) {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.feature-box:nth-child(3) .feature-inner {
+    width: fit-content;
 }
 
 .feature-box:nth-child(3) .feature-title,
