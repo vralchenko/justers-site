@@ -750,6 +750,14 @@ h6 {
     padding-left: 10px;
 }
 
+.feature-box:nth-child(2) {
+    text-align: center;
+}
+
+.feature-box:nth-child(2) .feature-title,
+.feature-box:nth-child(2) .feature-desc {
+    text-align: center;
+}
 
 .feature-title {
     font-size: 32px;
