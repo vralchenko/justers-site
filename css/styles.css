@@ -727,7 +727,6 @@ h6 {
     padding-bottom: 20px;
     border-top: none;
     padding-top: 120px;
-    transform: translateY(-4px);
 }
 
 .feature-box {
@@ -781,7 +780,7 @@ h6 {
 
 .feature-title {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     letter-spacing: 0.04em;
     color: #fff;
     font-weight: 500;
