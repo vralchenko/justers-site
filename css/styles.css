@@ -724,9 +724,10 @@ h6 {
     width: 100%;
     z-index: 10;
     margin-top: auto;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     border-top: none;
     padding-top: 120px;
+    transform: translateY(-4px);
 }
 
 .feature-box {
