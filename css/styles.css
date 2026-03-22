@@ -575,7 +575,7 @@ h6 {
     z-index: 0;
     pointer-events: none;
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .hero-page::after {
