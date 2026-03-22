@@ -323,7 +323,7 @@ h6 {
 
 .nav-dropdown-item:hover {
     color: #fff !important;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .nav-dropdown-arrow {
@@ -405,7 +405,7 @@ h6 {
 
 .nav-submenu-item:hover {
     color: #fff !important;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 /* Third level: sub-sub-menu */
@@ -476,7 +476,7 @@ h6 {
 
 .nav-subsubmenu-item:hover {
     color: #fff !important;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .header-contacts {
