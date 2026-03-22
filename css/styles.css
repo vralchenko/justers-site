@@ -271,8 +271,7 @@ h6 {
 .nav-dropdown {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     margin-top: 15px;
     background: #181D20;
     border: 1px solid rgba(255, 255, 255, 0.19);
@@ -282,7 +281,7 @@ h6 {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
-    transform: translateX(-50%) translateY(8px);
+    transform: translateY(8px);
     z-index: 1000;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
     overflow: visible;
@@ -291,7 +290,7 @@ h6 {
 .nav-dropdown-wrap:hover .nav-dropdown {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .nav-dropdown-item {
