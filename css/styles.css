@@ -571,7 +571,7 @@ h6 {
     height: 100%;
     background-image: url('../images/background-hero-v5.png');
     background-size: cover;
-    background-position: 62% calc(100% + 160px);
+    background-position: 62% calc(100% + clamp(0px, 56.6vw - 100vh, 160px));
     background-repeat: no-repeat;
     background-attachment: scroll;
     z-index: 0;
