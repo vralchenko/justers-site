@@ -274,7 +274,7 @@ h6 {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 15px;
-    background: #181D2F;
+    background: #181D20;
     border: 1px solid rgba(255, 255, 255, 0.19);
     border-radius: 2px;
     padding: 6px 0;
@@ -360,7 +360,7 @@ h6 {
     position: absolute;
     left: 100%;
     top: -6px;
-    background: #181D2F;
+    background: #181D20;
     border: 1px solid rgba(255, 255, 255, 0.19);
     border-radius: 2px;
     padding: 6px 0;
@@ -433,7 +433,7 @@ h6 {
     position: absolute;
     left: 100%;
     top: -6px;
-    background: #181D2F;
+    background: #181D20;
     border: 1px solid rgba(255, 255, 255, 0.19);
     border-radius: 2px;
     min-width: 260px;
