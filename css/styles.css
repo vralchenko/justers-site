@@ -184,8 +184,7 @@ h6 {
 }
 
 .logo-img {
-    height: 35px;
-    /* Increased by ~10% from 32px */
+    height: 39px;
     width: auto;
     object-fit: contain;
 }
@@ -575,7 +574,6 @@ h6 {
     z-index: 0;
     pointer-events: none;
     opacity: 1;
-    transform: scale(1.2);
 }
 
 .hero-page::after {
