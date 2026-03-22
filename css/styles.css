@@ -282,7 +282,7 @@ h6 {
     left: 0;
     margin-top: 15px;
     background: rgba(24, 29, 32, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.19);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     padding: 6px 0;
     min-width: 200px;
@@ -368,7 +368,7 @@ h6 {
     left: 100%;
     top: -6px;
     background: rgba(24, 29, 32, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.19);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     padding: 6px 0;
     min-width: 200px;
@@ -376,7 +376,7 @@ h6 {
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
     box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.8);
-    margin-left: 2px;
+    margin-left: -5px;
 }
 
 .nav-has-submenu:hover .nav-submenu {
@@ -442,7 +442,7 @@ h6 {
     top: -6px;
     background: rgba(24, 29, 32, 0.96);
     box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.19);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     min-width: 260px;
     padding: 6px 0;
@@ -450,7 +450,7 @@ h6 {
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
     z-index: 10002;
-    margin-left: 4px;
+    margin-left: -5px;
 }
 
 .nav-has-subsubmenu:hover .nav-subsubmenu {
