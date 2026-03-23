@@ -1811,6 +1811,25 @@ h6 {
 
 /* ===== Service Detail Page ===== */
 
+.service-top-bar {
+    position: sticky;
+    top: var(--header-height, 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    z-index: 10;
+    background: var(--bg-primary);
+}
+
+.service-top-bar .back-link {
+    margin-bottom: 0;
+}
+
+.service-top-bar .service-detail-category {
+    margin-bottom: 0;
+}
+
 .service-page-container {
     padding-top: 140px;
     padding-bottom: 80px;
