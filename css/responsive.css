@@ -501,6 +501,11 @@
         padding: 14px 24px;
     }
 
+    /* Service detail page */
+    .service-page-container { padding-top: 100px; padding-bottom: 60px; }
+    .service-detail-card h1 { font-size: 24px; }
+    .service-point { flex-direction: column; gap: 12px; padding: 20px; }
+
     /* Publications page */
     .publications-page-container {
         padding-top: 100px;
@@ -641,6 +646,13 @@
     /* Article pages */
     .article-card { padding: 20px 15px; }
     .article-card h1 { font-size: 20px; }
+
+    /* Service detail page */
+    .service-page-container { padding-top: 90px; }
+    .service-detail-card h1 { font-size: 20px; }
+    .service-point { padding: 16px; }
+    .service-point-content h3 { font-size: 16px; }
+    .service-point-content p { font-size: 14px; }
 
     /* Publications page */
     .publications-page-container {
