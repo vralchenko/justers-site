@@ -22,7 +22,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
     /* Offset for fixed header */
-    overflow-x: hidden;
 }
 
 body {
@@ -729,7 +728,7 @@ h6 {
     padding-bottom: 0;
     margin-bottom: -4px;
     border-top: none;
-    padding-top: 120px;
+    padding-top: 60px;
 }
 
 .feature-box {
@@ -1831,7 +1830,7 @@ h6 {
 }
 
 .service-page-container {
-    padding-top: 140px;
+    padding-top: var(--header-height, 130px);
     padding-bottom: 80px;
 }
 
@@ -1854,6 +1853,7 @@ h6 {
     color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-top: 0;
     margin-bottom: 24px;
     line-height: 1.3;
 }
