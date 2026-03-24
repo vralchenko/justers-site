@@ -1818,6 +1818,8 @@ h6 {
     padding: 16px 0;
     z-index: 10;
     background: var(--bg-primary);
+    position: sticky;
+    top: var(--header-height, 130px);
 }
 
 .service-top-bar .service-detail-category {
