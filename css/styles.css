@@ -1820,15 +1820,22 @@ h6 {
     background: var(--bg-primary);
 }
 
-.header-service-cat {
+.service-sticky-cat {
     display: none;
+    position: fixed;
+    top: var(--header-height, 130px);
+    width: 100%;
+    left: 0;
     text-align: right;
-    padding: 6px 5vw 0;
+    padding: 10px 5vw;
+    background: var(--bg-primary);
     color: var(--accent);
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .service-top-bar .service-detail-category {
