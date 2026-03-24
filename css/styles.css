@@ -137,7 +137,7 @@ h6 {
     z-index: 100;
     background: #161920;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
     overflow: hidden;
 }
 
