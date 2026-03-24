@@ -1812,7 +1812,7 @@ h6 {
 /* ===== Service Detail Page ===== */
 
 .service-top-bar {
-    display: none; /* TEMP: test if this causes horizontal scroll */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
@@ -1823,8 +1823,8 @@ h6 {
 .service-top-bar.is-stuck {
     position: fixed;
     top: var(--header-height, 130px);
+    width: 100%;
     left: 0;
-    right: 0;
     padding: 16px 5vw;
     z-index: 100;
     background: var(--bg-primary);
