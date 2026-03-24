@@ -1827,11 +1827,11 @@ h6 {
     width: 100%;
     left: 0;
     text-align: right;
-    padding: 10px 5vw;
+    padding: 10px 7vw 10px 5vw;
     background: var(--bg-primary);
     color: var(--accent);
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
     z-index: 99;
