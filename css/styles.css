@@ -1818,7 +1818,7 @@ h6 {
 /* ===== Service Detail Page ===== */
 
 .service-top-bar {
-    display: flex;
+    display: none; /* TEMP: test if this causes horizontal scroll */
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
