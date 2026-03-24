@@ -138,6 +138,11 @@ h6 {
     background: #161920;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.header:has(.nav-dropdown-wrap:hover) {
+    overflow: visible;
 }
 
 .header.scrolled {
