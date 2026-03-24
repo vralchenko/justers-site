@@ -201,7 +201,7 @@
         var hCat = document.getElementById('headerServiceCat');
         var origCat = document.querySelector('.service-top-bar');
         if (!hCat || !origCat) return;
-        var threshold = origCat.offsetTop + origCat.offsetHeight;
+        var threshold = origCat.offsetTop;
         window.addEventListener('scroll', function() {
             hCat.style.display = window.pageYOffset > threshold - 130 ? 'block' : 'none';
         }, {passive: true});
