@@ -1818,8 +1818,17 @@ h6 {
     padding: 16px 0;
     z-index: 10;
     background: var(--bg-primary);
-    position: sticky;
-    top: var(--header-height, 130px);
+}
+
+.header-service-cat {
+    display: none;
+    text-align: right;
+    padding: 6px 5vw 0;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .service-top-bar .service-detail-category {
