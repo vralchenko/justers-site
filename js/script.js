@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prevent horizontal scroll
     window.addEventListener('scroll', function() {
         if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
-    });
+        document.documentElement.scrollLeft = 0;
+        document.body.scrollLeft = 0;
+    }, true);
 
     // Mobile Menu Toggle
     const burger = document.querySelector('.burger-menu');
