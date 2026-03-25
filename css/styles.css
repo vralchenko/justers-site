@@ -805,10 +805,7 @@ h6 {
 
 /* About Page (Page 2) */
 .about-page {
-    background-image: url('../images/background-services.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+    background: linear-gradient(135deg, #080c15 0%, #0e1a2b 30%, #152336 55%, #0f1c2d 75%, #080c15 100%);
 }
 
 .section-title {
