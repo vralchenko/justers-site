@@ -1827,7 +1827,7 @@ h6 {
     width: 100%;
     left: 0;
     text-align: right;
-    padding: 10px 7vw 10px 5vw;
+    padding: 10px 5vw 10px 5vw;
     background: transparent;
     color: var(--accent);
     text-transform: uppercase;
@@ -1835,7 +1835,21 @@ h6 {
     font-weight: 600;
     letter-spacing: 1px;
     z-index: 999;
-    pointer-events: none;
+}
+
+.service-sticky-cat a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.service-sticky-cat a:hover {
+    color: #fff;
+}
+
+.service-sticky-sep {
+    margin: 0 4px;
+    opacity: 0.5;
 }
 
 .service-top-bar .service-detail-category {
