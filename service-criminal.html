@@ -192,6 +192,18 @@
 
     <script src="js/script.js"></script>
     <script src="js/chat-widget.js"></script>
+    <script>
+    (function() {
+        var hCat = document.getElementById('headerServiceCat');
+        var title = document.querySelector('.service-detail-card h1');
+        if (!hCat || !title) return;
+        var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 130;
+        window.addEventListener('scroll', function() {
+            var r = title.getBoundingClientRect();
+            hCat.style.display = r.bottom < headerH ? 'block' : 'none';
+        }, {passive: true});
+    })();
+    </script>
 </body>
 
 </html>

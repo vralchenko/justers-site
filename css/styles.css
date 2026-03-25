@@ -1821,7 +1821,7 @@ h6 {
 }
 
 .service-sticky-cat {
-    display: block;
+    display: none;
     position: fixed;
     top: var(--header-height, 130px);
     width: 100%;
