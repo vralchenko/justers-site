@@ -876,10 +876,7 @@ h6 {
 
 /* Services Page (Page 3) */
 .services-page {
-    background-image: url('../images/background-services.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+    background: linear-gradient(135deg, #080c15 0%, #12161e 25%, #1a1c22 45%, #181a1f 65%, #0e1117 85%, #080c15 100%);
 }
 
 .services-page .section-title {
