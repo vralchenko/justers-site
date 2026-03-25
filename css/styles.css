@@ -1852,6 +1852,11 @@ h6 {
     opacity: 0.5;
 }
 
+.service-sticky-current {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .service-top-bar .service-detail-category {
     margin-bottom: 0;
 }
