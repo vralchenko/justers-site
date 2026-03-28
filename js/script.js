@@ -563,6 +563,33 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Video loaded, duration:', scrollVideoEl.duration);
         });
 
+        // Force load and activate video for seeking
+        scrollVideoEl.load();
+
+        // Play briefly then pause — unlocks seeking in Chrome
+        scrollVideoEl.play().then(function() {
+            scrollVideoEl.pause();
+            scrollVideoEl.currentTime = 0;
+            console.log('Video activated for seeking');
+        }).catch(function(e) {
+            console.warn('Autoplay blocked, trying on first scroll:', e.message);
+        });
+
+        let videoActivated = false;
+
+        function activateAndSeek(targetTime) {
+            if (!videoActivated) {
+                scrollVideoEl.play().then(function() {
+                    scrollVideoEl.pause();
+                    scrollVideoEl.currentTime = targetTime;
+                    videoActivated = true;
+                    console.log('Video activated via scroll, seeking to:', targetTime);
+                }).catch(function() {});
+            } else {
+                scrollVideoEl.currentTime = targetTime;
+            }
+        }
+
         function updateVideoOnScroll() {
             const rect = scrollVideoSection.getBoundingClientRect();
             const sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
@@ -571,9 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (scrollVideoEl.duration && isFinite(scrollVideoEl.duration)) {
                 const targetTime = progress * scrollVideoEl.duration;
-                if (Math.abs(scrollVideoEl.currentTime - targetTime) > 0.01) {
-                    scrollVideoEl.currentTime = targetTime;
-                }
+                activateAndSeek(targetTime);
             }
             ticking = false;
         }
