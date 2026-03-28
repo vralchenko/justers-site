@@ -548,8 +548,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollVideoSection = document.getElementById('scrollVideo');
     const scrollVideoEl = document.getElementById('scrollVideoEl');
 
+    console.log('scrollVideoSection:', scrollVideoSection);
+    console.log('scrollVideoEl:', scrollVideoEl);
+
     if (scrollVideoSection && scrollVideoEl) {
         scrollVideoEl.pause();
+        let ticking = false;
+
+        scrollVideoEl.addEventListener('error', function(e) {
+            console.error('Video error:', scrollVideoEl.error);
+        });
+
+        scrollVideoEl.addEventListener('loadedmetadata', function() {
+            console.log('Video loaded, duration:', scrollVideoEl.duration);
+        });
 
         function updateVideoOnScroll() {
             const rect = scrollVideoSection.getBoundingClientRect();
@@ -558,12 +570,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
 
             if (scrollVideoEl.duration && isFinite(scrollVideoEl.duration)) {
-                scrollVideoEl.currentTime = progress * scrollVideoEl.duration;
+                const targetTime = progress * scrollVideoEl.duration;
+                if (Math.abs(scrollVideoEl.currentTime - targetTime) > 0.01) {
+                    scrollVideoEl.currentTime = targetTime;
+                }
             }
+            ticking = false;
         }
 
-        window.addEventListener('scroll', updateVideoOnScroll, { passive: true });
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(updateVideoOnScroll);
+            }
+        }, { passive: true });
+
         scrollVideoEl.addEventListener('loadedmetadata', updateVideoOnScroll);
+        // Also try on canplaythrough in case loadedmetadata fires too early
+        scrollVideoEl.addEventListener('canplaythrough', updateVideoOnScroll);
     }
 
 });
