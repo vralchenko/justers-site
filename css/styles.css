@@ -1,5 +1,5 @@
 :root {
-    --bg-primary: #080c15;
+    --bg-primary: #0A1019;
     --bg-secondary: #0f1623;
     --accent: #d4af68;
     --text-main: #ffffff;
@@ -805,7 +805,7 @@ h6 {
 
 /* About Page (Page 2) */
 .about-page {
-    background: linear-gradient(135deg, #080c15 0%, #12161e 25%, #1a1c22 45%, #181a1f 65%, #0e1117 85%, #080c15 100%);
+    background: #0A1019;
 }
 
 .section-title {
@@ -876,7 +876,7 @@ h6 {
 
 /* Services Page (Page 3) */
 .services-page {
-    background: linear-gradient(135deg, #080c15 0%, #12161e 25%, #1a1c22 45%, #181a1f 65%, #0e1117 85%, #080c15 100%);
+    background: #0A1019;
 }
 
 .services-page .section-title {
