@@ -544,4 +544,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Scroll-driven video playback
+    const scrollVideoSection = document.getElementById('scrollVideo');
+    const scrollVideoEl = document.getElementById('scrollVideoEl');
+
+    if (scrollVideoSection && scrollVideoEl) {
+        scrollVideoEl.pause();
+
+        function updateVideoOnScroll() {
+            const rect = scrollVideoSection.getBoundingClientRect();
+            const sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
+            const scrolled = -rect.top;
+            const progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
+
+            if (scrollVideoEl.duration && isFinite(scrollVideoEl.duration)) {
+                scrollVideoEl.currentTime = progress * scrollVideoEl.duration;
+            }
+        }
+
+        window.addEventListener('scroll', updateVideoOnScroll, { passive: true });
+        scrollVideoEl.addEventListener('loadedmetadata', updateVideoOnScroll);
+    }
+
 });

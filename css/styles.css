@@ -801,7 +801,27 @@ h6 {
     opacity: 0.6;
 }
 
-/* About Page (Page 2) */
+/* Scroll-driven Video Section */
+.scroll-video-section {
+    position: relative;
+    height: 500vh;
+    background: #000;
+}
+
+.scroll-video-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* About Page (Page 2) */
 .about-page {
