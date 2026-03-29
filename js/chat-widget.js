@@ -195,11 +195,11 @@
         // HTML віджету
         var html = '' +
             '<div id="justers-chat-fab" aria-label="Відкрити чат">' +
-            '  <img src="images/eva-avatar.png" alt="Єва" class="justers-chat-fab-avatar" />' +
+            '  <img src="images/eva-avatar.png" alt="" class="justers-chat-fab-avatar" />' +
             '</div>' +
             '<div id="justers-chat-window">' +
             '  <div id="justers-chat-header">' +
-            '    <img src="images/eva-avatar.png" alt="Єва" class="justers-chat-header-avatar" />' +
+            '    <img src="images/eva-avatar.png" alt="" class="justers-chat-header-avatar" />' +
             '    <div class="justers-chat-header-info">' +
             '      <span class="justers-chat-header-title">Єва</span>' +
             '      <span class="justers-chat-header-sub">Онлайн-помічник JUSTERS</span>' +
