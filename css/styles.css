@@ -945,7 +945,7 @@ h6 {
 }
 
 .service-title {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
     letter-spacing: 1px;
     text-transform: none;
@@ -953,7 +953,7 @@ h6 {
 }
 
 .service-desc {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-muted);
     line-height: 1.5;
 }

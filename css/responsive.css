@@ -7,8 +7,8 @@
     .feature-desc { font-size: 18px; }
     .section-title { font-size: 42px; }
     .about-text p { font-size: 22px; }
-    .service-title { font-size: 20px; }
-    .service-desc { font-size: 16px; }
+    .service-title { font-size: 22px; }
+    .service-desc { font-size: 18px; }
 }
 
 /* Large desktop / small laptop — header compression */
@@ -593,11 +593,11 @@
     }
 
     .service-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .service-desc {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .socials-centered a {
@@ -756,7 +756,7 @@
     }
 
     .service-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .feature-title {
