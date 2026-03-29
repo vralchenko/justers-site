@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (scrollVideoSection && scrollCanvas) {
         var ctx = scrollCanvas.getContext('2d', { alpha: false, desynchronized: true });
-        var frameCount = 65;
+        var frameCount = 58;
         var bitmaps = new Array(frameCount);
         var currentFrame = -1;
         var rafPending = false;
