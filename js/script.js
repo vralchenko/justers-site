@@ -549,11 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
     var scrollCanvas = document.getElementById('scrollCanvas');
 
     if (scrollVideoSection && scrollCanvas) {
-        var ctx = scrollCanvas.getContext('2d');
+        var ctx = scrollCanvas.getContext('2d', { alpha: false });
         var frameCount = 65;
         var frames = [];
         var loadedCount = 0;
         var currentFrame = -1;
+        var rafPending = false;
 
         function drawFrame(img) {
             if (!img.complete || !img.naturalWidth) return;
@@ -562,13 +563,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!cw || !ch) return;
             var iw = img.naturalWidth;
             var ih = img.naturalHeight;
-            // Cover-fit: scale to fill, center crop
             var scale = Math.max(cw / iw, ch / ih);
             var sw = iw * scale;
             var sh = ih * scale;
             var sx = (cw - sw) / 2;
             var sy = (ch - sh) / 2;
-            ctx.clearRect(0, 0, cw, ch);
             ctx.drawImage(img, sx, sy, sw, sh);
         }
 
@@ -581,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateFrame() {
+            rafPending = false;
             var rect = scrollVideoSection.getBoundingClientRect();
             var sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
             var scrolled = -rect.top;
@@ -597,6 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (var i = 0; i < frameCount; i++) {
             (function(idx) {
                 var img = new Image();
+                img.decoding = 'async';
                 img.onload = function() {
                     loadedCount++;
                     if (idx === 0) {
@@ -613,7 +614,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         window.addEventListener('scroll', function() {
-            requestAnimationFrame(updateFrame);
+            if (!rafPending) {
+                rafPending = true;
+                requestAnimationFrame(updateFrame);
+            }
         }, { passive: true });
 
         window.addEventListener('resize', resizeCanvas);
