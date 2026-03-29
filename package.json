@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/vralchenko/justers-site#readme",
   "dependencies": {
-    "@vercel/postgres": "^0.10.0"
+    "@neondatabase/serverless": "^1.0.0"
   },
   "devDependencies": {
-    "puppeteer": "^24.40.0"
+    "puppeteer": "^24.40.0",
+    "wrangler": "^4.0.0"
   }
 }

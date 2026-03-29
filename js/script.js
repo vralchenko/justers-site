@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fetchComments = async () => {
                 try {
                     const response = await fetch(`/api/comments?article=${currentArticle}`);
-                    if (!response.ok) throw new Error('Помилка сервера. Дані можуть бути недоступні локально без Vercel CLI.');
+                    if (!response.ok) throw new Error('Помилка сервера. Дані можуть бути недоступні локально.');
 
                     const comments = await response.json();
 

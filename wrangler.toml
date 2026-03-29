@@ -1,0 +1,7 @@
+# Cloudflare Pages — justers.io
+# Для локальної розробки: npx wrangler pages dev .
+# DATABASE_URL задається через Cloudflare Dashboard → Settings → Environment variables
+
+name = "justers-site"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "."
