@@ -549,33 +549,36 @@ document.addEventListener('DOMContentLoaded', () => {
     var scrollCanvas = document.getElementById('scrollCanvas');
 
     if (scrollVideoSection && scrollCanvas) {
-        var ctx = scrollCanvas.getContext('2d', { alpha: false });
+        var ctx = scrollCanvas.getContext('2d', { alpha: false, desynchronized: true });
         var frameCount = 65;
-        var frames = [];
-        var loadedCount = 0;
+        var bitmaps = new Array(frameCount);
         var currentFrame = -1;
         var rafPending = false;
+        var coverParams = null;
 
-        function drawFrame(img) {
-            if (!img.complete || !img.naturalWidth) return;
+        function calcCover(iw, ih) {
             var cw = scrollCanvas.width;
             var ch = scrollCanvas.height;
-            if (!cw || !ch) return;
-            var iw = img.naturalWidth;
-            var ih = img.naturalHeight;
             var scale = Math.max(cw / iw, ch / ih);
-            var sw = iw * scale;
-            var sh = ih * scale;
-            var sx = (cw - sw) / 2;
-            var sy = (ch - sh) / 2;
-            ctx.drawImage(img, sx, sy, sw, sh);
+            coverParams = {
+                sx: (cw - iw * scale) / 2,
+                sy: (ch - ih * scale) / 2,
+                sw: iw * scale,
+                sh: ih * scale
+            };
+        }
+
+        function drawBitmap(bmp) {
+            if (!coverParams) calcCover(bmp.width, bmp.height);
+            ctx.drawImage(bmp, coverParams.sx, coverParams.sy, coverParams.sw, coverParams.sh);
         }
 
         function resizeCanvas() {
             scrollCanvas.width = scrollCanvas.clientWidth;
             scrollCanvas.height = scrollCanvas.clientHeight;
-            if (currentFrame >= 0 && frames[currentFrame]) {
-                drawFrame(frames[currentFrame]);
+            coverParams = null;
+            if (currentFrame >= 0 && bitmaps[currentFrame]) {
+                drawBitmap(bitmaps[currentFrame]);
             }
         }
 
@@ -587,31 +590,39 @@ document.addEventListener('DOMContentLoaded', () => {
             var progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
             var index = Math.min(Math.floor(progress * frameCount), frameCount - 1);
 
-            if (index !== currentFrame && frames[index] && frames[index].complete && frames[index].naturalWidth) {
+            if (index !== currentFrame && bitmaps[index]) {
                 currentFrame = index;
-                drawFrame(frames[index]);
+                drawBitmap(bitmaps[index]);
             }
         }
 
-        // Preload all frames
-        for (var i = 0; i < frameCount; i++) {
-            (function(idx) {
-                var img = new Image();
-                img.decoding = 'async';
-                img.onload = function() {
-                    loadedCount++;
+        // Preload and pre-decode all frames into ImageBitmaps
+        function loadFrame(idx) {
+            var num = String(idx + 1);
+            while (num.length < 3) num = '0' + num;
+            return fetch('images/frames/frame-' + num + '.webp')
+                .then(function(r) { return r.blob(); })
+                .then(function(blob) { return createImageBitmap(blob); })
+                .then(function(bmp) {
+                    bitmaps[idx] = bmp;
                     if (idx === 0) {
                         resizeCanvas();
                         currentFrame = 0;
-                        drawFrame(img);
+                        drawBitmap(bmp);
                     }
-                };
-                var num = String(idx + 1);
-                while (num.length < 3) num = '0' + num;
-                img.src = 'images/frames/frame-' + num + '.webp';
-                frames[idx] = img;
-            })(i);
+                });
         }
+
+        // Load frames in batches to avoid blocking
+        (function loadBatch(start) {
+            var batch = [];
+            for (var i = start; i < Math.min(start + 8, frameCount); i++) {
+                batch.push(loadFrame(i));
+            }
+            Promise.all(batch).then(function() {
+                if (start + 8 < frameCount) loadBatch(start + 8);
+            });
+        })(0);
 
         window.addEventListener('scroll', function() {
             if (!rafPending) {
