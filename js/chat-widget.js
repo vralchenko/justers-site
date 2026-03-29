@@ -195,14 +195,16 @@
         // HTML віджету
         var html = '' +
             '<div id="justers-chat-fab" aria-label="Відкрити чат">' +
-            '  <img src="images/eva-avatar.png" alt="" class="justers-chat-fab-avatar" />' +
+            '  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" fill="currentColor"/>' +
+            '    <path d="M7 9H17V11H7V9ZM7 5H17V7H7V5ZM7 13H14V15H7V13Z" fill="currentColor"/>' +
+            '  </svg>' +
             '</div>' +
             '<div id="justers-chat-window">' +
             '  <div id="justers-chat-header">' +
-            '    <img src="images/eva-avatar.png" alt="" class="justers-chat-header-avatar" />' +
             '    <div class="justers-chat-header-info">' +
-            '      <span class="justers-chat-header-title">Єва</span>' +
-            '      <span class="justers-chat-header-sub">Онлайн-помічник JUSTERS</span>' +
+            '      <span class="justers-chat-header-title">JUSTERS</span>' +
+            '      <span class="justers-chat-header-sub">Онлайн-помічник</span>' +
             '    </div>' +
             '    <button id="justers-chat-reset" aria-label="На початок" title="На початок">' +
             '      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>' +
@@ -264,7 +266,7 @@
         }
 
         function showWelcome() {
-            addBotMessage('Вітаю! Я Єва — онлайн-помічник JUSTERS. Оберіть тему або напишіть своє питання:');
+            addBotMessage('Вітаю! Я онлайн-помічник JUSTERS. Оберіть тему або напишіть своє питання:');
             addChips([
                 { text: 'Послуги', query: 'які послуги ви надаєте' },
                 { text: 'Мобілізація', query: 'мобілізація' },
