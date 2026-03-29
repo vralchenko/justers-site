@@ -2,7 +2,7 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [master]
+    branches: [master, services-submenu]
 
 jobs:
   deploy:
@@ -15,4 +15,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=justers-site --commit-dirty=true --commit-message="Deploy ${{ github.sha }}"
+          command: pages deploy . --project-name=justers-site --branch=${{ github.ref_name }} --commit-dirty=true --commit-message="Deploy ${{ github.sha }}"
