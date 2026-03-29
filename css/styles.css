@@ -1754,7 +1754,7 @@ h6 {
 }
 
 .article-category {
-    color: var(--accent);
+    color: #525252;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
