@@ -19,5 +19,8 @@
   "homepage": "https://github.com/vralchenko/justers-site#readme",
   "dependencies": {
     "@vercel/postgres": "^0.10.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.40.0"
   }
 }

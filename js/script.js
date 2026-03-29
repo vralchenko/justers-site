@@ -544,75 +544,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Scroll-driven video playback
-    const scrollVideoSection = document.getElementById('scrollVideo');
-    const scrollVideoEl = document.getElementById('scrollVideoEl');
+    // Scroll-driven image sequence
+    var scrollVideoSection = document.getElementById('scrollVideo');
+    var scrollCanvas = document.getElementById('scrollCanvas');
 
-    console.log('scrollVideoSection:', scrollVideoSection);
-    console.log('scrollVideoEl:', scrollVideoEl);
+    if (scrollVideoSection && scrollCanvas) {
+        var ctx = scrollCanvas.getContext('2d');
+        var frameCount = 65;
+        var frames = [];
+        var loadedCount = 0;
+        var currentFrame = -1;
 
-    if (scrollVideoSection && scrollVideoEl) {
-        scrollVideoEl.pause();
-        let ticking = false;
+        function drawFrame(img) {
+            if (!img.complete || !img.naturalWidth) return;
+            var cw = scrollCanvas.width;
+            var ch = scrollCanvas.height;
+            if (!cw || !ch) return;
+            var iw = img.naturalWidth;
+            var ih = img.naturalHeight;
+            // Cover-fit: scale to fill, center crop
+            var scale = Math.max(cw / iw, ch / ih);
+            var sw = iw * scale;
+            var sh = ih * scale;
+            var sx = (cw - sw) / 2;
+            var sy = (ch - sh) / 2;
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.drawImage(img, sx, sy, sw, sh);
+        }
 
-        scrollVideoEl.addEventListener('error', function(e) {
-            console.error('Video error:', scrollVideoEl.error);
-        });
-
-        scrollVideoEl.addEventListener('loadedmetadata', function() {
-            console.log('Video loaded, duration:', scrollVideoEl.duration);
-        });
-
-        // Force load and activate video for seeking
-        scrollVideoEl.load();
-
-        // Play briefly then pause — unlocks seeking in Chrome
-        scrollVideoEl.play().then(function() {
-            scrollVideoEl.pause();
-            scrollVideoEl.currentTime = 0;
-            console.log('Video activated for seeking');
-        }).catch(function(e) {
-            console.warn('Autoplay blocked, trying on first scroll:', e.message);
-        });
-
-        let videoActivated = false;
-
-        function activateAndSeek(targetTime) {
-            if (!videoActivated) {
-                scrollVideoEl.play().then(function() {
-                    scrollVideoEl.pause();
-                    scrollVideoEl.currentTime = targetTime;
-                    videoActivated = true;
-                    console.log('Video activated via scroll, seeking to:', targetTime);
-                }).catch(function() {});
-            } else {
-                scrollVideoEl.currentTime = targetTime;
+        function resizeCanvas() {
+            scrollCanvas.width = scrollCanvas.clientWidth;
+            scrollCanvas.height = scrollCanvas.clientHeight;
+            if (currentFrame >= 0 && frames[currentFrame]) {
+                drawFrame(frames[currentFrame]);
             }
         }
 
-        function updateVideoOnScroll() {
-            const rect = scrollVideoSection.getBoundingClientRect();
-            const sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
-            const scrolled = -rect.top;
-            const progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
+        function updateFrame() {
+            var rect = scrollVideoSection.getBoundingClientRect();
+            var sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
+            var scrolled = -rect.top;
+            var progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
+            var index = Math.min(Math.floor(progress * frameCount), frameCount - 1);
 
-            if (scrollVideoEl.duration && isFinite(scrollVideoEl.duration)) {
-                const targetTime = progress * scrollVideoEl.duration;
-                activateAndSeek(targetTime);
+            if (index !== currentFrame && frames[index] && frames[index].complete && frames[index].naturalWidth) {
+                currentFrame = index;
+                drawFrame(frames[index]);
             }
-            ticking = false;
+        }
+
+        // Preload all frames
+        for (var i = 0; i < frameCount; i++) {
+            (function(idx) {
+                var img = new Image();
+                img.onload = function() {
+                    loadedCount++;
+                    if (idx === 0) {
+                        resizeCanvas();
+                        currentFrame = 0;
+                        drawFrame(img);
+                    }
+                };
+                var num = String(idx + 1);
+                while (num.length < 3) num = '0' + num;
+                img.src = 'images/frames/frame-' + num + '.webp';
+                frames[idx] = img;
+            })(i);
         }
 
         window.addEventListener('scroll', function() {
-            if (!ticking) {
-                ticking = true;
-                requestAnimationFrame(updateVideoOnScroll);
-            }
+            requestAnimationFrame(updateFrame);
         }, { passive: true });
 
-        scrollVideoEl.addEventListener('loadedmetadata', updateVideoOnScroll);
-        // Also try on canplaythrough in case loadedmetadata fires too early
-        scrollVideoEl.addEventListener('canplaythrough', updateVideoOnScroll);
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
     }
 
 });
