@@ -140,10 +140,6 @@
         gap: 30px;
     }
 
-    .prices-principles-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .contacts-content {
         flex-direction: column;
         gap: 40px;
@@ -448,35 +444,6 @@
         gap: 30px;
     }
 
-    /* Prices: stack principles to 1 column */
-    .prices-principles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .prices-intro p {
-        font-size: 17px;
-    }
-
-    .prices-explanation-intro {
-        font-size: 16px;
-    }
-
-    .prices-factor h4 {
-        font-size: 16px;
-    }
-
-    .prices-factor h4 span {
-        font-size: 14px;
-    }
-
-    .prices-factor p {
-        font-size: 14px;
-    }
-
-    .prices-principles h3 {
-        font-size: 20px;
-    }
-
     /* Contacts: stack vertically */
     .contacts-layout {
         flex-direction: column;
@@ -639,34 +606,6 @@
 
     .contacts-footer-text {
         font-size: 12px;
-    }
-
-    /* Prices */
-    .prices-factor {
-        padding: 15px 18px;
-    }
-
-    .prices-principle {
-        padding: 15px;
-        gap: 12px;
-    }
-
-    .prices-principle-num {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .prices-principle strong {
-        font-size: 15px;
-    }
-
-    .prices-principle p {
-        font-size: 14px;
-    }
-
-    .prices-principles h3 {
-        font-size: 18px;
     }
 
     /* Modal responsive */
