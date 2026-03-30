@@ -959,6 +959,144 @@ h6 {
 }
 
 
+/* Prices Page (Page 5) */
+.prices-page {
+    background: #0A1019;
+}
+
+.prices-intro {
+    margin-bottom: 30px;
+}
+
+.prices-intro p {
+    font-size: 20px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.prices-infographic {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.prices-infographic img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.prices-explanation {
+    margin-bottom: 40px;
+}
+
+.prices-explanation-intro {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.prices-factors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prices-factor {
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.prices-factor:hover {
+    border-color: var(--accent);
+}
+
+.prices-factor h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.prices-factor h4 i {
+    color: var(--accent);
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.prices-factor h4 span {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.prices-factor p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.prices-principles {
+    margin-top: 40px;
+}
+
+.prices-principles h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.prices-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.prices-principle {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.prices-principle:hover {
+    border-color: var(--accent);
+}
+
+.prices-principle-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prices-principle strong {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.prices-principle p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
 /* Contacts Page (Page 4) */
 /* Container uses global style for alignment */
 
