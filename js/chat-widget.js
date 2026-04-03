@@ -241,10 +241,16 @@
         }
         updateResetBtn();
 
+        // Звук відкриття чату
+        var chatOpenSound = new Audio('audio/chat-open.wav');
+        chatOpenSound.volume = 0.5;
+
         function openChat() {
             isOpen = true;
             chatWindow.classList.add('open');
             fab.classList.add('hidden');
+            chatOpenSound.currentTime = 0;
+            chatOpenSound.play().catch(function () {});
             inputEl.focus();
             if (messagesEl.children.length === 0) {
                 showWelcome();
