@@ -274,10 +274,11 @@ h6 {
     transition: transform 0.3s ease;
     vertical-align: middle;
     margin-left: 2px;
+    transform: translateY(-2px);
 }
 
 .nav-dropdown-wrap:hover .nav-chevron {
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(0);
 }
 
 .nav-dropdown-wrap:hover > a {
