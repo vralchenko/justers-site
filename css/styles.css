@@ -267,6 +267,18 @@ h6 {
     position: relative;
 }
 
+.nav-chevron {
+    display: inline-block;
+    font-size: 0.75em;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+.nav-dropdown-wrap:hover .nav-chevron {
+    transform: rotate(180deg);
+}
+
 .nav-dropdown-wrap:hover > a {
     color: var(--accent) !important;
 }
