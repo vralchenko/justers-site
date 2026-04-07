@@ -2032,16 +2032,43 @@ a.service-item-link {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(212, 175, 104, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
     z-index: 10001;
+    animation: fab-breathe 5s ease-in-out infinite;
+}
+
+/* «Дихання» — збільшується 3с, зменшується 2с */
+@keyframes fab-breathe {
+    0%   { transform: scale(1); }
+    60%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+/* Обертовий білий stroke навколо кнопки */
+#justers-chat-fab::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.8);
+    animation: fab-stroke-spin 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fab-stroke-spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 #justers-chat-fab:hover {
+    animation: none;
     transform: scale(1.1);
     box-shadow: 0 3px 12px rgba(212, 175, 104, 0.3);
 }
 
 #justers-chat-fab.hidden {
+    animation: none;
     transform: scale(0);
     pointer-events: none;
 }
