@@ -269,7 +269,8 @@ h6 {
 
 .nav-chevron {
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 1.5em;
+    line-height: 0;
     transition: transform 0.3s ease;
     vertical-align: middle;
     margin-left: 2px;
