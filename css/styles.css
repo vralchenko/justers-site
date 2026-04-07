@@ -720,6 +720,7 @@ h6 {
 .btn-hero-arrow {
     margin-left: 12px;
     font-size: 1.1em;
+    font-weight: 900;
 }
 
 .btn-hero-cta:hover {
