@@ -202,6 +202,7 @@
             '</div>' +
             '<div id="justers-chat-window">' +
             '  <div id="justers-chat-header">' +
+            '    <button id="justers-chat-close" aria-label="Закрити чат">&times;</button>' +
             '    <div class="justers-chat-header-info">' +
             '      <span class="justers-chat-header-title">JUSTERS</span>' +
             '      <span class="justers-chat-header-sub">Онлайн-помічник</span>' +
@@ -209,7 +210,10 @@
             '    <button id="justers-chat-reset" aria-label="На початок" title="На початок">' +
             '      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>' +
             '    </button>' +
-            '    <button id="justers-chat-close" aria-label="Закрити чат">&times;</button>' +
+            '    <div class="justers-chat-header-eva">' +
+            '      <span class="justers-chat-eva-name">Eva</span>' +
+            '      <img src="images/eva-avatar.png" alt="Eva" class="justers-chat-eva-avatar" />' +
+            '    </div>' +
             '  </div>' +
             '  <div id="justers-chat-messages"></div>' +
             '  <div id="justers-chat-input-area">' +

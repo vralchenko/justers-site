@@ -2104,23 +2104,39 @@ a.service-item-link {
 #justers-chat-header {
     display: flex;
     align-items: center;
-    padding: 14px 18px;
+    padding: 10px 14px;
     background: #161920;
     border-bottom: 1px solid rgba(212, 175, 104, 0.15);
     flex-shrink: 0;
-    gap: 8px;
+    gap: 10px;
+}
+
+#justers-chat-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8ba0b9;
+    font-size: 24px;
+    padding: 0 4px;
+    line-height: 1;
+    transition: color 0.2s;
+    order: -1;
+}
+
+#justers-chat-close:hover {
+    color: #ffffff;
 }
 
 .justers-chat-header-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
 }
 
 .justers-chat-header-title {
     color: #d4af68;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -2132,34 +2148,44 @@ a.service-item-link {
     letter-spacing: 0.5px;
 }
 
-#justers-chat-header .justers-chat-header-info ~ button {
+#justers-chat-reset {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0 4px;
-    line-height: 1;
-    transition: color 0.2s;
-}
-
-#justers-chat-reset {
     color: #8ba0b9;
     display: flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 8px;
+    padding: 0 4px;
+    line-height: 1;
+    transition: color 0.2s;
 }
 
 #justers-chat-reset:hover {
     color: #d4af68;
 }
 
-#justers-chat-close {
-    color: #8ba0b9;
-    font-size: 24px;
+.justers-chat-header-eva {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
 }
 
-#justers-chat-close:hover {
+.justers-chat-eva-name {
     color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.justers-chat-eva-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(212, 175, 104, 0.4);
 }
 
 #justers-chat-messages {
