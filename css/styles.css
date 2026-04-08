@@ -275,6 +275,7 @@ h6 {
     vertical-align: middle;
     margin-left: 2px;
     transform: translateY(-2px);
+    opacity: 0.6;
 }
 
 .nav-dropdown-wrap:hover .nav-chevron {
@@ -343,6 +344,7 @@ h6 {
     margin-left: auto;
     font-size: 10px !important;
     color: var(--accent) !important;
+    opacity: 0.6;
 }
 
 .nav-dropdown-divider {
@@ -447,6 +449,7 @@ h6 {
     font-size: 8px !important;
     color: var(--accent) !important;
     padding-left: 8px;
+    opacity: 0.6;
 }
 
 .nav-subsubmenu {
@@ -722,7 +725,7 @@ h6 {
     font-size: 1.1em;
     font-weight: 900;
     -webkit-text-stroke: 2px currentColor;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .btn-hero-cta:hover {
@@ -1127,6 +1130,7 @@ h6 {
     z-index: 999;
     animation: bounce 2s infinite;
     cursor: pointer;
+    opacity: 0.6;
     transition: all 0.3s ease;
 }
 
@@ -1738,6 +1742,7 @@ h6 {
 .btn-pub-read i {
     font-size: 12px;
     transition: transform 0.3s ease;
+    opacity: 0.6;
 }
 
 .pub-card:hover .btn-pub-read i {
@@ -1769,6 +1774,10 @@ h6 {
     margin-bottom: 30px;
     font-size: 14px;
     transition: transform 0.3s ease;
+}
+
+.back-link i {
+    opacity: 0.6;
 }
 
 .back-link:hover {
