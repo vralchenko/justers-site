@@ -259,7 +259,7 @@
             chatOpenSound.play().catch(function () {});
             inputEl.focus();
             if (messagesEl.children.length === 0) {
-                setTimeout(showWelcome, 2000);
+                setTimeout(showWelcome, 1500);
             }
         }
 
@@ -339,22 +339,24 @@
         }
 
         function addChips(chips) {
-            var chipsDiv = document.createElement('div');
-            chipsDiv.className = 'justers-chat-chips';
-            for (var i = 0; i < chips.length; i++) {
-                (function (chip) {
-                    var btn = document.createElement('button');
-                    btn.className = 'justers-chat-chip';
-                    btn.textContent = chip.text;
-                    btn.addEventListener('click', function () {
-                        handleQuery(chip.query, chip.text);
-                        chipsDiv.remove();
-                    });
-                    chipsDiv.appendChild(btn);
-                })(chips[i]);
-            }
-            messagesEl.appendChild(chipsDiv);
-            scrollToBottom();
+            setTimeout(function() {
+                var chipsDiv = document.createElement('div');
+                chipsDiv.className = 'justers-chat-chips';
+                for (var i = 0; i < chips.length; i++) {
+                    (function (chip) {
+                        var btn = document.createElement('button');
+                        btn.className = 'justers-chat-chip';
+                        btn.textContent = chip.text;
+                        btn.addEventListener('click', function () {
+                            handleQuery(chip.query, chip.text);
+                            chipsDiv.remove();
+                        });
+                        chipsDiv.appendChild(btn);
+                    })(chips[i]);
+                }
+                messagesEl.appendChild(chipsDiv);
+                scrollToBottom();
+            }, 500);
         }
 
         function scrollToBottom() {
