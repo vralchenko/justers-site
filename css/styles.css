@@ -2187,7 +2187,7 @@ a.service-item-link {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1.5px solid rgba(212, 175, 104, 0.4);
+    border: none;
 }
 
 #justers-chat-messages {
