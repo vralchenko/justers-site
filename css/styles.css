@@ -721,6 +721,7 @@ h6 {
     margin-left: 12px;
     font-size: 1.1em;
     font-weight: 900;
+    -webkit-text-stroke: 2px currentColor;
 }
 
 .btn-hero-cta:hover {
