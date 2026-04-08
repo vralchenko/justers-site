@@ -245,9 +245,11 @@
         }
         updateResetBtn();
 
-        // Звук відкриття чату
+        // Звуки чату
         var chatOpenSound = new Audio('audio/chat-open.wav');
         chatOpenSound.volume = 0.5;
+        var chatMessageSound = new Audio('audio/chat-message.wav');
+        chatMessageSound.volume = 0.5;
 
         function openChat() {
             isOpen = true;
@@ -257,7 +259,7 @@
             chatOpenSound.play().catch(function () {});
             inputEl.focus();
             if (messagesEl.children.length === 0) {
-                showWelcome();
+                setTimeout(showWelcome, 2000);
             }
         }
 
@@ -277,6 +279,7 @@
 
         function showWelcome() {
             addBotMessage('Вітаю! Я онлайн-помічник JUSTERS. Оберіть тему або напишіть своє питання:');
+            chatMessageSound.play().catch(function () {});
             addChips([
                 { text: 'Послуги', query: 'які послуги ви надаєте' },
                 { text: 'Мобілізація', query: 'мобілізація' },
