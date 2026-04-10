@@ -717,15 +717,20 @@ h6 {
     text-decoration: none;
     white-space: nowrap;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 5px -7px 5.3px -1px rgba(0, 0, 0, 0.25);
 }
 
 .btn-hero-arrow {
-    margin-left: 12px;
-    font-size: 1.1em;
-    font-weight: 900;
-    -webkit-text-stroke: 3px currentColor;
-    opacity: 0.8;
+    margin-left: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-hero-arrow svg {
+    width: 22px;
+    height: 18px;
+    fill: #080c15;
+    opacity: 0.7;
 }
 
 .btn-hero-cta:hover {
