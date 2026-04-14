@@ -700,7 +700,7 @@ h6 {
 .btn-hero-cta {
     background: linear-gradient(to bottom, #ffffff 60%, #d9d9d9 100%);
     color: #080c15;
-    border: 1px solid #ffffff;
+    border: none;
     width: auto;
     min-width: 180px;
     height: auto;
@@ -717,7 +717,7 @@ h6 {
     text-decoration: none;
     white-space: nowrap;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 5px -7px 7px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 -7px 8px 0px rgba(0, 0, 0, 0.25);
 }
 
 .btn-hero-arrow {
@@ -2245,7 +2245,7 @@ a.service-item-link {
 }
 
 .justers-chat-eva-status-dot.online {
-    background: #d4af68;
+    background: #3FBB46;
 }
 
 #justers-chat-messages {
