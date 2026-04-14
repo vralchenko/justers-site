@@ -212,7 +212,10 @@
             '    </button>' +
             '    <div class="justers-chat-header-eva">' +
             '      <span class="justers-chat-eva-name">Eva</span>' +
-            '      <img src="images/eva-avatar.png" alt="Eva" class="justers-chat-eva-avatar" />' +
+            '      <div class="justers-chat-eva-avatar-wrap">' +
+            '        <img src="images/eva-avatar.png" alt="Eva" class="justers-chat-eva-avatar" />' +
+            '        <span class="justers-chat-eva-status"><span class="justers-chat-eva-status-dot"></span></span>' +
+            '      </div>' +
             '    </div>' +
             '  </div>' +
             '  <div id="justers-chat-messages"></div>' +
@@ -402,6 +405,12 @@
             inputEl.value = '';
             handleQuery(query);
         }
+
+        // Індикатор "онлайн" — золотий кружечок через 1 секунду
+        setTimeout(function () {
+            var dot = document.querySelector('.justers-chat-eva-status-dot');
+            if (dot) dot.classList.add('online');
+        }, 1000);
 
         // Event listeners
         fab.addEventListener('click', openChat);

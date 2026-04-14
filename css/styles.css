@@ -2198,12 +2198,44 @@ a.service-item-link {
     letter-spacing: 0.5px;
 }
 
+.justers-chat-eva-avatar-wrap {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
 .justers-chat-eva-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: none;
+}
+
+.justers-chat-eva-status {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    background: #0a0e17;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.justers-chat-eva-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.4s ease;
+}
+
+.justers-chat-eva-status-dot.online {
+    background: #d4af68;
 }
 
 #justers-chat-messages {
