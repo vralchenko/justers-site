@@ -2068,15 +2068,23 @@ a.service-item-link {
     border-radius: 50%;
     border: 2px solid transparent;
     border-top-color: rgba(255, 255, 255, 0.8);
-    animation: fab-stroke-spin 6s linear infinite;
+    animation: fab-stroke-spin 27.5s linear infinite;
     pointer-events: none;
 }
 
-/* 6с цикл: швидке коло за 1с → пауза 5с → повтор */
+/* 5 циклів по 5.5с = 27.5с: спринт 0.5с (360°) + дрейф 5с (144°, 4% швидкості) */
 @keyframes fab-stroke-spin {
-    0%        { transform: rotate(0deg); }
-    16.67%    { transform: rotate(360deg); }
-    100%      { transform: rotate(360deg); }
+    0%      { transform: rotate(0deg); }
+    1.8%    { transform: rotate(360deg); }
+    20%     { transform: rotate(504deg); }
+    21.8%   { transform: rotate(864deg); }
+    40%     { transform: rotate(1008deg); }
+    41.8%   { transform: rotate(1368deg); }
+    60%     { transform: rotate(1512deg); }
+    61.8%   { transform: rotate(1872deg); }
+    80%     { transform: rotate(2016deg); }
+    81.8%   { transform: rotate(2376deg); }
+    100%    { transform: rotate(2520deg); }
 }
 
 #justers-chat-fab:hover {
