@@ -261,6 +261,11 @@
             chatOpenSound.currentTime = 0;
             chatOpenSound.play().catch(function () {});
             inputEl.focus();
+            // Індикатор: офлайн (#323232) → онлайн (золотий) через 1 сек
+            setTimeout(function () {
+                var dot = document.querySelector('.justers-chat-eva-status-dot');
+                if (dot) dot.classList.add('online');
+            }, 1000);
             if (messagesEl.children.length === 0) {
                 setTimeout(showWelcome, 1500);
             }
@@ -405,12 +410,6 @@
             inputEl.value = '';
             handleQuery(query);
         }
-
-        // Індикатор "онлайн" — золотий кружечок через 1 секунду
-        setTimeout(function () {
-            var dot = document.querySelector('.justers-chat-eva-status-dot');
-            if (dot) dot.classList.add('online');
-        }, 1000);
 
         // Event listeners
         fab.addEventListener('click', openChat);
