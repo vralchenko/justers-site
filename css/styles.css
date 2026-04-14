@@ -2072,19 +2072,19 @@ a.service-item-link {
     pointer-events: none;
 }
 
-/* 5 циклів по 5.5с = 27.5с: спринт 0.5с (360°) + дрейф 5с (144°, 4% швидкості) */
+/* 5 циклів по 5.5с = 27.5с: спринт 0.5с (360°) + дрейф 5с (648°, 18% швидкості) */
 @keyframes fab-stroke-spin {
     0%      { transform: rotate(0deg); }
     1.8%    { transform: rotate(360deg); }
-    20%     { transform: rotate(504deg); }
-    21.8%   { transform: rotate(864deg); }
-    40%     { transform: rotate(1008deg); }
-    41.8%   { transform: rotate(1368deg); }
-    60%     { transform: rotate(1512deg); }
-    61.8%   { transform: rotate(1872deg); }
-    80%     { transform: rotate(2016deg); }
-    81.8%   { transform: rotate(2376deg); }
-    100%    { transform: rotate(2520deg); }
+    20%     { transform: rotate(1008deg); }
+    21.8%   { transform: rotate(1368deg); }
+    40%     { transform: rotate(2016deg); }
+    41.8%   { transform: rotate(2376deg); }
+    60%     { transform: rotate(3024deg); }
+    61.8%   { transform: rotate(3384deg); }
+    80%     { transform: rotate(4032deg); }
+    81.8%   { transform: rotate(4392deg); }
+    100%    { transform: rotate(5040deg); }
 }
 
 #justers-chat-fab:hover {
