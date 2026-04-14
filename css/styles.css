@@ -2038,8 +2038,8 @@ a.service-item-link {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     background: #d4af68;
     color: #0d1220;
     border-radius: 50%;
@@ -2072,9 +2072,11 @@ a.service-item-link {
     pointer-events: none;
 }
 
+/* 6с цикл: швидке коло за 1с → пауза 5с → повтор */
 @keyframes fab-stroke-spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0%        { transform: rotate(0deg); }
+    16.67%    { transform: rotate(360deg); }
+    100%      { transform: rotate(360deg); }
 }
 
 #justers-chat-fab:hover {
