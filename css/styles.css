@@ -2227,8 +2227,8 @@ a.service-item-link {
 }
 
 .justers-chat-eva-status-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: transparent;
     transition: background 0.4s ease;
@@ -2392,7 +2392,7 @@ a.service-item-link {
 #justers-chat-send {
     background: none;
     border: none;
-    color: #d4af68;
+    color: #ffffff;
     cursor: pointer;
     padding: 4px;
     display: flex;
