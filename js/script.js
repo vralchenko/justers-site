@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const consultationModal = document.getElementById('consultationModal');
 
     // Get all buttons that open modals
-    const consultationBtns = document.querySelectorAll('.hero-cta .btn, .consult-btn-trigger');
+    const consultationBtns = document.querySelectorAll('[data-modal="consultationModal"], .consult-btn-trigger');
 
     // Function to open modal
     function openModal(modal) {
