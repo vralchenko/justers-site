@@ -9,7 +9,7 @@
     --font-main: 'Montserrat', sans-serif;
 
     --container-width: 1400px;
-    --header-height: 130px;
+    --header-height: 104px;
 }
 
 * {
@@ -128,7 +128,7 @@ h6 {
 
 /* Header */
 .header {
-    padding: 30px 0;
+    padding: 24px 0;
     position: fixed;
     width: 100%;
     top: 0;
