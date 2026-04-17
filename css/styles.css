@@ -402,6 +402,8 @@ h6 {
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 20px;
+    padding-bottom: 160px;
+    box-sizing: border-box;
 }
 
 .hero-text {
