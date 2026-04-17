@@ -597,7 +597,7 @@ h6 {
     display: flex;
     justify-content: flex-start;
     gap: 0;
-    padding: 20px 0;
+    padding: 0;
     width: 100%;
     margin-top: auto;
     z-index: 10;
