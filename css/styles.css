@@ -394,16 +394,20 @@ h6 {
     height: 100%;
 }
 
+.hero-main-col {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .hero-content {
     position: relative;
     width: 100%;
-    height: 100%;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 20px;
-    padding-bottom: 160px;
-    box-sizing: border-box;
 }
 
 .hero-text {
@@ -595,8 +599,7 @@ h6 {
     gap: 0;
     padding: 20px 0;
     width: 100%;
-    position: absolute;
-    bottom: -30px;
+    margin-top: auto;
     z-index: 10;
 }
 
