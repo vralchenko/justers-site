@@ -880,48 +880,59 @@ h6 {
     background: var(--accent);
 }
 
-.about-content {
+.about-layout {
     display: flex;
-    justify-content: space-between;
-    gap: 80px;
-    align-items: center;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.about-photo {
+    flex-shrink: 0;
+    width: 40%;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
 }
 
 .about-text {
     flex: 1;
-    max-width: 800px;
 }
 
 .about-text p {
     color: var(--text-muted);
-    font-size: 20px;
+    font-size: 26px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
 .about-stats {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 40px;
-    margin-right: 0;
-    align-items: flex-end;
 }
 
 .about-stat-item {
-    text-align: right;
+    text-align: center;
 }
 
 .stat-number {
-    font-size: 51px;
-    /* Reduced by 20% (from 64px) */
+    font-size: 64px;
     font-weight: 700;
     color: var(--accent);
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 11px;
-    /* Reduced by 20% (from 14px) */
+    font-size: 14px;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
