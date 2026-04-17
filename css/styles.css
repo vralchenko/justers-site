@@ -883,7 +883,7 @@ h6 {
 .about-layout {
     display: flex;
     gap: 50px;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 60px;
 }
 
