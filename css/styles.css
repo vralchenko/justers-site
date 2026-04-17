@@ -670,16 +670,27 @@ h6 {
     background: var(--accent);
 }
 
-.about-content {
+.about-layout {
     display: flex;
-    justify-content: space-between;
-    gap: 80px;
-    align-items: center;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.about-photo {
+    flex-shrink: 0;
+    width: 40%;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
 }
 
 .about-text {
     flex: 1;
-    max-width: 600px;
 }
 
 .about-text p {
@@ -691,15 +702,12 @@ h6 {
 
 .about-stats {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 40px;
-    margin-right: 85px;
-    /* Aligned with header phones */
-    align-items: flex-end;
 }
 
 .about-stat-item {
-    text-align: right;
+    text-align: center;
 }
 
 .stat-number {
