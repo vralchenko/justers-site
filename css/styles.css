@@ -670,17 +670,17 @@ h6 {
     background: var(--accent);
 }
 
-.about-layout {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-    margin-bottom: 60px;
+.about-page .split-grid {
+    height: auto;
+}
+
+.about-photo-col {
+    display: flex !important;
+    align-items: center;
 }
 
 .about-photo {
-    flex-shrink: 0;
-    width: 40%;
-    margin-top: 80px;
+    width: 100%;
 }
 
 .about-photo img {
