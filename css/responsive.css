@@ -132,7 +132,8 @@
     }
 
     .about-stats {
-        justify-content: space-around;
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: 0;
     }
 
     .services-grid {
@@ -450,7 +451,8 @@
     }
 
     .about-stats {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        padding-right: 0;
         gap: 30px;
     }
 

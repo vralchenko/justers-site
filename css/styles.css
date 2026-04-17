@@ -882,14 +882,15 @@ h6 {
 
 .about-layout {
     display: flex;
-    gap: 50px;
+    gap: 80px;
     align-items: flex-start;
     margin-bottom: 60px;
+    padding-right: 15%;
 }
 
 .about-photo {
     flex-shrink: 0;
-    width: 20%;
+    width: 33%;
 }
 
 .about-photo img {
@@ -905,7 +906,7 @@ h6 {
 
 .about-text p {
     color: var(--text-muted);
-    font-size: 26px;
+    font-size: 18px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -915,8 +916,9 @@ h6 {
 }
 
 .about-stats {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 33% 1fr 1fr;
+    padding-right: 15%;
     gap: 40px;
 }
 
