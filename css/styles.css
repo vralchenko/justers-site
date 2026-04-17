@@ -883,13 +883,13 @@ h6 {
 .about-layout {
     display: flex;
     gap: 50px;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 60px;
 }
 
 .about-photo {
     flex-shrink: 0;
-    width: 40%;
+    width: 25%;
 }
 
 .about-photo img {
