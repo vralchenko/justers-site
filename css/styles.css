@@ -860,6 +860,9 @@ h6 {
 /* About Page (Page 2) */
 .about-page {
     background: #0A1019;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-title {
