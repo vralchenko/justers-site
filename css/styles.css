@@ -909,7 +909,7 @@ h6 {
 }
 
 .about-text p {
-    color: var(--text-muted);
+    color: #ffffff;
     font-size: 21px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -960,7 +960,7 @@ h6 {
 
 .services-intro p {
     font-size: 34px;
-    color: var(--text-muted);
+    color: #ffffff;
     line-height: 1.5;
 }
 
@@ -990,7 +990,7 @@ h6 {
 
 .service-icon {
     font-size: 32px;
-    color: #5a6a7e;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
