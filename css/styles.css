@@ -959,7 +959,7 @@ h6 {
 }
 
 .services-intro p {
-    font-size: 20px;
+    font-size: 34px;
     color: var(--text-muted);
     line-height: 1.5;
 }
@@ -1003,7 +1003,7 @@ h6 {
 }
 
 .service-desc {
-    font-size: 16px;
+    font-size: 20px;
     color: var(--text-muted);
     line-height: 1.5;
 }
