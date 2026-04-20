@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Hover sound on interactive elements (Web Audio API for reliable playback)
+    // Hover sound on interactive elements (Web Audio API)
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let hoverBuffer = null;
     fetch('/sounds/klick.wav')
@@ -195,12 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(buf => audioCtx.decodeAudioData(buf))
         .then(decoded => { hoverBuffer = decoded; })
         .catch(() => {});
-    // Resume AudioContext on any user gesture
+    // Resume AudioContext on valid user gestures (keep trying until running)
     const resumeAudio = () => {
         if (audioCtx.state === 'suspended') audioCtx.resume();
     };
-    ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(evt => {
-        document.addEventListener(evt, resumeAudio, { once: true });
+    const gestureEvents = ['click', 'mousedown', 'pointerdown', 'touchstart', 'keydown'];
+    gestureEvents.forEach(evt => {
+        document.addEventListener(evt, resumeAudio);
+    });
+    // Clean up listeners once audio is unlocked
+    audioCtx.addEventListener('statechange', () => {
+        if (audioCtx.state === 'running') {
+            gestureEvents.forEach(evt => {
+                document.removeEventListener(evt, resumeAudio);
+            });
+        }
     });
     const playHoverSound = () => {
         if (hoverBuffer && audioCtx.state === 'running') {
@@ -215,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
         el.addEventListener('mouseenter', () => {
-            resumeAudio();
             playHoverSound();
         });
     });
