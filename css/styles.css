@@ -959,7 +959,7 @@ h6 {
 }
 
 .services-intro p {
-    font-size: 34px;
+    font-size: 32px;
     color: #ffffff;
     line-height: 1.5;
 }
@@ -983,14 +983,13 @@ h6 {
 
 .service-item:hover {
     background: rgba(255, 255, 255, 0.05);
-    border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon {
     font-size: 32px;
-    color: #5a6a7e;
+    color: var(--accent);
     margin-bottom: 10px;
 }
 
