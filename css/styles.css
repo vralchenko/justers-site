@@ -983,7 +983,7 @@ h6 {
 
 .service-item:hover {
     background: rgba(255, 255, 255, 0.05);
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
