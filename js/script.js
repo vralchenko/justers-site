@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hover sound on service tiles
-    const hoverSound = new Audio('sounds/klick.wav');
+    const hoverSound = new Audio('/sounds/klick.wav');
     hoverSound.volume = 0.3;
     document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn').forEach(el => {
         el.addEventListener('mouseenter', () => {
