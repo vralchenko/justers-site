@@ -187,26 +187,36 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Hover sound on interactive elements
-    const hoverSound = new Audio('/sounds/klick.wav');
-    hoverSound.volume = 0.3;
-    // Unlock audio on first user interaction (browser autoplay policy)
-    let audioUnlocked = false;
-    const unlockAudio = () => {
-        if (!audioUnlocked) {
-            hoverSound.play().then(() => {
-                hoverSound.pause();
-                hoverSound.currentTime = 0;
-                audioUnlocked = true;
-            }).catch(() => {});
+    // Hover sound on interactive elements (Web Audio API for reliable playback)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let hoverBuffer = null;
+    fetch('/sounds/klick.wav')
+        .then(r => r.arrayBuffer())
+        .then(buf => audioCtx.decodeAudioData(buf))
+        .then(decoded => { hoverBuffer = decoded; })
+        .catch(() => {});
+    // Resume AudioContext on any user gesture
+    const resumeAudio = () => {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+    };
+    ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(evt => {
+        document.addEventListener(evt, resumeAudio, { once: true });
+    });
+    const playHoverSound = () => {
+        if (hoverBuffer && audioCtx.state === 'running') {
+            const source = audioCtx.createBufferSource();
+            source.buffer = hoverBuffer;
+            const gain = audioCtx.createGain();
+            gain.gain.value = 0.3;
+            source.connect(gain);
+            gain.connect(audioCtx.destination);
+            source.start(0);
         }
     };
-    document.addEventListener('click', unlockAudio, { once: true });
-    document.addEventListener('mousemove', unlockAudio, { once: true });
     document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
         el.addEventListener('mouseenter', () => {
-            hoverSound.currentTime = 0;
-            hoverSound.play().catch(() => {});
+            resumeAudio();
+            playHoverSound();
         });
     });
 
