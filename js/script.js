@@ -187,9 +187,22 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Hover sound on service tiles
+    // Hover sound on interactive elements
     const hoverSound = new Audio('/sounds/klick.wav');
     hoverSound.volume = 0.3;
+    // Unlock audio on first user interaction (browser autoplay policy)
+    let audioUnlocked = false;
+    const unlockAudio = () => {
+        if (!audioUnlocked) {
+            hoverSound.play().then(() => {
+                hoverSound.pause();
+                hoverSound.currentTime = 0;
+                audioUnlocked = true;
+            }).catch(() => {});
+        }
+    };
+    document.addEventListener('click', unlockAudio, { once: true });
+    document.addEventListener('mousemove', unlockAudio, { once: true });
     document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
         el.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
