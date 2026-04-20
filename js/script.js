@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hover sound on service tiles
     const hoverSound = new Audio('sounds/klick.wav');
     hoverSound.volume = 0.3;
-    document.querySelectorAll('.service-item, .btn-hero-cta').forEach(el => {
+    document.querySelectorAll('.service-item, [data-modal="consultationModal"]').forEach(el => {
         el.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
             hoverSound.play().catch(() => {});
