@@ -187,6 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Hover sound on service tiles
+    const hoverSound = new Audio('sounds/klick.wav');
+    hoverSound.volume = 0.3;
+    document.querySelectorAll('.service-item').forEach(tile => {
+        tile.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(() => {});
+        });
+    });
+
     // Modal Dialogs
     const consultationModal = document.getElementById('consultationModal');
 
