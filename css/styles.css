@@ -2083,7 +2083,7 @@ h6 {
 a.service-item-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
 }
 
 /* ===== Chat Widget ===== */
