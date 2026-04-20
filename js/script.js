@@ -170,6 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                // Remove inline styles after animation to allow CSS :hover to work
+                setTimeout(() => {
+                    entry.target.style.transform = '';
+                    entry.target.style.transition = '';
+                }, 700);
             }
         });
     }, observerOptions);
