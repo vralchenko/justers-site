@@ -682,28 +682,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Reviews Carousel
-    const carousel = document.querySelector('.reviews-carousel');
-    if (carousel) {
-        const INTERVAL = 4000;
+    const track = document.querySelector('.reviews-track');
+    if (track) {
+        const PAUSE = 5000;
+        const SLIDE_DURATION = 1000;
         let carouselTimer;
+        let isHovered = false;
+
+        function getCardWidth() {
+            const card = track.querySelector('.review-card');
+            if (!card) return 0;
+            const gap = 30;
+            return card.offsetWidth + gap;
+        }
 
         function rotateCarousel() {
-            const firstCard = carousel.firstElementChild;
-            if (!firstCard) return;
-            firstCard.classList.add('slide-out');
-            firstCard.addEventListener('animationend', function handler() {
-                firstCard.classList.remove('slide-out');
-                carousel.appendChild(firstCard);
-                firstCard.removeEventListener('animationend', handler);
-            }, { once: true });
+            if (isHovered) return;
+            const shift = getCardWidth();
+            track.style.transition = 'transform 1s ease';
+            track.style.transform = `translateX(-${shift}px)`;
+
+            setTimeout(() => {
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                track.appendChild(track.firstElementChild);
+            }, SLIDE_DURATION);
         }
 
         function startCarousel() {
-            carouselTimer = setInterval(rotateCarousel, INTERVAL);
+            carouselTimer = setInterval(rotateCarousel, PAUSE + SLIDE_DURATION);
         }
 
-        carousel.addEventListener('mouseenter', () => clearInterval(carouselTimer));
-        carousel.addEventListener('mouseleave', startCarousel);
+        track.closest('.reviews-carousel').addEventListener('mouseenter', () => {
+            isHovered = true;
+            clearInterval(carouselTimer);
+        });
+        track.closest('.reviews-carousel').addEventListener('mouseleave', () => {
+            isHovered = false;
+            startCarousel();
+        });
 
         startCarousel();
     }

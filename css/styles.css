@@ -1171,9 +1171,14 @@ h6 {
 }
 
 .reviews-carousel {
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.reviews-track {
     display: flex;
     gap: 30px;
-    margin-top: 40px;
+    transition: transform 1s ease;
 }
 
 .review-card {
@@ -1181,28 +1186,16 @@ h6 {
     border: 1px solid var(--border-color);
     padding: 30px;
     border-radius: 12px;
-    transition: all 0.6s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
     min-height: 200px;
-    flex: 1;
-    min-width: 0;
+    flex: 0 0 calc((100% - 60px) / 3);
 }
 
 .review-card:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--accent);
-}
-
-.review-card.slide-out {
-    animation: slideOutLeft 0.6s ease forwards;
-}
-
-@keyframes slideOutLeft {
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
 }
 
 .review-header {
