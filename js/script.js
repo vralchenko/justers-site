@@ -681,4 +681,31 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
     }
 
+    // Reviews Carousel
+    const carousel = document.querySelector('.reviews-carousel');
+    if (carousel) {
+        const INTERVAL = 4000;
+        let carouselTimer;
+
+        function rotateCarousel() {
+            const firstCard = carousel.firstElementChild;
+            if (!firstCard) return;
+            firstCard.classList.add('slide-out');
+            firstCard.addEventListener('animationend', function handler() {
+                firstCard.classList.remove('slide-out');
+                carousel.appendChild(firstCard);
+                firstCard.removeEventListener('animationend', handler);
+            }, { once: true });
+        }
+
+        function startCarousel() {
+            carouselTimer = setInterval(rotateCarousel, INTERVAL);
+        }
+
+        carousel.addEventListener('mouseenter', () => clearInterval(carouselTimer));
+        carousel.addEventListener('mouseleave', startCarousel);
+
+        startCarousel();
+    }
+
 });
