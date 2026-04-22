@@ -1015,6 +1015,7 @@ h6 {
 .contacts-page {
     background: #0A1019;
     padding-bottom: 0;
+    min-height: calc(100vh - 20px);
 }
 
 .contacts-layout {
