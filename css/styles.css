@@ -1026,7 +1026,9 @@ h6 {
 
 .contacts-info-col {
     flex: 0.9;
-    /* Slightly narrower to give more space to map */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contacts-map-col {
@@ -1050,32 +1052,23 @@ h6 {
     display: block;
 }
 
-.contacts-footer-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-muted);
-    line-height: 1.4;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    opacity: 0.7;
-}
-
 /* Contact block with icons */
 .contact-text-block p {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     color: var(--text-muted);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
 .contact-text-block p i {
     color: var(--accent);
-    margin-top: 3px;
+    margin-top: 4px;
     flex-shrink: 0;
-    width: 18px;
+    width: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -1103,10 +1096,11 @@ h6 {
     justify-content: flex-start;
     gap: 30px;
     display: flex;
+    margin-top: 25px;
 }
 
 .socials-centered a {
-    font-size: 28px;
+    font-size: 36px;
     color: var(--text-main);
 }
 
