@@ -1026,7 +1026,7 @@ h6 {
 .contacts-layout {
     display: flex;
     justify-content: space-between;
-    gap: calc(5vw + 85px);
+    gap: 60px;
     width: 100%;
     margin-top: 20px;
 }
