@@ -1097,11 +1097,17 @@ h6 {
     gap: 30px;
     display: flex;
     margin-top: 25px;
+    padding-left: 34px;
 }
 
 .socials-centered a {
     font-size: 36px;
-    color: var(--text-main);
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.socials-centered a:hover {
+    color: var(--accent);
 }
 
 
