@@ -1012,17 +1012,9 @@ h6 {
 /* Contacts Page (Page 4) */
 /* Container uses global style for alignment */
 
-section.contacts-page {
+.contacts-page {
     background: #0A1019;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: var(--header-height, 130px);
-    padding-bottom: var(--header-height, 130px);
-}
-
-section.contacts-page .split-grid {
-    height: auto;
+    padding-bottom: 0;
 }
 
 .contacts-layout {
