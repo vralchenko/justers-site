@@ -1015,6 +1015,7 @@ h6 {
 .contacts-page {
     background: #0A1019;
     padding-bottom: 0;
+    min-height: calc(100vh - 40px);
 }
 
 .contacts-layout {
@@ -1022,7 +1023,7 @@ h6 {
     justify-content: space-between;
     gap: 60px;
     width: 100%;
-    margin-top: 0;
+    margin-top: 20px;
 }
 
 .contacts-info-col {
@@ -1030,7 +1031,7 @@ h6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 85px;
+    padding-left: 90px;
 }
 
 .contacts-map-col {
