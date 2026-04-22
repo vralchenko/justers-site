@@ -1,8 +1,10 @@
-# JUSTERS.IO — Сайт адвокатського об'єднання ДЖАСТЕРС
+# JUSTERS.COM.UA — Сайт адвокатського об'єднання ДЖАСТЕРС
 
 ## Проект
 - Статичний сайт (vanilla HTML/CSS/JS, без фреймворків)
-- Хостинг: Vercel (justers.io)
+- Хостинг: MiroHost (ovh14.mirohost.net, IP: 89.184.78.240)
+- Домен: justers.com.ua (реєстратор: imena.ua)
+- Деплой: автоматичний через GitHub Actions (FTP при пуші в master)
 - Репозиторій: github.com/vralchenko/justers-site
 - Основна гілка: `master`
 
