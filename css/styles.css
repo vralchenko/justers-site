@@ -1019,10 +1019,6 @@ h6 {
     align-items: center;
 }
 
-.contacts-page .container {
-    padding-left: calc(5vw + 85px);
-}
-
 .contacts-layout {
     display: flex;
     justify-content: space-between;
@@ -1032,14 +1028,14 @@ h6 {
 }
 
 .contacts-info-col {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .contacts-map-col {
-    flex: 1.2;
+    flex: 1.1;
 }
 
 .contacts-map-small {
