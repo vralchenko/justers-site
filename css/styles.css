@@ -1165,9 +1165,12 @@ h6 {
 /* Reviews Section Styles */
 .reviews-title {
     text-transform: none;
-    font-style: italic;
     font-weight: 400;
     font-size: 28px;
+}
+
+.reviews-title::after {
+    display: none;
 }
 
 .reviews-carousel {
