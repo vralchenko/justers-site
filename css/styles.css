@@ -1094,9 +1094,9 @@ h6 {
 
 .socials-centered {
     justify-content: flex-start;
-    gap: 30px;
+    gap: 60px;
     display: flex;
-    margin-top: 25px;
+    margin-top: 38px;
     padding-left: 34px;
 }
 
