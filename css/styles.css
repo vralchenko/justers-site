@@ -1111,6 +1111,7 @@ h6 {
 .socials-centered a:hover {
     color: var(--accent);
     filter: blur(0.6px) drop-shadow(0 0 4px rgba(212, 175, 104, 0.4));
+    opacity: 0.5;
 }
 
 .socials-centered a .fa-tiktok path {
