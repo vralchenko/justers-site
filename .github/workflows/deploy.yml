@@ -1,8 +1,8 @@
-name: Deploy to MiroHost
+name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [master]
+    branches: [master, services-submenu]
 
 jobs:
   deploy:
@@ -10,24 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - uses: actions/setup-node@v4
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          server-dir: /justers.com.ua/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.idea/**
-            **/.DS_Store
-            **/README.md
-            **/_headers
-            **/package.json
-            **/package-lock.json
-            **/node_modules/**
-            **/.github/**
-            **/.claude/**
-            **/.env
-            **/CLAUDE.md
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --production
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler@4 pages deploy . --project-name=justers-site --branch=${{ github.ref_name }} --commit-dirty=true --commit-message="Deploy ${{ github.sha }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
