@@ -1021,6 +1021,10 @@ section.contacts-page {
     padding-bottom: var(--header-height, 130px);
 }
 
+section.contacts-page .split-grid {
+    height: auto;
+}
+
 .contacts-layout {
     display: flex;
     justify-content: space-between;
