@@ -457,6 +457,10 @@
     }
 
     /* Contacts: stack vertically */
+    .contacts-page .container {
+        padding-left: 5vw;
+    }
+
     .contacts-layout {
         flex-direction: column;
         gap: 30px;
