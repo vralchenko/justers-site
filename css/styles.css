@@ -1112,6 +1112,10 @@ h6 {
     color: var(--accent);
 }
 
+.socials-centered a .fa-tiktok path {
+    fill: currentColor;
+}
+
 
 
 /* Call Button Fixed */
