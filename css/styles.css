@@ -1108,10 +1108,15 @@ h6 {
     transition: color 0.3s ease;
 }
 
+.socials-centered a,
+.socials-centered a:hover {
+    border: none;
+    width: auto;
+    height: auto;
+}
+
 .socials-centered a:hover {
     color: var(--accent);
-    filter: blur(0.6px) drop-shadow(0 0 4px rgba(212, 175, 104, 0.4));
-    opacity: 0.5;
 }
 
 .socials-centered a .fa-tiktok path {
