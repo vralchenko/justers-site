@@ -194,12 +194,10 @@
             // Штраф за низьку відповідність: багато слів у запиті, мало збігів
             if (words.length >= 3 && matchedWordCount > 0) {
                 var matchRatio = matchedWordCount / words.length;
-                if (matchRatio < 0.3) {
-                    score = Math.floor(score * 0.3);
-                }
+                if (matchRatio < 0.4) score = 0;
             }
 
-            if (score > 0) {
+            if (score >= 15) {
                 results.push({ item: item, score: score });
             }
         }
@@ -413,7 +411,7 @@
                 }
             } else {
                 addBotMessage(
-                    'На жаль, я не знайшов відповіді на ваше питання. Зверніться до нас напряму — ми із задоволенням допоможемо!\n\n📞 +38 067 380 17 77\n📧 office@justers.io',
+                    'Це питання виходить за межі моєї компетенції. Я передам його адвокату — з вами зв\'яжуться протягом найближчого часу.\n\nАбо зверніться напряму:\n📞 +38 067 380 17 77',
                     [
                         { text: 'Контакти', url: '#contacts' },
                         { text: 'Telegram', url: 'https://t.me/Justers_lawfirm' }
