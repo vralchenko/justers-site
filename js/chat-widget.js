@@ -138,28 +138,38 @@
     ];
 
     // ===== ПОШУК =====
+    var STOP_WORDS = ['по', 'на', 'за', 'від', 'до', 'та', 'або', 'що', 'як', 'це', 'не',
+        'він', 'вона', 'вони', 'мене', 'мені', 'нас', 'вам', 'його', 'її', 'їх',
+        'мій', 'моя', 'мої', 'ваш', 'ваша', 'має', 'буде', 'було', 'бути',
+        'при', 'для', 'про', 'між', 'під', 'над', 'без', 'через'];
+
     function searchKB(query) {
         if (!query || query.trim().length < 2) return [];
 
         var q = query.toLowerCase().trim();
-        var words = q.split(/\s+/).filter(function (w) { return w.length >= 2; });
+        var words = q.split(/\s+/).filter(function (w) {
+            return w.length >= 2 && STOP_WORDS.indexOf(w) === -1;
+        });
         var results = [];
+
+        if (words.length === 0) return [];
 
         for (var i = 0; i < JUSTERS_KB.length; i++) {
             var item = JUSTERS_KB[i];
             var score = 0;
+            var matchedWordCount = 0;
 
-            // Пошук по keywords (найвища вага)
-            for (var k = 0; k < item.keywords.length; k++) {
-                var kw = item.keywords[k];
-                for (var w = 0; w < words.length; w++) {
-                    if (kw.indexOf(words[w]) !== -1 || words[w].indexOf(kw) !== -1) {
+            // Пошук по keywords — prefix-based matching
+            for (var w = 0; w < words.length; w++) {
+                var wordMatched = false;
+                for (var k = 0; k < item.keywords.length; k++) {
+                    var kw = item.keywords[k];
+                    if (kw.indexOf(words[w]) === 0 || words[w].indexOf(kw) === 0) {
                         score += 10;
+                        wordMatched = true;
                     }
                 }
-                if (kw.indexOf(q) !== -1 || q.indexOf(kw) !== -1) {
-                    score += 15;
-                }
+                if (wordMatched) matchedWordCount++;
             }
 
             // Пошук по question (середня вага)
@@ -181,6 +191,14 @@
                 }
             }
 
+            // Штраф за низьку відповідність: багато слів у запиті, мало збігів
+            if (words.length >= 3 && matchedWordCount > 0) {
+                var matchRatio = matchedWordCount / words.length;
+                if (matchRatio < 0.3) {
+                    score = Math.floor(score * 0.3);
+                }
+            }
+
             if (score > 0) {
                 results.push({ item: item, score: score });
             }
@@ -195,13 +213,14 @@
         // HTML віджету
         var html = '' +
             '<div id="justers-chat-fab" aria-label="Відкрити чат">' +
-            '  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
             '    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" fill="currentColor"/>' +
             '    <path d="M7 9H17V11H7V9ZM7 5H17V7H7V5ZM7 13H14V15H7V13Z" fill="currentColor"/>' +
             '  </svg>' +
             '</div>' +
             '<div id="justers-chat-window">' +
             '  <div id="justers-chat-header">' +
+            '    <button id="justers-chat-close" aria-label="Закрити чат">&times;</button>' +
             '    <div class="justers-chat-header-info">' +
             '      <span class="justers-chat-header-title">JUSTERS</span>' +
             '      <span class="justers-chat-header-sub">Онлайн-помічник</span>' +
@@ -209,7 +228,13 @@
             '    <button id="justers-chat-reset" aria-label="На початок" title="На початок">' +
             '      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>' +
             '    </button>' +
-            '    <button id="justers-chat-close" aria-label="Закрити чат">&times;</button>' +
+            '    <div class="justers-chat-header-eva">' +
+            '      <span class="justers-chat-eva-name">Eva</span>' +
+            '      <div class="justers-chat-eva-avatar-wrap">' +
+            '        <img src="images/eva-avatar.png" alt="Eva" class="justers-chat-eva-avatar" />' +
+            '        <span class="justers-chat-eva-status"><span class="justers-chat-eva-status-dot"></span></span>' +
+            '      </div>' +
+            '    </div>' +
             '  </div>' +
             '  <div id="justers-chat-messages"></div>' +
             '  <div id="justers-chat-input-area">' +
@@ -241,13 +266,26 @@
         }
         updateResetBtn();
 
+        // Звуки чату
+        var chatOpenSound = new Audio('audio/chat-open.wav');
+        chatOpenSound.volume = 0.5;
+        var chatMessageSound = new Audio('audio/chat-message.wav');
+        chatMessageSound.volume = 0.5;
+
         function openChat() {
             isOpen = true;
             chatWindow.classList.add('open');
             fab.classList.add('hidden');
+            chatOpenSound.currentTime = 0;
+            chatOpenSound.play().catch(function () {});
             inputEl.focus();
+            // Індикатор: офлайн (#323232) → онлайн (золотий) через 1 сек
+            setTimeout(function () {
+                var dot = document.querySelector('.justers-chat-eva-status-dot');
+                if (dot) dot.classList.add('online');
+            }, 1000);
             if (messagesEl.children.length === 0) {
-                showWelcome();
+                setTimeout(showWelcome, 1500);
             }
         }
 
@@ -267,6 +305,7 @@
 
         function showWelcome() {
             addBotMessage('Вітаю! Я онлайн-помічник JUSTERS. Оберіть тему або напишіть своє питання:');
+            chatMessageSound.play().catch(function () {});
             addChips([
                 { text: 'Послуги', query: 'які послуги ви надаєте' },
                 { text: 'Мобілізація', query: 'мобілізація' },
@@ -326,22 +365,24 @@
         }
 
         function addChips(chips) {
-            var chipsDiv = document.createElement('div');
-            chipsDiv.className = 'justers-chat-chips';
-            for (var i = 0; i < chips.length; i++) {
-                (function (chip) {
-                    var btn = document.createElement('button');
-                    btn.className = 'justers-chat-chip';
-                    btn.textContent = chip.text;
-                    btn.addEventListener('click', function () {
-                        handleQuery(chip.query, chip.text);
-                        chipsDiv.remove();
-                    });
-                    chipsDiv.appendChild(btn);
-                })(chips[i]);
-            }
-            messagesEl.appendChild(chipsDiv);
-            scrollToBottom();
+            setTimeout(function() {
+                var chipsDiv = document.createElement('div');
+                chipsDiv.className = 'justers-chat-chips';
+                for (var i = 0; i < chips.length; i++) {
+                    (function (chip) {
+                        var btn = document.createElement('button');
+                        btn.className = 'justers-chat-chip';
+                        btn.textContent = chip.text;
+                        btn.addEventListener('click', function () {
+                            handleQuery(chip.query, chip.text);
+                            chipsDiv.remove();
+                        });
+                        chipsDiv.appendChild(btn);
+                    })(chips[i]);
+                }
+                messagesEl.appendChild(chipsDiv);
+                scrollToBottom();
+            }, 500);
         }
 
         function scrollToBottom() {

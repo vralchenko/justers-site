@@ -170,6 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                // Remove inline styles after animation to allow CSS :hover to work
+                setTimeout(() => {
+                    entry.target.style.transform = '';
+                    entry.target.style.transition = '';
+                }, 700);
             }
         });
     }, observerOptions);
@@ -182,11 +187,52 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Hover sound on interactive elements (Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let hoverBuffer = null;
+    fetch('/sounds/klick.wav')
+        .then(r => r.arrayBuffer())
+        .then(buf => audioCtx.decodeAudioData(buf))
+        .then(decoded => { hoverBuffer = decoded; })
+        .catch(() => {});
+    // Resume AudioContext on valid user gestures (keep trying until running)
+    const resumeAudio = () => {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+    };
+    const gestureEvents = ['click', 'mousedown', 'pointerdown', 'touchstart', 'keydown'];
+    gestureEvents.forEach(evt => {
+        document.addEventListener(evt, resumeAudio);
+    });
+    // Clean up listeners once audio is unlocked
+    audioCtx.addEventListener('statechange', () => {
+        if (audioCtx.state === 'running') {
+            gestureEvents.forEach(evt => {
+                document.removeEventListener(evt, resumeAudio);
+            });
+        }
+    });
+    const playHoverSound = () => {
+        if (hoverBuffer && audioCtx.state === 'running') {
+            const source = audioCtx.createBufferSource();
+            source.buffer = hoverBuffer;
+            const gain = audioCtx.createGain();
+            gain.gain.value = 0.3;
+            source.connect(gain);
+            gain.connect(audioCtx.destination);
+            source.start(0);
+        }
+    };
+    document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            playHoverSound();
+        });
+    });
+
     // Modal Dialogs
     const consultationModal = document.getElementById('consultationModal');
 
     // Get all buttons that open modals
-    const consultationBtns = document.querySelectorAll('.hero-cta .btn, .consult-btn-trigger');
+    const consultationBtns = document.querySelectorAll('[data-modal="consultationModal"], .consult-btn-trigger');
 
     // Function to open modal
     function openModal(modal) {
@@ -433,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 } else if (data.message && data.message.includes('Activation')) {
                     closeModal(modalToClose);
-                    showStatusModal(true, 'Активація форми', `Будь ласка, перевірте пошту ${emailTo} та натисніть 'Activate Form' у щойно надісланому листі від FormSubmit. Це потрібно зробити лише один раз!`);
+                    showStatusModal(true, 'Майже готово!', `Дякуємо за заявку! Для завершення налаштування, будь ласка, перевірте пошту ${emailTo} та підтвердіть активацію у листі від FormSubmit. Це одноразова дія.`);
                     form.reset();
                 } else {
                     showStatusModal(false, 'Помилка', 'Виникла помилка при відправці. Спробуйте пізніше.');
@@ -473,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fetchComments = async () => {
                 try {
                     const response = await fetch(`/api/comments?article=${currentArticle}`);
-                    if (!response.ok) throw new Error('Помилка сервера. Дані можуть бути недоступні локально без Vercel CLI.');
+                    if (!response.ok) throw new Error('Помилка сервера. Дані можуть бути недоступні локально.');
 
                     const comments = await response.json();
 
@@ -542,6 +588,141 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+    }
+
+    // Scroll-driven image sequence
+    var scrollVideoSection = document.getElementById('scrollVideo');
+    var scrollCanvas = document.getElementById('scrollCanvas');
+
+    if (scrollVideoSection && scrollCanvas) {
+        var ctx = scrollCanvas.getContext('2d', { alpha: false, desynchronized: true });
+        var frameCount = 58;
+        var bitmaps = new Array(frameCount);
+        var currentFrame = -1;
+        var rafPending = false;
+        var coverParams = null;
+
+        function calcCover(iw, ih) {
+            var cw = scrollCanvas.width;
+            var ch = scrollCanvas.height;
+            var scale = Math.max(cw / iw, ch / ih);
+            coverParams = {
+                sx: (cw - iw * scale) / 2,
+                sy: (ch - ih * scale) / 2,
+                sw: iw * scale,
+                sh: ih * scale
+            };
+        }
+
+        function drawBitmap(bmp) {
+            if (!coverParams) calcCover(bmp.width, bmp.height);
+            ctx.drawImage(bmp, coverParams.sx, coverParams.sy, coverParams.sw, coverParams.sh);
+        }
+
+        function resizeCanvas() {
+            scrollCanvas.width = scrollCanvas.clientWidth;
+            scrollCanvas.height = scrollCanvas.clientHeight;
+            coverParams = null;
+            if (currentFrame >= 0 && bitmaps[currentFrame]) {
+                drawBitmap(bitmaps[currentFrame]);
+            }
+        }
+
+        function updateFrame() {
+            rafPending = false;
+            var rect = scrollVideoSection.getBoundingClientRect();
+            var sectionHeight = scrollVideoSection.offsetHeight - window.innerHeight;
+            var scrolled = -rect.top;
+            var progress = Math.min(Math.max(scrolled / sectionHeight, 0), 1);
+            var index = Math.min(Math.floor(progress * frameCount), frameCount - 1);
+
+            if (index !== currentFrame && bitmaps[index]) {
+                currentFrame = index;
+                drawBitmap(bitmaps[index]);
+            }
+        }
+
+        // Preload and pre-decode all frames into ImageBitmaps
+        function loadFrame(idx) {
+            var num = String(idx + 1);
+            while (num.length < 3) num = '0' + num;
+            return fetch('images/frames/frame-' + num + '.webp')
+                .then(function(r) { return r.blob(); })
+                .then(function(blob) { return createImageBitmap(blob); })
+                .then(function(bmp) {
+                    bitmaps[idx] = bmp;
+                    if (idx === 0) {
+                        resizeCanvas();
+                        currentFrame = 0;
+                        drawBitmap(bmp);
+                    }
+                });
+        }
+
+        // Load frames in batches to avoid blocking
+        (function loadBatch(start) {
+            var batch = [];
+            for (var i = start; i < Math.min(start + 8, frameCount); i++) {
+                batch.push(loadFrame(i));
+            }
+            Promise.all(batch).then(function() {
+                if (start + 8 < frameCount) loadBatch(start + 8);
+            });
+        })(0);
+
+        window.addEventListener('scroll', function() {
+            if (!rafPending) {
+                rafPending = true;
+                requestAnimationFrame(updateFrame);
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+    }
+
+    // Reviews Carousel
+    const track = document.querySelector('.reviews-track');
+    if (track) {
+        const PAUSE = 5000;
+        const SLIDE_DURATION = 1000;
+        let carouselTimer;
+        let isHovered = false;
+
+        function getCardWidth() {
+            const card = track.querySelector('.review-card');
+            if (!card) return 0;
+            const gap = 30;
+            return card.offsetWidth + gap;
+        }
+
+        function rotateCarousel() {
+            if (isHovered) return;
+            const shift = getCardWidth();
+            track.style.transition = 'transform 1s ease';
+            track.style.transform = `translateX(-${shift}px)`;
+
+            setTimeout(() => {
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                track.appendChild(track.firstElementChild);
+            }, SLIDE_DURATION);
+        }
+
+        function startCarousel() {
+            carouselTimer = setInterval(rotateCarousel, PAUSE + SLIDE_DURATION);
+        }
+
+        track.closest('.reviews-carousel').addEventListener('mouseenter', () => {
+            isHovered = true;
+            clearInterval(carouselTimer);
+        });
+        track.closest('.reviews-carousel').addEventListener('mouseleave', () => {
+            isHovered = false;
+            startCarousel();
+        });
+
+        startCarousel();
     }
 
 });
