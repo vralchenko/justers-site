@@ -138,28 +138,38 @@
     ];
 
     // ===== ПОШУК =====
+    var STOP_WORDS = ['по', 'на', 'за', 'від', 'до', 'та', 'або', 'що', 'як', 'це', 'не',
+        'він', 'вона', 'вони', 'мене', 'мені', 'нас', 'вам', 'його', 'її', 'їх',
+        'мій', 'моя', 'мої', 'ваш', 'ваша', 'має', 'буде', 'було', 'бути',
+        'при', 'для', 'про', 'між', 'під', 'над', 'без', 'через'];
+
     function searchKB(query) {
         if (!query || query.trim().length < 2) return [];
 
         var q = query.toLowerCase().trim();
-        var words = q.split(/\s+/).filter(function (w) { return w.length >= 2; });
+        var words = q.split(/\s+/).filter(function (w) {
+            return w.length >= 2 && STOP_WORDS.indexOf(w) === -1;
+        });
         var results = [];
+
+        if (words.length === 0) return [];
 
         for (var i = 0; i < JUSTERS_KB.length; i++) {
             var item = JUSTERS_KB[i];
             var score = 0;
+            var matchedWordCount = 0;
 
-            // Пошук по keywords (найвища вага)
-            for (var k = 0; k < item.keywords.length; k++) {
-                var kw = item.keywords[k];
-                for (var w = 0; w < words.length; w++) {
-                    if (kw.indexOf(words[w]) !== -1 || words[w].indexOf(kw) !== -1) {
+            // Пошук по keywords — prefix-based matching
+            for (var w = 0; w < words.length; w++) {
+                var wordMatched = false;
+                for (var k = 0; k < item.keywords.length; k++) {
+                    var kw = item.keywords[k];
+                    if (kw.indexOf(words[w]) === 0 || words[w].indexOf(kw) === 0) {
                         score += 10;
+                        wordMatched = true;
                     }
                 }
-                if (kw.indexOf(q) !== -1 || q.indexOf(kw) !== -1) {
-                    score += 15;
-                }
+                if (wordMatched) matchedWordCount++;
             }
 
             // Пошук по question (середня вага)
@@ -178,6 +188,14 @@
             for (var w3 = 0; w3 < words.length; w3++) {
                 if (answerLower.indexOf(words[w3]) !== -1) {
                     score += 1;
+                }
+            }
+
+            // Штраф за низьку відповідність: багато слів у запиті, мало збігів
+            if (words.length >= 3 && matchedWordCount > 0) {
+                var matchRatio = matchedWordCount / words.length;
+                if (matchRatio < 0.3) {
+                    score = Math.floor(score * 0.3);
                 }
             }
 

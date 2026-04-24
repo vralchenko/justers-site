@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 } else if (data.message && data.message.includes('Activation')) {
                     closeModal(modalToClose);
-                    showStatusModal(true, 'Активація форми', `Будь ласка, перевірте пошту ${emailTo} та натисніть 'Activate Form' у щойно надісланому листі від FormSubmit. Це потрібно зробити лише один раз!`);
+                    showStatusModal(true, 'Майже готово!', `Дякуємо за заявку! Для завершення налаштування, будь ласка, перевірте пошту ${emailTo} та підтвердіть активацію у листі від FormSubmit. Це одноразова дія.`);
                     form.reset();
                 } else {
                     showStatusModal(false, 'Помилка', 'Виникла помилка при відправці. Спробуйте пізніше.');
