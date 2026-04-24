@@ -292,6 +292,15 @@ h6 {
     width: 100% !important;
 }
 
+.nav-dropdown-wrap::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
 .nav-dropdown {
     position: absolute;
     top: 100%;
@@ -307,16 +316,6 @@ h6 {
     transition: opacity 0.2s ease, visibility 0.2s ease;
     z-index: 1000;
     box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.8);
-    overflow: visible;
-}
-
-.nav-dropdown::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 0;
-    width: 100%;
-    height: 15px;
 }
 
 .nav-dropdown-wrap:hover .nav-dropdown {
