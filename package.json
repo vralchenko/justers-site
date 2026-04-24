@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/vralchenko/justers-site#readme",
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.0"
+    "@neondatabase/serverless": "^1.0.0",
+    "playwright": "^1.59.1"
   },
   "devDependencies": {
     "puppeteer": "^24.40.0",
