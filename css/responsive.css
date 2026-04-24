@@ -1,3 +1,10 @@
+/* Full HD screens (1920x1080) */
+@media (max-width: 1920px) {
+    .hero-title { font-size: 60px; }
+    .hero-description { font-size: 24px; }
+    .hero-tagline span { font-size: 28px; }
+}
+
 /* Ultra-wide screens (2K+) */
 @media (min-width: 1921px) {
     .hero-title { font-size: 86px; }
