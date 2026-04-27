@@ -2598,7 +2598,7 @@ a.service-item-link {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 30px;
+    overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -2614,28 +2614,81 @@ a.service-item-link {
     box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
 }
 
-.video-card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
+.video-card-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #111827 0%, #1a2540 50%, #0f1923 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: #fff;
-    margin-bottom: 20px;
+    overflow: hidden;
 }
 
-.video-card:hover .video-card-icon {
-    background: rgba(212, 175, 104, 0.15);
+.video-card-thumb::before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.04);
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+}
+
+.video-card-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-card-play i {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 3px;
+    transition: color 0.3s ease;
+}
+
+.video-card:hover .video-card-play {
+    background: rgba(212, 175, 104, 0.2);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.video-card:hover .video-card-play i {
     color: var(--accent);
+}
+
+.video-card-views {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.video-card-views i {
+    font-size: 9px;
 }
 
 .video-card-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    padding: 20px;
     flex: 1;
 }
 
@@ -2648,7 +2701,7 @@ a.service-item-link {
 }
 
 .video-card-title {
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     line-height: 1.4;
     font-weight: 600;
@@ -2661,41 +2714,14 @@ a.service-item-link {
     gap: 16px;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.4);
-    margin-top: 4px;
+    margin-top: auto;
+    padding-top: 8px;
 }
 
 .video-card-meta span {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.btn-video-watch {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-    margin-top: auto;
-    padding-top: 16px;
-}
-
-.video-card:hover .btn-video-watch {
-    color: var(--accent);
-}
-
-.btn-video-watch i {
-    font-size: 11px;
-    transition: transform 0.3s ease;
-    opacity: 0.6;
-}
-
-.video-card:hover .btn-video-watch i {
-    transform: translate(3px, -3px);
 }
 
 .video-no-results {
