@@ -2617,7 +2617,7 @@ a.service-item-link {
 .video-card-thumb {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     background: linear-gradient(135deg, #111827 0%, #1a2540 50%, #0f1923 100%);
     display: flex;
     align-items: center;
@@ -2626,8 +2626,8 @@ a.service-item-link {
 }
 
 .video-card-thumb.has-img {
-    background-size: cover;
-    background-position: center 20%;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
