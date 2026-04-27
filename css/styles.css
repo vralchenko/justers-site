@@ -1722,8 +1722,8 @@ h6 {
 }
 
 .pub-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     padding: 40px;
     transition: all 0.3s ease;
@@ -1737,7 +1737,7 @@ h6 {
 }
 
 .pub-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     border-color: var(--accent);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
