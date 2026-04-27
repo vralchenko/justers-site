@@ -445,11 +445,17 @@
 
     /* About section */
     .about-layout {
-        gap: 20px;
+        flex-direction: column;
+        gap: 30px;
         margin-bottom: 30px;
     }
 
+    .about-text {
+        flex: 0 0 100%;
+    }
+
     .about-photo {
+        flex: 0 0 100%;
         width: 100%;
     }
 
