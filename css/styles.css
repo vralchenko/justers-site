@@ -1812,8 +1812,10 @@ h6 {
 }
 
 .article-card {
-    background: transparent;
-    padding: 60px 0;
+    background: var(--bg-secondary);
+    padding: 60px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
     max-width: 900px;
     margin: 0 auto;
 }
