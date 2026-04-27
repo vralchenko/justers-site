@@ -540,6 +540,25 @@
         padding: 24px 20px;
     }
 
+    /* Videos page */
+    .videos-page-container {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .video-card-body {
+        padding: 20px;
+    }
+
+    .video-embed {
+        min-height: 350px;
+    }
+
     /* Article pages */
     .article-container { padding-top: 100px; }
     .article-card { padding: 30px 20px; }
@@ -684,6 +703,27 @@
 
     .pub-card-title {
         font-size: 17px;
+    }
+
+    /* Videos page */
+    .videos-page-container {
+        padding-top: 90px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card-body {
+        padding: 16px;
+    }
+
+    .video-card-title {
+        font-size: 17px;
+    }
+
+    .video-embed {
+        min-height: 300px;
     }
 }
 
