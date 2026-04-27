@@ -187,47 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Hover sound on interactive elements (Web Audio API)
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let hoverBuffer = null;
-    fetch('/sounds/klick.wav')
-        .then(r => r.arrayBuffer())
-        .then(buf => audioCtx.decodeAudioData(buf))
-        .then(decoded => { hoverBuffer = decoded; })
-        .catch(() => {});
-    // Resume AudioContext on valid user gestures (keep trying until running)
-    const resumeAudio = () => {
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-    };
-    const gestureEvents = ['click', 'mousedown', 'pointerdown', 'touchstart', 'keydown'];
-    gestureEvents.forEach(evt => {
-        document.addEventListener(evt, resumeAudio);
-    });
-    // Clean up listeners once audio is unlocked
-    audioCtx.addEventListener('statechange', () => {
-        if (audioCtx.state === 'running') {
-            gestureEvents.forEach(evt => {
-                document.removeEventListener(evt, resumeAudio);
-            });
-        }
-    });
-    const playHoverSound = () => {
-        if (hoverBuffer && audioCtx.state === 'running') {
-            const source = audioCtx.createBufferSource();
-            source.buffer = hoverBuffer;
-            const gain = audioCtx.createGain();
-            gain.gain.value = 0.3;
-            source.connect(gain);
-            gain.connect(audioCtx.destination);
-            source.start(0);
-        }
-    };
-    document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            playHoverSound();
-        });
-    });
-
     // Modal Dialogs
     const consultationModal = document.getElementById('consultationModal');
 
