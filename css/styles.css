@@ -892,18 +892,17 @@ h6 {
 
 .about-layout {
     display: flex;
-    gap: 80px;
+    gap: 8%;
     align-items: flex-start;
     margin-bottom: 140px;
 }
 
 .about-text {
-    flex: 1;
+    flex: 0 0 51%;
 }
 
 .about-photo {
-    flex-shrink: 0;
-    width: 33%;
+    flex: 0 0 29%;
 }
 
 .about-photo img {
