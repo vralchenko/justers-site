@@ -895,7 +895,10 @@ h6 {
     gap: 80px;
     align-items: flex-start;
     margin-bottom: 140px;
-    padding-right: 15%;
+}
+
+.about-text {
+    flex: 1;
 }
 
 .about-photo {
@@ -908,11 +911,6 @@ h6 {
     height: auto;
     display: block;
     border-radius: 4px;
-}
-
-.about-text {
-    flex: 1;
-    padding-left: 10px;
 }
 
 .about-text p {
