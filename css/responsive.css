@@ -548,15 +548,15 @@
 
     .video-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
     }
 
-    .video-card-body {
-        padding: 20px;
+    .video-card {
+        padding: 24px 20px;
     }
 
-    .video-embed {
-        min-height: 350px;
+    .video-search {
+        max-width: 100%;
     }
 
     /* Article pages */
@@ -710,20 +710,19 @@
         padding-top: 90px;
     }
 
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .video-card-body {
-        padding: 16px;
+    .video-card {
+        padding: 20px 16px;
     }
 
     .video-card-title {
-        font-size: 17px;
+        font-size: 16px;
     }
 
-    .video-embed {
-        min-height: 300px;
+    .video-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 14px;
     }
 }
 

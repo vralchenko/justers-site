@@ -36,8 +36,8 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/styles.css?v=20260427">
-    <link rel="stylesheet" href="css/responsive.css?v=20260427">
+    <link rel="stylesheet" href="css/styles.css?v=20260427b">
+    <link rel="stylesheet" href="css/responsive.css?v=20260427b">
 </head>
 
 <body>
@@ -106,34 +106,268 @@
                 </a>
             </div>
 
-            <div class="video-grid">
-                <!-- Video 1 -->
-                <div class="video-card">
-                    <div class="video-embed">
-                        <blockquote class="tiktok-embed"
-                            cite="https://www.tiktok.com/@justers_law_firm"
-                            data-video-id=""
-                            style="max-width: 100%; min-width: 300px;">
-                            <section>
-                                <a target="_blank" href="https://www.tiktok.com/@justers_law_firm">@justers_law_firm</a>
-                            </section>
-                        </blockquote>
-                    </div>
-                    <div class="video-card-body">
-                        <div class="video-card-platform">
-                            <i class="fa-brands fa-tiktok"></i> TikTok
-                        </div>
-                        <h2 class="video-card-title">Юридичні поради від ДЖАСТЕРС</h2>
-                        <p class="video-card-desc">Корисні відео з юридичних питань від адвокатського об'єднання ДЖАСТЕРС.</p>
-                        <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer" class="btn-video-watch">
-                            Дивитись на TikTok <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
+            <!-- Search -->
+            <div class="video-search-wrap">
+                <div class="video-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="videoSearch" placeholder="Пошук відео..." autocomplete="off">
                 </div>
+                <div class="video-search-count" id="videoSearchCount"></div>
             </div>
 
-            <div class="videos-note">
-                <p><i class="fa-solid fa-circle-info"></i> Відео будуть додаватись по мірі публікації нового контенту на каналі.</p>
+            <div class="video-grid" id="videoGrid">
+
+                <!-- 1 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="відстрочка мобілізація військовослужбовці резерв">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Мобілізація та відстрочка</div>
+                        <h2 class="video-card-title">Для отримання відстрочки</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 4 335</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 2 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="адвокат юрист консультація допомога">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Юридична консультація</div>
+                        <h2 class="video-card-title">Три сигнали, що вам потрібен адвокат</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 3 525</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 3 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="ВЛК висновок догляд медичний огляд непридатність">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">ВЛК та медичний огляд</div>
+                        <h2 class="video-card-title">Нова форма висновку про постійний догляд</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 4 678</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 4 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="кримінальна відповідальність ухилення строк мобілізація">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Кримінальне право</div>
+                        <h2 class="video-card-title">Кримінальна відповідальність за ухилення. Реальний строк.</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 21 700</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 5 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="мікрокредити фінанси борг кредит МФО">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Фінанси та кредити</div>
+                        <h2 class="video-card-title">Мікрокредити — плюси та мінуси</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 625</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 6 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="постанова 560 законодавство зміни відстрочка мобілізація">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Законодавство</div>
+                        <h2 class="video-card-title">Зміни в постанові 560</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 6 977</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 7 -->
+                <a href="https://www.tiktok.com/@justers_law_firm/video/7584071175920192824" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="відстрочка непродовження автоматичне резерв+ мобілізація">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Мобілізація та відстрочка</div>
+                        <h2 class="video-card-title">Причини автоматичного непродовження відстрочки</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 8 775</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 8 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="ЦНАП відстрочка документи оформлення мобілізація">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Мобілізація та відстрочка</div>
+                        <h2 class="video-card-title">Взаємодія з ЦНАП для отримання відстрочки</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 5 131</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 9 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="ВЛК права порушення медичний огляд комісія">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">ВЛК та медичний огляд</div>
+                        <h2 class="video-card-title">Як запобігти порушенню ваших прав на ВЛК?</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 24 700</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 10 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="ОДГ одноразова грошова допомога військовослужбовець">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Допомога військовослужбовцям</div>
+                        <h2 class="video-card-title">Відстояли призначення ОДГ військовослужбовцю</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 2 390</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 11 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="вступна кампанія Резерв+ мобілізація військовий облік">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Мобілізація та відстрочка</div>
+                        <h2 class="video-card-title">Вступна кампанія Резерв+</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 614</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 12 -->
+                <a href="https://www.tiktok.com/@justers_law_firm" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="подружжя поділ майна будинок цивільне сімейне">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Цивільне право</div>
+                        <h2 class="video-card-title">Подружжя не поділило будинок</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-solid fa-play"></i> 460</span>
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 13 -->
+                <a href="https://www.tiktok.com/@justers_law_firm/video/7438479987071585592" target="_blank" rel="noopener noreferrer"
+                   class="video-card" data-tags="усиновлення спадкування діти сімейне право суд">
+                    <div class="video-card-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-category">Сімейне право</div>
+                        <h2 class="video-card-title">Усиновлення: спадкування та правовий зв'язок</h2>
+                        <div class="video-card-meta">
+                            <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                        </div>
+                    </div>
+                    <div class="btn-video-watch">
+                        Дивитись <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="video-no-results" id="videoNoResults" style="display:none;">
+                <i class="fa-solid fa-video-slash"></i>
+                <p>Нічого не знайдено</p>
             </div>
 
         </div>
@@ -181,7 +415,33 @@
 
     <script src="js/script.js"></script>
     <script src="js/chat-widget.js?v=20260427"></script>
-    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script>
+        (function() {
+            var input = document.getElementById('videoSearch');
+            var grid = document.getElementById('videoGrid');
+            var cards = grid.querySelectorAll('.video-card');
+            var noResults = document.getElementById('videoNoResults');
+            var countEl = document.getElementById('videoSearchCount');
+
+            input.addEventListener('input', function() {
+                var q = this.value.toLowerCase().trim();
+                var visible = 0;
+
+                cards.forEach(function(card) {
+                    var title = card.querySelector('.video-card-title').textContent.toLowerCase();
+                    var category = card.querySelector('.video-card-category').textContent.toLowerCase();
+                    var tags = (card.getAttribute('data-tags') || '').toLowerCase();
+                    var match = !q || title.indexOf(q) !== -1 || category.indexOf(q) !== -1 || tags.indexOf(q) !== -1;
+
+                    card.style.display = match ? '' : 'none';
+                    if (match) visible++;
+                });
+
+                noResults.style.display = visible === 0 ? 'block' : 'none';
+                countEl.textContent = q ? 'Знайдено: ' + visible : '';
+            });
+        })();
+    </script>
 </body>
 
 </html>

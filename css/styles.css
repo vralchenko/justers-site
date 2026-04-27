@@ -2537,21 +2537,74 @@ a.service-item-link {
     opacity: 0.8;
 }
 
+.video-search-wrap {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-search {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.video-search i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+}
+
+.video-search input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-family: var(--font-main);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.video-search input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.video-search input:focus {
+    border-color: var(--accent);
+}
+
+.video-search-count {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    min-height: 20px;
+}
+
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
 }
 
 .video-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 30px;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .video-card:hover {
@@ -2561,89 +2614,102 @@ a.service-item-link {
     box-shadow: 0 10px 30px rgba(212, 175, 104, 0.1);
 }
 
-.video-embed {
-    width: 100%;
+.video-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
     display: flex;
+    align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    min-height: 400px;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
-.video-embed blockquote {
-    margin: 0 !important;
-    width: 100%;
+.video-card:hover .video-card-icon {
+    background: rgba(212, 175, 104, 0.15);
+    color: var(--accent);
 }
 
 .video-card-body {
-    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     flex: 1;
 }
 
-.video-card-platform {
-    font-size: 12px;
+.video-card-category {
+    font-size: 11px;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .video-card-title {
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     line-height: 1.4;
     font-weight: 600;
     text-transform: none;
 }
 
-.video-card-desc {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
+.video-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 4px;
+}
+
+.video-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .btn-video-watch {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: #fff;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s ease;
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 16px;
 }
 
-.btn-video-watch:hover {
+.video-card:hover .btn-video-watch {
     color: var(--accent);
 }
 
 .btn-video-watch i {
-    font-size: 12px;
+    font-size: 11px;
     transition: transform 0.3s ease;
     opacity: 0.6;
 }
 
-.btn-video-watch:hover i {
+.video-card:hover .btn-video-watch i {
     transform: translate(3px, -3px);
 }
 
-.videos-note {
-    margin-top: 60px;
+.video-no-results {
     text-align: center;
+    padding: 80px 20px;
 }
 
-.videos-note p {
+.video-no-results i {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 16px;
+}
+
+.video-no-results p {
     color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 16px;
 }
