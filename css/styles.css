@@ -2534,10 +2534,13 @@ a.service-item-link {
 
 .cta-banner-text h2 {
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.85);
     text-transform: none;
+    background: linear-gradient(to right, #FFFFFF 50%, #CCBCD5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .cta-banner-form {
