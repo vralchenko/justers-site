@@ -1685,7 +1685,7 @@ h6 {
 
 .status-message {
     font-size: 16px;
-    color: #333;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 30px;
     line-height: 1.6;
 }
