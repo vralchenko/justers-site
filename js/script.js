@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to close modal
     function closeModal(modal) {
+        if (!modal) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
     }
