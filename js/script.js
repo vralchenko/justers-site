@@ -415,6 +415,17 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Відправка...';
         }
 
+        // Telegram notification
+        var tgBot = '8617525109:AAGkM7rVkjS0CmAubiipOJtDrTLrt5Puu38';
+        var tgChat = '5460915201';
+        var tgText = '📋 *Нова заявка з сайту*\n\n👤 Ім\'я: ' + name + '\n📞 Телефон: ' + phone + '\n📝 Тип: ' + formType;
+        fetch('https://api.telegram.org/bot' + tgBot + '/sendMessage', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: tgChat, text: tgText, parse_mode: 'Markdown' })
+        }).catch(function() {});
+
+        // Email notification
         fetch(`https://formsubmit.co/ajax/${emailTo}`, {
             method: "POST",
             headers: {
