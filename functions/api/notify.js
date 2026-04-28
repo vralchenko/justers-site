@@ -18,9 +18,9 @@ export async function onRequestPost(context) {
         }
 
         const botToken = env.TG_BOT_TOKEN;
-        const chatId = env.TG_CHAT_ID;
+        const chatIds = (env.TG_CHAT_ID || '').split(',').map(id => id.trim()).filter(Boolean);
 
-        if (!botToken || !chatId) {
+        if (!botToken || chatIds.length === 0) {
             return new Response(JSON.stringify({ ok: false, error: 'Bot not configured' }), {
                 status: 500,
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -29,15 +29,17 @@ export async function onRequestPost(context) {
 
         const text = `📋 *Нова заявка з сайту*\n\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}\n📝 Тип: ${formType || 'Консультація'}`;
 
-        const tgResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' })
-        });
+        const results = await Promise.all(chatIds.map(chatId =>
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' })
+            }).then(r => r.json()).catch(() => ({ ok: false }))
+        ));
 
-        const tgData = await tgResponse.json();
+        const anyOk = results.some(r => r.ok);
 
-        return new Response(JSON.stringify({ ok: tgData.ok }), {
+        return new Response(JSON.stringify({ ok: anyOk }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
     } catch (err) {
