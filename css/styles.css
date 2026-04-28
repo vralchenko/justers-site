@@ -2510,6 +2510,93 @@ a.service-item-link {
     font-style: normal;
 }
 
+/* ===== CTA Banner ===== */
+.cta-banner {
+    padding: 0 5vw;
+    margin-top: -1px;
+}
+
+.cta-banner-inner {
+    background: linear-gradient(135deg, #002A62 0%, #17223C 59%);
+    border-radius: 16px;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    min-height: 50vh;
+}
+
+.cta-banner-text {
+    flex: 1;
+}
+
+.cta-banner-text h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: none;
+}
+
+.cta-banner-form {
+    flex: 0 0 auto;
+    width: 420px;
+}
+
+.cta-form-fields {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.cta-form-fields input {
+    flex: 1;
+    padding: 14px 18px;
+    background: #555555;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--font-main);
+    font-size: 14px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.cta-form-fields input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-form-fields input:focus {
+    background: #666666;
+}
+
+.cta-form-btn {
+    width: 100%;
+    padding: 18px;
+    background: #FAFAFA;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        inset -4.5px -1.5px 8px rgba(0, 0, 0, 0.65),
+        inset 3.7px 3px 10px rgba(0, 0, 0, 0.72);
+}
+
+.cta-form-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow:
+        inset -4.5px -1.5px 8px rgba(0, 0, 0, 0.5),
+        inset 3.7px 3px 10px rgba(0, 0, 0, 0.55),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 /* ===== Videos page ===== */
 .videos-page-container {
     padding-top: 140px;

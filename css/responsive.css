@@ -463,6 +463,27 @@
         font-size: 18px;
     }
 
+    /* CTA Banner */
+    .cta-banner-inner {
+        flex-direction: column;
+        padding: 50px 30px;
+        min-height: auto;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .cta-banner-text h2 {
+        font-size: 24px;
+    }
+
+    .cta-banner-form {
+        width: 100%;
+    }
+
+    .cta-form-fields {
+        flex-direction: column;
+    }
+
     .about-stats {
         grid-template-columns: 1fr;
         padding-right: 0;

@@ -462,6 +462,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // CTA Banner Form
+    const ctaBannerForm = document.getElementById('ctaBannerForm');
+    if (ctaBannerForm) {
+        ctaBannerForm.addEventListener('submit', (e) => {
+            handleFormSubmit(e, null, 'CTA Banner');
+        });
+    }
+
     // -------------------------
     // Comments API Integration (Vercel Postgres)
     // -------------------------
