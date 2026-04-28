@@ -415,17 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Відправка...';
         }
 
-        // Telegram notification
-        var tgBot = '8617525109:AAGkM7rVkjS0CmAubiipOJtDrTLrt5Puu38';
-        var tgChat = '5460915201';
-        var tgText = '📋 *Нова заявка з сайту*\n\n👤 Ім\'я: ' + name + '\n📞 Телефон: ' + phone + '\n📝 Тип: ' + formType;
-        fetch('https://api.telegram.org/bot' + tgBot + '/sendMessage', {
+        // Telegram notification (via serverless function)
+        fetch('/api/notify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: tgChat, text: tgText, parse_mode: 'Markdown' })
+            body: JSON.stringify({ name: name, phone: phone, formType: formType })
         }).catch(function() {});
 
-        // Email notification
+        // Email notification (secondary, silent fail)
         fetch(`https://formsubmit.co/ajax/${emailTo}`, {
             method: "POST",
             headers: {
@@ -440,31 +437,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Тип запиту": formType,
                 "Джерело": "Сайт Justers"
             })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === 'true' || data.success === true) {
-                    closeModal(modalToClose);
-                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
-                    form.reset();
-                } else if (data.message && data.message.includes('Activation')) {
-                    closeModal(modalToClose);
-                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
-                    form.reset();
-                } else {
-                    showStatusModal(false, 'Помилка', 'Виникла помилка при відправці. Спробуйте пізніше.');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                showStatusModal(false, 'Помилка сервера', 'Не вдалося відправити заявку. Спробуйте пізніше.');
-            })
-            .finally(() => {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-            });
+        }).catch(function() {});
+
+        // Show success (Telegram is primary channel)
+        closeModal(modalToClose);
+        showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
+        form.reset();
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
     }
 
     if (consultationForm) {
