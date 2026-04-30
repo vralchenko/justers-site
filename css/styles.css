@@ -2514,7 +2514,7 @@ a.service-item-link {
 .cta-banner {
     padding: 0;
     margin-top: -1px;
-    margin-bottom: 160px;
+    margin-bottom: 180px;
 }
 
 .cta-banner-inner {
@@ -2581,6 +2581,7 @@ a.service-item-link {
     background: #FAFAFA;
     color: #000;
     border: none;
+    font-weight: 600;
     border-radius: 10px;
     font-family: var(--font-main);
     font-size: 16px;
