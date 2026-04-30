@@ -2518,7 +2518,9 @@ a.service-item-link {
 }
 
 .cta-banner-inner {
-    background: linear-gradient(135deg, #002A62 0%, #17223C 59%);
+    background: linear-gradient(135deg, #002A62, #17223C, #002A62, #17223C);
+    background-size: 400% 400%;
+    animation: ctaGradientWave 12s ease infinite;
     border-radius: 16px;
     padding: 80px 60px;
     display: flex;
@@ -2600,6 +2602,12 @@ a.service-item-link {
         inset -4.5px -1.5px 8px rgba(0, 0, 0, 0.5),
         inset 3.7px 3px 10px rgba(0, 0, 0, 0.55),
         0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes ctaGradientWave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ===== Videos page ===== */
