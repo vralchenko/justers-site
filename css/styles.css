@@ -1202,7 +1202,7 @@ h6 {
 }
 
 .review-card {
-    background: #1E2D39;
+    background: #4F5765;
     border: none;
     padding: 30px;
     border-radius: 22px;
@@ -1211,24 +1211,10 @@ h6 {
     flex-direction: column;
     min-height: 200px;
     flex: 0 0 calc((100% - 60px) / 3);
-    position: relative;
-}
-
-.review-card::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 24px;
-    width: 0;
-    height: 0;
-    border-left: 14px solid #1E2D39;
-    border-right: 14px solid transparent;
-    border-top: 14px solid #1E2D39;
-    border-bottom: 14px solid transparent;
 }
 
 .review-card:hover {
-    background: #243544;
+    background: #5a6270;
 }
 
 .review-header {
