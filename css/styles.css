@@ -1202,20 +1202,33 @@ h6 {
 }
 
 .review-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
+    background: #1E2D39;
+    border: none;
     padding: 30px;
-    border-radius: 12px;
-    transition: background 0.3s ease, border-color 0.3s ease;
+    border-radius: 22px;
+    transition: background 0.3s ease;
     display: flex;
     flex-direction: column;
     min-height: 200px;
     flex: 0 0 calc((100% - 60px) / 3);
+    position: relative;
+}
+
+.review-card::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 24px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid #1E2D39;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #1E2D39;
+    border-bottom: 14px solid transparent;
 }
 
 .review-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--accent);
+    background: #243544;
 }
 
 .review-header {
