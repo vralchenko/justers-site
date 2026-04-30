@@ -187,47 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Hover sound on interactive elements (Web Audio API)
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let hoverBuffer = null;
-    fetch('/sounds/klick.wav')
-        .then(r => r.arrayBuffer())
-        .then(buf => audioCtx.decodeAudioData(buf))
-        .then(decoded => { hoverBuffer = decoded; })
-        .catch(() => {});
-    // Resume AudioContext on valid user gestures (keep trying until running)
-    const resumeAudio = () => {
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-    };
-    const gestureEvents = ['click', 'mousedown', 'pointerdown', 'touchstart', 'keydown'];
-    gestureEvents.forEach(evt => {
-        document.addEventListener(evt, resumeAudio);
-    });
-    // Clean up listeners once audio is unlocked
-    audioCtx.addEventListener('statechange', () => {
-        if (audioCtx.state === 'running') {
-            gestureEvents.forEach(evt => {
-                document.removeEventListener(evt, resumeAudio);
-            });
-        }
-    });
-    const playHoverSound = () => {
-        if (hoverBuffer && audioCtx.state === 'running') {
-            const source = audioCtx.createBufferSource();
-            source.buffer = hoverBuffer;
-            const gain = audioCtx.createGain();
-            gain.gain.value = 0.3;
-            source.connect(gain);
-            gain.connect(audioCtx.destination);
-            source.start(0);
-        }
-    };
-    document.querySelectorAll('.service-item, [data-modal="consultationModal"], .comment-btn, .btn-review').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            playHoverSound();
-        });
-    });
-
     // Modal Dialogs
     const consultationModal = document.getElementById('consultationModal');
 
@@ -242,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to close modal
     function closeModal(modal) {
+        if (!modal) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
     }
@@ -456,6 +416,14 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Відправка...';
         }
 
+        // Telegram notification (via serverless function)
+        fetch('/api/notify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, phone: phone, formType: formType })
+        }).catch(function() {});
+
+        // Email notification (secondary, silent fail)
         fetch(`https://formsubmit.co/ajax/${emailTo}`, {
             method: "POST",
             headers: {
@@ -470,36 +438,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Тип запиту": formType,
                 "Джерело": "Сайт Justers"
             })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === 'true' || data.success === true) {
-                    closeModal(modalToClose);
-                    showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
-                    form.reset();
-                } else if (data.message && data.message.includes('Activation')) {
-                    closeModal(modalToClose);
-                    showStatusModal(true, 'Майже готово!', `Дякуємо за заявку! Для завершення налаштування, будь ласка, перевірте пошту ${emailTo} та підтвердіть активацію у листі від FormSubmit. Це одноразова дія.`);
-                    form.reset();
-                } else {
-                    showStatusModal(false, 'Помилка', 'Виникла помилка при відправці. Спробуйте пізніше.');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                showStatusModal(false, 'Помилка сервера', 'Не вдалося відправити заявку. Спробуйте пізніше.');
-            })
-            .finally(() => {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-            });
+        }).catch(function() {});
+
+        // Show success (Telegram is primary channel)
+        closeModal(modalToClose);
+        showStatusModal(true, 'Успішно!', `Дякуємо, ${name}! Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.`);
+        form.reset();
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
     }
 
     if (consultationForm) {
         consultationForm.addEventListener('submit', (e) => {
             handleFormSubmit(e, consultationModal, 'Консультація');
+        });
+    }
+
+    // CTA Banner Form
+    const ctaBannerForm = document.getElementById('ctaBannerForm');
+    if (ctaBannerForm) {
+        ctaBannerForm.addEventListener('submit', (e) => {
+            handleFormSubmit(e, null, 'CTA Banner');
         });
     }
 

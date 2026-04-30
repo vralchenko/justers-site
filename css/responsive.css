@@ -1,3 +1,10 @@
+/* Full HD screens (1920x1080) */
+@media (max-width: 1920px) {
+    .hero-title { font-size: 60px; }
+    .hero-description { font-size: 24px; }
+    .hero-tagline span { font-size: 28px; }
+}
+
 /* Ultra-wide screens (2K+) */
 @media (min-width: 1921px) {
     .hero-title { font-size: 86px; }
@@ -438,16 +445,49 @@
 
     /* About section */
     .about-layout {
-        gap: 20px;
+        flex-direction: column;
+        gap: 30px;
         margin-bottom: 30px;
     }
 
+    .about-text {
+        flex: 0 0 100%;
+    }
+
     .about-photo {
+        flex: 0 0 100%;
         width: 100%;
     }
 
     .about-text p {
         font-size: 18px;
+    }
+
+    /* CTA Banner */
+    .cta-banner-inner {
+        flex-direction: column;
+        padding: 50px 30px;
+        min-height: auto;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .cta-banner-text h2 {
+        font-size: 24px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .cta-banner-form {
+        width: 100%;
+    }
+
+    .cta-form-fields {
+        flex-direction: column;
     }
 
     .about-stats {
@@ -531,6 +571,25 @@
 
     .pub-card {
         padding: 24px 20px;
+    }
+
+    /* Videos page */
+    .videos-page-container {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+    }
+
+    .video-card-body {
+        padding: 16px;
+    }
+
+    .video-search {
+        max-width: 100%;
     }
 
     /* Article pages */
@@ -677,6 +736,43 @@
 
     .pub-card-title {
         font-size: 17px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 14px;
+    }
+
+    /* Videos page */
+    .videos-page-container {
+        padding-top: 90px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card-body {
+        padding: 14px;
+    }
+
+    .video-card-title {
+        font-size: 15px;
+    }
+
+    .video-card-play {
+        width: 48px;
+        height: 48px;
+    }
+
+    .video-card-play i {
+        font-size: 16px;
     }
 }
 
