@@ -2604,6 +2604,72 @@ a.service-item-link {
         0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== Footer ===== */
+.site-footer {
+    background: #000000;
+    padding: 60px 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-heading {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent);
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.footer-socials a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--accent);
+}
+
 @keyframes ctaGradientWave {
     0% { background-position: 0% 0%; }
     25% { background-position: 100% 0%; }

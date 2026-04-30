@@ -476,6 +476,12 @@
         font-size: 24px;
     }
 
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
     .cta-banner-form {
         width: 100%;
     }
@@ -730,6 +736,17 @@
 
     .pub-card-title {
         font-size: 17px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 14px;
     }
 
     /* Videos page */
