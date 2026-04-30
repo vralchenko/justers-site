@@ -2617,12 +2617,7 @@ a.service-item-link {
 }
 
 .footer-heading {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: none;
-    margin-bottom: 20px;
-    letter-spacing: 0;
+    display: none;
 }
 
 .footer-col ul {
@@ -2638,7 +2633,7 @@ a.service-item-link {
 .footer-col a {
     color: rgba(255, 255, 255, 0.6);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     transition: color 0.3s ease;
 }
 
@@ -2649,24 +2644,26 @@ a.service-item-link {
 .footer-col p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 8px;
     line-height: 1.5;
 }
 
-.footer-socials {
-    display: flex;
-    gap: 16px;
-    margin-top: 16px;
+.footer-socials-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 8px;
+    line-height: 1.5;
 }
 
-.footer-socials a {
+.footer-socials-text a {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
+    font-weight: 400;
     transition: color 0.3s ease;
 }
 
-.footer-socials a:hover {
+.footer-socials-text a:hover {
     color: var(--accent);
 }
 
