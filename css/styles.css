@@ -2633,7 +2633,7 @@ a.service-item-link {
 .footer-col a {
     color: #8BA0B9;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     transition: color 0.3s ease;
 }
 
@@ -2644,7 +2644,7 @@ a.service-item-link {
 .footer-col p {
     color: #8BA0B9;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 8px;
     line-height: 1.5;
 }
@@ -2652,14 +2652,14 @@ a.service-item-link {
 .footer-socials-text {
     color: #8BA0B9;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 8px;
     line-height: 1.5;
 }
 
 .footer-socials-text a {
     color: #8BA0B9;
-    font-weight: 400;
+    font-weight: 300;
     transition: color 0.3s ease;
 }
 
