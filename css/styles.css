@@ -1202,7 +1202,7 @@ h6 {
 }
 
 .review-card {
-    background: #4F5765;
+    background: rgba(79, 87, 101, 0.5);
     border: none;
     padding: 30px;
     border-radius: 22px;
