@@ -2518,9 +2518,9 @@ a.service-item-link {
 }
 
 .cta-banner-inner {
-    background: linear-gradient(135deg, #002A62, #17223C, #002A62, #17223C);
-    background-size: 400% 400%;
-    animation: ctaGradientWave 12s ease infinite;
+    background: linear-gradient(135deg, #002A62, #0d2f50, #17223C, #0d2f50, #002A62);
+    background-size: 300% 300%;
+    animation: ctaGradientWave 20s ease-in-out infinite;
     border-radius: 16px;
     padding: 80px 60px;
     display: flex;
