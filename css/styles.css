@@ -2631,7 +2631,7 @@ a.service-item-link {
 }
 
 .footer-col a {
-    color: rgba(255, 255, 255, 0.6);
+    color: #8BA0B9;
     font-size: 16px;
     font-weight: 400;
     transition: color 0.3s ease;
@@ -2642,7 +2642,7 @@ a.service-item-link {
 }
 
 .footer-col p {
-    color: rgba(255, 255, 255, 0.6);
+    color: #8BA0B9;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 8px;
@@ -2650,7 +2650,7 @@ a.service-item-link {
 }
 
 .footer-socials-text {
-    color: rgba(255, 255, 255, 0.6);
+    color: #8BA0B9;
     font-size: 16px;
     font-weight: 400;
     margin-top: 8px;
@@ -2658,7 +2658,7 @@ a.service-item-link {
 }
 
 .footer-socials-text a {
-    color: rgba(255, 255, 255, 0.6);
+    color: #8BA0B9;
     font-weight: 400;
     transition: color 0.3s ease;
 }
