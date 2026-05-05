@@ -2666,6 +2666,25 @@ a.service-item-link {
     color: var(--accent);
 }
 
+.footer-developer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-developer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-developer a:hover {
+    color: var(--accent);
+}
+
 @keyframes ctaGradientWave {
     0% { background-position: 0% 0%; }
     25% { background-position: 100% 0%; }
