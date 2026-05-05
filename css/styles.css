@@ -2667,16 +2667,17 @@ a.service-item-link {
 }
 
 .footer-developer {
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.5px;
 }
 
 .footer-developer a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.3);
     text-decoration: none;
     transition: color 0.3s;
 }
