@@ -2216,7 +2216,7 @@ a.service-item-link {
     z-index: 10000;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 21px;
     align-items: center;
     width: 58px;
     pointer-events: none;
