@@ -47,7 +47,7 @@
         },
         {
             name: 'Signal',
-            url: 'https://signal.me/#p/+380673801777',
+            url: 'https://signal.me/#eu/justers_law_firm.23',
             color: '#3A76F0',
             icon: 'fa-signal-messenger',
             iconPrefix: 'fa-brands',
@@ -122,8 +122,9 @@
             fab.classList.add('active');
             fab.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
+            var total = items.length;
             items.forEach(function (item, i) {
-                item.style.transitionDelay = (0.08 * i) + 's';
+                item.style.transitionDelay = (0.08 * (total - 1 - i)) + 's';
             });
         } else {
             overlay.classList.remove('active');
