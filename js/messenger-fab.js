@@ -14,6 +14,14 @@
             label: 'Напишіть нам у Telegram'
         },
         {
+            name: 'Viber',
+            url: 'viber://chat?number=%2B380673801777',
+            color: '#7360F2',
+            icon: 'fa-viber',
+            iconPrefix: 'fa-brands',
+            label: 'Напишіть нам у Viber'
+        },
+        {
             name: 'WhatsApp',
             url: 'https://wa.me/380673801777',
             color: '#25D366',
@@ -22,12 +30,28 @@
             label: 'Напишіть нам у WhatsApp'
         },
         {
+            name: 'Messenger',
+            url: 'https://m.me/justers.lawfirm',
+            color: '#0084FF',
+            icon: 'fa-facebook-messenger',
+            iconPrefix: 'fa-brands',
+            label: 'Напишіть нам у Messenger'
+        },
+        {
             name: 'Email',
             url: 'mailto:office@justers.com.ua',
             color: '#ffffff',
             icon: 'fa-envelope',
             iconPrefix: 'fa-solid',
             label: 'Напишіть нам на Email'
+        },
+        {
+            name: 'Signal',
+            url: 'https://signal.me/#p/+380673801777',
+            color: '#3A76F0',
+            icon: 'fa-signal-messenger',
+            iconPrefix: 'fa-brands',
+            label: 'Напишіть нам у Signal'
         }
     ];
 

@@ -899,12 +899,7 @@
 
     .messenger-menu {
         bottom: 170px;
-        right: 10px;
-    }
-
-    .messenger-item-label {
-        opacity: 1;
-        transform: translateX(0);
+        right: 16px;
     }
 }
 
@@ -916,7 +911,7 @@
     }
 
     .messenger-menu {
-        bottom: 160px;
+        bottom: 155px;
     }
 }
 
