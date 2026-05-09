@@ -1103,7 +1103,7 @@ h6 {
     gap: 60px;
     display: flex;
     margin-top: 38px;
-    padding-left: 34px;
+    padding-left: 0;
 }
 
 .socials-centered a {
