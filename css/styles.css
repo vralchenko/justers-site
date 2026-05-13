@@ -2203,7 +2203,7 @@ a.service-item-link {
     z-index: 9999;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.35s ease;
+    transition: opacity 2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
