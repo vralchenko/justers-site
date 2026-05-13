@@ -2198,8 +2198,8 @@ a.service-item-link {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
     z-index: 9999;
     opacity: 0;
     pointer-events: none;
@@ -2279,6 +2279,8 @@ a.service-item-link {
 }
 
 .messenger-item-label {
+    position: absolute;
+    right: 76px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
