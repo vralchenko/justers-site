@@ -2225,7 +2225,7 @@ a.service-item-link {
 
 .messenger-overlay.active .messenger-overlay-text {
     opacity: 0.38;
-    transition-delay: 0.5s;
+    transition-delay: 1s;
 }
 
 .messenger-overlay.active {
