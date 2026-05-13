@@ -15,7 +15,7 @@
         },
         {
             name: 'Viber',
-            url: 'viber://chat,number=380674560011',
+            url: 'viber://chat?number=%2B380674560011',
             color: '#7360F2',
             icon: 'fa-viber',
             iconPrefix: 'fa-brands',
@@ -23,7 +23,7 @@
         },
         {
             name: 'WhatsApp',
-            url: 'https://wa.me/qr/TAWIITDZHN6BI1',
+            url: 'https://wa.me/380674560011',
             color: '#25D366',
             icon: 'fa-whatsapp',
             iconPrefix: 'fa-brands',
@@ -47,7 +47,7 @@
         },
         {
             name: 'Signal',
-            url: 'https://signal.me/#p/justers_law_firm.23',
+            url: 'https://signal.me/#eu/justers_law_firm.23',
             color: '#3A76F0',
             icon: 'fa-signal-messenger',
             iconPrefix: 'fa-brands',
