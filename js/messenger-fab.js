@@ -47,7 +47,7 @@
         },
         {
             name: 'Signal',
-            url: 'https://signal.me/#eu/justers_law_firm.23',
+            url: 'https://signal.me/#eu/pcXP26iHpnmj5B-fShx2071Ve_0qDCwhjJsE3RoHlzs1WIZx9jNPOouDtarQ8bsc',
             color: '#3A76F0',
             icon: 'fa-signal-messenger',
             iconPrefix: 'fa-brands',
