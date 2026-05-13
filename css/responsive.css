@@ -901,6 +901,10 @@
         bottom: 170px;
         right: 16px;
     }
+
+    .messenger-overlay-text {
+        font-size: 36px;
+    }
 }
 
 @media (max-width: 480px) {

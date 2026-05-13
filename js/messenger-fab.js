@@ -62,6 +62,11 @@
         overlay.className = 'messenger-overlay';
         overlay.addEventListener('click', toggle);
 
+        const overlayText = document.createElement('div');
+        overlayText.className = 'messenger-overlay-text';
+        overlayText.innerHTML = 'Звертайтесь, будь ласка.<br>Ми з радістю Вам<br>допоможемо!';
+        overlay.appendChild(overlayText);
+
         const menu = document.createElement('div');
         menu.className = 'messenger-menu';
 
