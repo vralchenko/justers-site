@@ -47,7 +47,7 @@
         },
         {
             name: 'Signal',
-            url: 'https://signal.me/#eu/pcXP26iHpnmj5B-fShx2071Ve_0qDCwhjJsE3RoHlzs1WIZx9jNPOouDtarQ8bsc',
+            url: 'https://signal.me/#eu/fwD0RQzSsiNVmIvE9i0XVWWSRUlzxkDELWcCdFr9W4fQy291owhMqZYq2M-6eAlM',
             color: '#3A76F0',
             icon: 'fa-signal-messenger',
             iconPrefix: 'fa-brands',
