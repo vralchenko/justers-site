@@ -122,6 +122,7 @@
         var items = menu.querySelectorAll('.messenger-item');
 
         if (isOpen) {
+            overlay.style.transitionDuration = '2s';
             overlay.classList.add('active');
             menu.classList.add('active');
             fab.classList.add('active');
@@ -132,6 +133,7 @@
                 item.style.transitionDelay = (0.08 * (total - 1 - i)) + 's';
             });
         } else {
+            overlay.style.transitionDuration = '0.5s';
             overlay.classList.remove('active');
             menu.classList.remove('active');
             fab.classList.remove('active');
