@@ -975,12 +975,13 @@ h6 {
 }
 
 .service-item {
-    padding: 12px 20px;
+    padding: 12px 20px 12px 24px;
     height: 100%;
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent);
     border-radius: 10px;
     transition: all 0.3s ease;
 }
