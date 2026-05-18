@@ -188,6 +188,7 @@ h6 {
     height: 54px;
     width: auto;
     object-fit: contain;
+    display: block;
 }
 
 .logo-divider {
