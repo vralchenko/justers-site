@@ -1219,29 +1219,14 @@ h6 {
     background: #5a6270;
 }
 
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-.review-author {
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    flex: 1;
-}
-
 .review-stars {
     color: var(--accent);
     font-size: 14px;
     white-space: nowrap;
-    flex-shrink: 0;
     display: flex;
     flex-wrap: nowrap;
     gap: 2px;
+    margin-bottom: 15px;
 }
 
 .review-text {
@@ -1250,7 +1235,25 @@ h6 {
     line-height: 1.6;
     font-style: italic;
     flex: 1;
-    /* Pushes content to fill card height evenly */
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.review-avatar {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1;
+}
+
+.review-author {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .reviews-cta {
