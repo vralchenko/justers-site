@@ -1255,6 +1255,7 @@ h6 {
     font-weight: 600;
     color: #fff;
     flex-shrink: 0;
+    object-fit: cover;
 }
 
 .review-author {
