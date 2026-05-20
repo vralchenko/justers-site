@@ -1206,12 +1206,11 @@ h6 {
 .review-card {
     background: rgba(79, 87, 101, 0.5);
     border: none;
-    padding: 30px;
+    padding: 22px 26px;
     border-radius: 22px;
     transition: background 0.3s ease;
     display: flex;
     flex-direction: column;
-    min-height: 200px;
     flex: 0 0 calc((100% - 60px) / 3);
 }
 
@@ -1226,7 +1225,7 @@ h6 {
     display: flex;
     flex-wrap: nowrap;
     gap: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .review-text {
@@ -1241,7 +1240,7 @@ h6 {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 .review-avatar {
