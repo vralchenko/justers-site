@@ -551,6 +551,25 @@
     .btn-hero-cta {
         font-size: 16px;
         padding: 14px 24px;
+        background: transparent;
+        color: var(--accent);
+        border: 1.5px solid var(--accent);
+        box-shadow: none;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        justify-content: center;
+    }
+
+    .btn-hero-cta:hover {
+        background: transparent;
+        color: #fff;
+        border-color: #fff;
+        box-shadow: none;
+    }
+
+    .hero-cta {
+        justify-content: center;
     }
 
     /* Service detail page */
