@@ -431,6 +431,16 @@
     .feature-box {
         padding: 25px 15px !important;
         max-width: 100%;
+        border-bottom: 1px solid rgba(212, 175, 104, 0.3);
+    }
+
+    .feature-box:last-child {
+        border-bottom: none;
+    }
+
+    .feature-box::before,
+    .feature-box::after {
+        display: none !important;
     }
 
     .feature-title {
@@ -549,16 +559,17 @@
     }
 
     .btn-hero-cta {
-        font-size: 16px;
-        padding: 14px 24px;
+        font-size: 15px;
+        padding: 16px 36px;
         background: transparent;
         color: var(--accent);
-        border: 1.5px solid var(--accent);
+        border: 2px solid var(--accent);
         box-shadow: none;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         font-weight: 600;
         justify-content: center;
+        border-radius: 30px;
     }
 
     .btn-hero-cta:hover {
@@ -664,6 +675,7 @@
         font-size: 14px;
         max-width: 100%;
         margin-top: 8px;
+        text-align: center;
     }
 
     .stat-number {
