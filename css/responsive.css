@@ -420,7 +420,7 @@
     }
 
     .features-strip {
-        margin-top: 40px;
+        margin-top: 30px;
         padding: 25px 15px;
         flex-direction: column;
         gap: 0;
@@ -640,12 +640,12 @@
     }
 
     .hero-title {
-        font-size: 28px;
-        letter-spacing: 0.02em;
+        font-size: 36px;
+        letter-spacing: 0.04em;
     }
 
     .hero-page {
-        min-height: auto;
+        min-height: 100dvh;
     }
 
     .hero-fullwidth {
@@ -672,10 +672,14 @@
     }
 
     .hero-description {
-        font-size: 14px;
+        font-size: 16px;
         max-width: 100%;
         margin-top: 8px;
-        text-align: center;
+        text-align: left;
+    }
+
+    .hero-description-second {
+        margin-top: 18px;
     }
 
     .stat-number {
@@ -683,11 +687,11 @@
     }
 
     .feature-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .feature-desc {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .service-icon {
@@ -736,7 +740,7 @@
     .btn-hero-cta {
         width: 100%;
         white-space: normal;
-        font-size: 14px;
+        font-size: 15px;
         min-width: unset;
     }
 
@@ -898,14 +902,14 @@
     }
 
     .hero-title {
-        font-size: 24px;
-        letter-spacing: 0.01em;
+        font-size: 30px;
+        letter-spacing: 0.03em;
         word-break: keep-all;
         overflow-wrap: normal;
     }
 
     .hero-description {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .section-title {
@@ -923,11 +927,11 @@
     }
 
     .feature-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .feature-desc {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     /* Ensure contact info doesn't overflow */
