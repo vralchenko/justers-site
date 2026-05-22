@@ -335,8 +335,10 @@
     }
 
     .hero-title {
-        font-size: 38px;
-        line-height: 1.1;
+        font-size: 32px;
+        line-height: 0.94;
+        letter-spacing: 1.2px;
+        opacity: 0.82;
     }
 
     .hero-page {
@@ -389,9 +391,12 @@
     }
 
     .hero-description {
-        font-size: 16px;
+        font-size: 19px;
         max-width: 100%;
         margin-top: 10px;
+        opacity: 0.80;
+        line-height: 1.26;
+        letter-spacing: 0.2px;
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }
 
@@ -425,14 +430,14 @@
         padding: 25px 15px;
         flex-direction: column;
         gap: 0;
-        background: rgba(10, 16, 25, 0.95);
-        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.27);
+        border-radius: 16px;
     }
 
     .feature-box {
         padding: 25px 15px !important;
         max-width: 100%;
-        border-bottom: 1px solid rgba(212, 175, 104, 0.3);
+        border-bottom: 2px solid rgba(139, 160, 185, 0.6);
     }
 
     .feature-box:last-child {
@@ -445,13 +450,14 @@
     }
 
     .feature-title {
-        font-size: 18px;
+        font-size: 20px;
         margin-bottom: 10px;
     }
 
     .feature-desc {
-        font-size: 13px;
-        line-height: 1.5;
+        font-size: 14px;
+        line-height: 1.29;
+        letter-spacing: 0.3px;
     }
 
     /* About section */
@@ -570,7 +576,7 @@
         letter-spacing: 0.08em;
         font-weight: 600;
         justify-content: center;
-        border-radius: 30px;
+        border-radius: 10px;
     }
 
     .btn-hero-cta:hover {
@@ -641,8 +647,8 @@
     }
 
     .hero-title {
-        font-size: 36px;
-        letter-spacing: 0.04em;
+        font-size: 32px;
+        letter-spacing: 1.2px;
     }
 
     .hero-page {
@@ -673,7 +679,7 @@
     }
 
     .hero-description {
-        font-size: 16px;
+        font-size: 19px;
         max-width: 100%;
         margin-top: 8px;
         text-align: left;
@@ -688,11 +694,11 @@
     }
 
     .feature-title {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .feature-desc {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .service-icon {
@@ -903,14 +909,14 @@
     }
 
     .hero-title {
-        font-size: 30px;
-        letter-spacing: 0.03em;
+        font-size: 28px;
+        letter-spacing: 1px;
         word-break: keep-all;
         overflow-wrap: normal;
     }
 
     .hero-description {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     .section-title {
@@ -928,11 +934,11 @@
     }
 
     .feature-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .feature-desc {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     /* Ensure contact info doesn't overflow */
