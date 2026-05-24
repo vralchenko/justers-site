@@ -773,7 +773,7 @@
 
     /* CTA button full width on very small screens */
     .btn-hero-cta {
-        width: 100%;
+        width: 80%;
         white-space: normal;
         font-size: 15px;
         min-width: unset;
