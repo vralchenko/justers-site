@@ -842,6 +842,10 @@ h6 {
     opacity: 0.6;
 }
 
+.hero-tagline-mobile {
+    display: none;
+}
+
 /* Scroll-driven Video Section */
 .scroll-video-section {
     position: relative;
