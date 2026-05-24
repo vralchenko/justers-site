@@ -689,7 +689,7 @@
 
     .hero-page::before {
         background-size: 100% auto;
-        background-position: top center;
+        background-position: center -24px;
     }
 
     .hero-content {
