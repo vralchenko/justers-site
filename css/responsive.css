@@ -322,8 +322,9 @@
 
     .header {
         padding: 10px 0;
-        background: linear-gradient(to bottom, rgba(10, 16, 25, 0.95), rgba(10, 16, 25, 0.85)) !important;
-        backdrop-filter: blur(10px);
+        padding-top: max(10px, env(safe-area-inset-top, 10px));
+        background: #161920 !important;
+        backdrop-filter: none;
     }
 
     .logo-img {
