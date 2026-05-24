@@ -437,7 +437,7 @@
         padding: 25px 15px;
         flex-direction: column;
         gap: 0;
-        background: rgba(10, 16, 25, 0.95);
+        background: rgba(0, 0, 0, 0.28);
         border-radius: 16px;
     }
 
@@ -471,7 +471,7 @@
         display: block;
         margin-top: 15px;
         padding: 25px 30px;
-        background: rgba(10, 16, 25, 0.95);
+        background: rgba(0, 0, 0, 0.28);
         border-radius: 16px;
         z-index: 10;
         text-align: center;
