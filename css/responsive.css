@@ -437,7 +437,7 @@
         padding: 25px 15px;
         flex-direction: column;
         gap: 0;
-        background: rgba(0, 0, 0, 0.27);
+        background: rgba(10, 16, 25, 0.9);
         border-radius: 16px;
     }
 
