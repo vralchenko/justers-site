@@ -564,11 +564,15 @@
         flex-direction: column;
     }
 
+    .stat-label {
+        font-size: 16px;
+    }
+
     .about-stats {
         grid-template-columns: repeat(3, 1fr);
         padding-right: 0;
         gap: 15px;
-        margin-top: 40px;
+        margin-top: 48px;
     }
 
     /* Contacts: stack vertically */
