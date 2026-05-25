@@ -530,6 +530,7 @@
     .about-text p {
         font-size: 16px;
         font-weight: 400;
+        opacity: 0.80;
     }
 
     /* CTA Banner */
@@ -560,7 +561,7 @@
     }
 
     .about-stats {
-        display: none;
+        grid-template-columns: 1fr;
         padding-right: 0;
         gap: 30px;
     }
