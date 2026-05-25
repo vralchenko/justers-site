@@ -468,7 +468,7 @@
     }
 
     .hero-stats-mobile {
-        display: flex;
+        display: none; /* тимчасово вимкнено */
         justify-content: space-around;
         align-items: center;
         margin-top: 0;
