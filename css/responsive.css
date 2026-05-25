@@ -417,6 +417,10 @@
         font-size: 48px;
     }
 
+    .services-intro {
+        display: none;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
