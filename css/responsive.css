@@ -469,7 +469,7 @@
     }
 
     .hero-stats-mobile {
-        display: flex;
+        display: none;
         justify-content: space-around;
         align-items: center;
         margin-top: 0;
