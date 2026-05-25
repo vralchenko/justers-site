@@ -842,7 +842,8 @@ h6 {
     opacity: 0.6;
 }
 
-.hero-tagline-mobile {
+.hero-tagline-mobile,
+.hero-stats-mobile {
     display: none;
 }
 
