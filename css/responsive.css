@@ -505,9 +505,13 @@
     }
 
     /* About section */
+    .about-page {
+        padding-top: 44px;
+    }
+
     .about-layout {
         flex-direction: column;
-        gap: 30px;
+        gap: 54px;
         margin-bottom: 30px;
     }
 
