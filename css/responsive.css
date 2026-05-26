@@ -599,6 +599,12 @@
     }
 
     /* Reviews: single column */
+    .reviews-title {
+        font-size: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
     .reviews-grid {
         grid-template-columns: 1fr;
     }
