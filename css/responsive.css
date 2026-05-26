@@ -913,6 +913,7 @@
     .contact-text-block p {
         justify-content: flex-start;
         font-size: 16px;
+        max-width: calc(100vw - 30px);
     }
 }
 
