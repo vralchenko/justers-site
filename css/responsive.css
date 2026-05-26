@@ -538,6 +538,10 @@
     }
 
     /* CTA Banner */
+    .cta-banner {
+        margin-bottom: 40px;
+    }
+
     .cta-banner-inner {
         flex-direction: column;
         padding: 50px 30px;
