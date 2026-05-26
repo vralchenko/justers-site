@@ -572,8 +572,8 @@
         grid-template-columns: repeat(3, 1fr);
         padding-right: 0;
         gap: 15px;
-        margin-top: 90px;
-        margin-bottom: 40px;
+        margin-top: 54px;
+        margin-bottom: 10px;
     }
 
     /* Contacts: stack vertically */
