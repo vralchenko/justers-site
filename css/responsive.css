@@ -912,6 +912,7 @@
 
     .contact-text-block p {
         justify-content: flex-start;
+        font-size: 16px;
     }
 }
 
