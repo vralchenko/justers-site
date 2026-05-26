@@ -749,6 +749,12 @@
         font-size: 24px;
     }
 
+    .reviews-title {
+        font-size: 18px;
+        white-space: normal;
+        max-width: 100%;
+    }
+
     .hero-description {
         font-size: 19px;
         max-width: 100%;
@@ -993,6 +999,12 @@
     .section-title {
         font-size: 22px;
         letter-spacing: 1px;
+    }
+
+    .reviews-title {
+        font-size: 18px;
+        white-space: normal;
+        max-width: 100%;
     }
 
     .about-text p {
