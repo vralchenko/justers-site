@@ -617,7 +617,13 @@
         max-width: calc(100vw - 30px);
     }
 
-    /* Socials: larger tap zones */
+    /* Socials: fit within text width */
+    .socials-centered {
+        gap: 0;
+        justify-content: space-between;
+        max-width: calc(100vw - 30px);
+    }
+
     .socials-centered a {
         font-size: 22px;
         min-width: 44px;
