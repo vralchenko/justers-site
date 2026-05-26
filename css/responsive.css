@@ -600,7 +600,9 @@
 
     /* Reviews: single column */
     .reviews-title {
-        font-size: 20px;
+        font-size: 18px;
+        display: block;
+        letter-spacing: 1px;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
