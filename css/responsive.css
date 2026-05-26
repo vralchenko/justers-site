@@ -622,10 +622,11 @@
         gap: 0;
         justify-content: space-between;
         max-width: calc(100vw - 30px);
+        margin-top: 0;
     }
 
     .socials-centered a {
-        font-size: 22px;
+        font-size: 31px;
         min-width: 44px;
         min-height: 44px;
         display: flex;
