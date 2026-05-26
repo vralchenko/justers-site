@@ -514,7 +514,6 @@
     /* About section */
     .about-page {
         padding-top: 72px;
-        padding-bottom: 20px;
     }
 
     .about-layout {
@@ -573,7 +572,7 @@
         grid-template-columns: repeat(3, 1fr);
         padding-right: 0;
         gap: 15px;
-        margin-top: 64px;
+        margin-top: 80px;
         margin-bottom: 0;
     }
 
