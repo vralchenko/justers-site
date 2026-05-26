@@ -599,12 +599,8 @@
     }
 
     /* Reviews: single column */
-    .reviews-title {
+    .reviews-heading {
         font-size: 18px;
-        display: block;
-        letter-spacing: 1px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
     }
 
     .reviews-grid {
@@ -747,12 +743,6 @@
 
     .section-title {
         font-size: 24px;
-    }
-
-    .reviews-title {
-        font-size: 18px;
-        white-space: normal;
-        max-width: 100%;
     }
 
     .hero-description {
@@ -999,12 +989,6 @@
     .section-title {
         font-size: 22px;
         letter-spacing: 1px;
-    }
-
-    .reviews-title {
-        font-size: 18px;
-        white-space: normal;
-        max-width: 100%;
     }
 
     .about-text p {
