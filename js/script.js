@@ -684,6 +684,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         startCarousel();
+
+        // Make review cards clickable — open Google Maps reviews
+        const gmapsUrl = 'https://www.google.com/maps?cid=1123500699740096936';
+        track.querySelectorAll('.review-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => window.open(gmapsUrl, '_blank'));
+        });
     }
 
 });

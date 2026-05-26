@@ -1240,6 +1240,10 @@ h6 {
     line-height: 1.6;
     font-style: italic;
     flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .review-footer {
