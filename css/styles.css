@@ -1195,6 +1195,7 @@ h6 {
     color: var(--text-primary);
     margin-bottom: 30px;
     line-height: 1.4;
+    max-width: calc(100vw - 30px);
 }
 
 .reviews-carousel {
