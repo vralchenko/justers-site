@@ -609,6 +609,8 @@
 
     .review-card {
         padding: 24px 20px;
+        flex: 0 0 calc(100vw - 30px);
+        max-width: calc(100vw - 30px);
     }
 
     /* Socials: larger tap zones */
