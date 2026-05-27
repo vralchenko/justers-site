@@ -2432,7 +2432,7 @@ a.service-item-link {
 /* ===== Footer ===== */
 .site-footer {
     background: var(--bg-primary);
-    padding: 60px 0 40px;
+    padding: 84px 0 40px;
 }
 
 .footer-grid {
