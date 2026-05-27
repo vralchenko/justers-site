@@ -2431,7 +2431,7 @@ a.service-item-link {
 
 /* ===== Footer ===== */
 .site-footer {
-    background: #000000;
+    background: var(--bg-primary);
     padding: 60px 0 40px;
 }
 
