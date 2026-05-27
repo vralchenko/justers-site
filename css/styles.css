@@ -2433,6 +2433,7 @@ a.service-item-link {
 .site-footer {
     background: #000000;
     padding: 60px 0 40px;
+    margin-top: 24px;
 }
 
 .footer-grid {
