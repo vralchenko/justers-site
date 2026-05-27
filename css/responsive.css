@@ -540,6 +540,7 @@
     /* CTA Banner */
     .cta-banner {
         margin-bottom: 56px;
+        margin-top: -16px;
     }
 
     .cta-banner-inner {
