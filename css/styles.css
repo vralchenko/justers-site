@@ -2247,7 +2247,7 @@ a.service-item-link {
     opacity: 0;
     text-align: center;
     line-height: 1.14;
-    padding: 0 20px;
+    padding: 0 100px 0 20px;
     pointer-events: none;
     transition: opacity 1.5s ease;
     transition-delay: 0s;
