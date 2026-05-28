@@ -263,6 +263,10 @@
         padding-top: calc(68px + 82px);
     }
 
+    .service-detail-card h1 {
+        margin-top: 16px;
+    }
+
     /* Contacts inside mobile nav */
     .nav-mobile-contacts {
         display: block;
