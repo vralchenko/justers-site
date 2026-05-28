@@ -248,6 +248,11 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    .nav-dropdown-item {
+        font-size: 16px !important;
+        padding-left: 30px !important;
+    }
+
     /* Contacts inside mobile nav */
     .nav-mobile-contacts {
         display: block;
