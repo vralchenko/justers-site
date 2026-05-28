@@ -253,6 +253,16 @@
         padding-left: 30px !important;
     }
 
+    .service-sticky-cat {
+        top: 60px;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .service-page-container {
+        padding-top: calc(60px + 66px);
+    }
+
     /* Contacts inside mobile nav */
     .nav-mobile-contacts {
         display: block;
