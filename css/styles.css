@@ -873,7 +873,7 @@ h6 {
 
 /* About Page (Page 2) */
 .about-page {
-    scroll-margin-top: -48px;
+    scroll-margin-top: -72px;
     background: #0A1019;
     display: flex;
     align-items: center;
