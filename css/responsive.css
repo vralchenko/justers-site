@@ -254,13 +254,13 @@
     }
 
     .service-sticky-cat {
-        top: 60px;
+        top: 68px;
         font-size: 12px;
         padding: 8px 15px;
     }
 
     .service-page-container {
-        padding-top: calc(60px + 66px);
+        padding-top: calc(68px + 82px);
     }
 
     /* Contacts inside mobile nav */
