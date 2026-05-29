@@ -255,6 +255,7 @@
     .nav-dropdown-item {
         font-size: 16px !important;
         padding-left: 22px !important;
+        white-space: nowrap;
     }
 
     .service-sticky-cat {
