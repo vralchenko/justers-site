@@ -2071,8 +2071,8 @@ h6 {
 
 .service-point-number {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--text-muted);
     color: #0d1220;
