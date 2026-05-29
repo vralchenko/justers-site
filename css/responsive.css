@@ -265,6 +265,10 @@
         margin-top: 16px;
     }
 
+    .btn-service-cta {
+        display: none;
+    }
+
     /* Contacts inside mobile nav */
     .nav-mobile-contacts {
         display: block;
