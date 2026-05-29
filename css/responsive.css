@@ -275,6 +275,15 @@
         display: none;
     }
 
+    .prices-infographic-page {
+        margin: 8px -20px 16px;
+    }
+
+    .prices-infographic-page img {
+        width: 100%;
+        border-radius: 0;
+    }
+
     /* Contacts inside mobile nav */
     .nav-mobile-contacts {
         display: block;
