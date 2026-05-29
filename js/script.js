@@ -51,6 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Close menu on swipe left
+    if (nav) {
+        let touchStartX = 0;
+        nav.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        nav.addEventListener('touchend', (e) => {
+            const deltaX = e.changedTouches[0].clientX - touchStartX;
+            if (deltaX < -60 && nav.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        }, { passive: true });
+    }
+
     // Close menu on resize above 960px
     window.addEventListener('resize', () => {
         if (window.innerWidth > 960 && nav && nav.classList.contains('active')) {
