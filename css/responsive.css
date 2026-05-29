@@ -249,7 +249,7 @@
     }
 
     .nav-dropdown {
-        width: calc(100% - 30px);
+        width: calc(100% - 22px);
     }
 
     .nav-dropdown-item {
