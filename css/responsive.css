@@ -254,13 +254,11 @@
     }
 
     .service-sticky-cat {
-        top: 68px;
-        font-size: 12px;
-        padding: 8px 15px;
+        display: none;
     }
 
     .service-page-container {
-        padding-top: calc(68px + 82px);
+        padding-top: calc(68px + 30px);
     }
 
     .service-detail-card h1 {
