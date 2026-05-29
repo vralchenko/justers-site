@@ -2074,7 +2074,7 @@ h6 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--text-muted);
     color: #0d1220;
     display: flex;
     align-items: center;
