@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
         nav.addEventListener('touchend', (e) => {
             const deltaX = e.changedTouches[0].clientX - touchStartX;
-            if (deltaX < -60 && nav.classList.contains('active')) {
+            if (deltaX < -30 && nav.classList.contains('active')) {
                 closeMobileMenu();
             }
         }, { passive: true });
