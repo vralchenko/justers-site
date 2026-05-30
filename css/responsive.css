@@ -276,12 +276,30 @@
     }
 
     .prices-infographic-page {
-        margin: 8px -20px 48px;
+        margin: 0 -20px;
     }
 
     .prices-infographic-page img {
         width: 100%;
         border-radius: 0;
+    }
+
+    .prices-infographic-page ~ * {
+        display: none;
+    }
+
+    body:has(.prices-infographic-page) .article-card {
+        background: transparent;
+        padding: 20px 20px 0;
+    }
+
+    body:has(.prices-infographic-page) .article-container {
+        padding-bottom: 0;
+    }
+
+    body:has(.prices-infographic-page) .article-category,
+    body:has(.prices-infographic-page) .back-link {
+        color: var(--text-muted);
     }
 
     /* Contacts inside mobile nav */
