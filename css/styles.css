@@ -652,7 +652,7 @@ h6 {
 }
 
 .hero-title {
-    font-size: 76px;
+    font-size: 4.75rem;
     margin-top: 0;
     margin-bottom: 30px;
     line-height: 1.0;
@@ -664,7 +664,7 @@ h6 {
 }
 
 .hero-description {
-    font-size: 26px;
+    font-size: 1.625rem;
     line-height: 1.3;
     color: #fff;
     margin-top: 0;
@@ -823,7 +823,7 @@ h6 {
 }
 
 .feature-title {
-    font-size: 32px;
+    font-size: 2rem;
     margin-bottom: 12px;
     letter-spacing: 0.04em;
     color: #fff;
@@ -833,7 +833,7 @@ h6 {
 }
 
 .feature-desc {
-    font-size: 16px;
+    font-size: 1rem;
     color: #fff;
     line-height: 1.55;
     text-align: left;

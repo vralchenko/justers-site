@@ -4,12 +4,6 @@
     .hero-tagline span { font-size: 28px; }
 }
 
-/* High DPI (Windows 125%/150% zoom) — applied via JS */
-.high-dpi .hero-title { font-size: 96px; }
-.high-dpi .hero-description { font-size: 28px; }
-.high-dpi .feature-title { font-size: 40px; }
-.high-dpi .feature-desc { font-size: 20px; }
-.high-dpi .hero-content { padding-top: 120px; }
 
 /* Ultra-wide screens (2K+) */
 @media (min-width: 1921px) {
