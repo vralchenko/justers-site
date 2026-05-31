@@ -642,7 +642,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: calc(var(--header-height) + 40px);
+    padding-top: 144px;
 }
 
 .hero-text {
