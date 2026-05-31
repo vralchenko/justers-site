@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Justers site loaded at: ' + new Date().toLocaleTimeString());
 
+    // High DPI scaling (Windows 125%/150% zoom)
+    const dpr = window.devicePixelRatio || 1;
+    if (dpr > 1.2 && window.innerWidth >= 960) {
+        document.documentElement.classList.add('high-dpi');
+    }
+
     // Mobile Menu Toggle
     const burger = document.querySelector('.burger-menu');
     const nav = document.querySelector('.nav');
