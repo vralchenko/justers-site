@@ -31,10 +31,10 @@
 
     .hero-content { padding-top: 100px; }
     .hero-text { max-width: 550px; }
-    .hero-title { font-size: 52px; }
+    .hero-title { font-size: 66px; }
     .hero-description { font-size: 20px; }
-    .hero-tagline { padding-top: 100px; max-width: 220px; display: flex !important; flex-shrink: 0; }
-    .hero-tagline span { font-size: 16px; }
+    .hero-tagline { padding-top: 100px; max-width: 260px; display: flex !important; flex-shrink: 0; }
+    .hero-tagline span { font-size: 20px; }
     .hero-cta { margin-top: 25px; }
     .btn-hero-cta { font-size: 16px; padding: 10px 20px; min-width: 140px; }
     .btn-hero-arrow svg { width: 18px; height: 14px; }
