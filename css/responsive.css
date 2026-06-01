@@ -30,8 +30,8 @@
     .header-right { gap: 15px; }
 
     .hero-content { padding-top: 100px; }
-    .hero-text { max-width: 620px; }
-    .hero-title { font-size: 74px; }
+    .hero-text { max-width: 640px; }
+    .hero-title { font-size: 90px !important; opacity: 1; }
     .hero-description { font-size: 20px; }
     .hero-tagline { padding-top: 100px; max-width: 280px; display: flex !important; flex-shrink: 0; }
     .hero-tagline span { font-size: 22px; }
@@ -55,7 +55,7 @@
     .logo-sub { font-size: 12px; max-width: 180px; }
     .contact-phones div { letter-spacing: 0.15em; font-size: 15px; }
 
-    .hero-title { font-size: 68px; }
+    .hero-title { font-size: 80px !important; opacity: 1; }
     .hero-description { font-size: 22px; }
     .hero-tagline span { font-size: 22px; }
     .feature-title { font-size: 26px; }
