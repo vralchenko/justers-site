@@ -29,21 +29,20 @@
     .header-contacts { font-size: 16px; }
     .header-right { gap: 15px; }
 
-    .hero-content { padding-top: 100px; }
+    .hero-content { padding-top: 70px; }
     .hero-text { max-width: 640px; }
-    .hero-title { font-size: 90px !important; opacity: 1; }
-    .hero-description { font-size: 20px; }
-    .hero-tagline { padding-top: 100px; max-width: 280px; display: flex !important; flex-shrink: 0; }
+    .hero-title { font-size: 84px !important; opacity: 1; margin-bottom: 15px; }
+    .hero-description { font-size: 18px; }
+    .hero-tagline { padding-top: 70px; max-width: 280px; display: flex !important; flex-shrink: 0; }
     .hero-tagline span { font-size: 22px; }
-    .hero-cta { margin-top: 25px; }
-    .btn-hero-cta { font-size: 16px; padding: 10px 20px; min-width: 140px; }
+    .hero-cta { margin-top: 20px; }
+    .btn-hero-cta { font-size: 15px; padding: 10px 20px; min-width: 140px; }
+    .hero-description-second { margin-top: 10px; }
     .btn-hero-arrow svg { width: 18px; height: 14px; }
 
     .feature-title { font-size: 22px; margin-bottom: 8px; }
     .feature-desc { font-size: 13px; }
     .feature-box { padding: 15px 20px; }
-
-    .hero-description-second { margin-top: 15px; }
 }
 
 /* Large desktop / small laptop — header compression */
