@@ -29,15 +29,15 @@
     .header-contacts { font-size: 16px; }
     .header-right { gap: 15px; }
 
-    .hero-content { padding-top: 55px; }
+    .hero-content { padding-top: 40px; }
     .hero-text { max-width: 640px; }
-    .hero-title { font-size: 84px !important; opacity: 1; margin-bottom: 10px; }
-    .hero-description { font-size: 16px; }
-    .hero-tagline { padding-top: 55px; max-width: 280px; display: flex !important; flex-shrink: 0; }
-    .hero-tagline span { font-size: 20px; }
-    .hero-cta { margin-top: 15px; }
-    .btn-hero-cta { font-size: 14px; padding: 8px 18px; min-width: 130px; }
-    .hero-description-second { margin-top: 8px; }
+    .hero-title { font-size: 78px !important; opacity: 1; margin-bottom: 8px; }
+    .hero-description { font-size: 15px; }
+    .hero-tagline { padding-top: 40px; max-width: 260px; display: flex !important; flex-shrink: 0; }
+    .hero-tagline span { font-size: 18px; }
+    .hero-cta { margin-top: 12px; }
+    .btn-hero-cta { font-size: 13px; padding: 8px 16px; min-width: 120px; }
+    .hero-description-second { margin-top: 6px; }
     .btn-hero-arrow svg { width: 18px; height: 14px; }
 
     .feature-title { font-size: 22px; margin-bottom: 8px; }
