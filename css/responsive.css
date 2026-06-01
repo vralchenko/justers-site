@@ -30,10 +30,11 @@
     .header-right { gap: 15px; }
 
     .hero-content { padding-top: 100px; }
+    .hero-text { max-width: 550px; }
     .hero-title { font-size: 52px; }
     .hero-description { font-size: 20px; }
-    .hero-tagline { padding-top: 100px; }
-    .hero-tagline span { font-size: 22px; }
+    .hero-tagline { padding-top: 100px; max-width: 200px; }
+    .hero-tagline span { font-size: 18px; }
     .hero-cta { margin-top: 25px; }
     .btn-hero-cta { font-size: 16px; padding: 10px 20px; min-width: 140px; }
     .btn-hero-arrow svg { width: 18px; height: 14px; }
