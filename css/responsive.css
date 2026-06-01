@@ -18,6 +18,33 @@
     .service-desc { font-size: 18px; }
 }
 
+/* Windows 150% DPI on 1080p (viewport ~1280px) */
+@media (max-width: 1400px) {
+    .header { padding: 12px 0; }
+    .logo-img { height: 36px; }
+    .logo-divider { height: 30px; }
+    .logo-sub { font-size: 12px; max-width: 160px; }
+    .nav a { font-size: 11px; }
+    .nav { margin: 0 15px; }
+    .header-contacts { font-size: 16px; }
+    .header-right { gap: 15px; }
+
+    .hero-content { padding-top: 100px; }
+    .hero-title { font-size: 52px; }
+    .hero-description { font-size: 20px; }
+    .hero-tagline { padding-top: 100px; }
+    .hero-tagline span { font-size: 22px; }
+    .hero-cta { margin-top: 25px; }
+    .btn-hero-cta { font-size: 16px; padding: 10px 20px; min-width: 140px; }
+    .btn-hero-arrow svg { width: 18px; height: 14px; }
+
+    .feature-title { font-size: 22px; margin-bottom: 8px; }
+    .feature-desc { font-size: 13px; }
+    .feature-box { padding: 15px 20px; }
+
+    .hero-description-second { margin-top: 15px; }
+}
+
 /* Large desktop / small laptop — header compression */
 @media (max-width: 1200px) {
     .header-grid { grid-template-columns: auto 1fr; }
