@@ -63,15 +63,6 @@
     .btn-hero-cta { font-size: 18px; padding: 14px 30px; }
 }
 
-/* === Height-based: 150% DPI → real viewport 1280×551 === */
-/* Proportionally scales the entire hero section using zoom.            */
-/* Maintains all original proportions — no individual overrides needed.  */
-@media (max-height: 800px) and (min-width: 1024px) {
-    .hero-fullwidth {
-        zoom: 0.78;
-    }
-}
-
 /* Tablet */
 @media (max-width: 1024px) {
     .container {
