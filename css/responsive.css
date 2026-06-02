@@ -63,6 +63,19 @@
     .btn-hero-cta { font-size: 18px; padding: 14px 30px; }
 }
 
+/* === 150% DPI: збільшити дрібні шрифти, великі залишити === */
+@media (max-height: 800px) and (min-width: 1024px) {
+    .hero-content { padding-top: 60px; }
+    .hero-description { font-size: 22px; }
+    .hero-description-second { margin-top: 10px; }
+    .hero-tagline span { font-size: 22px; }
+    .hero-cta { margin-top: 15px; }
+    .btn-hero-cta { font-size: 18px; padding: 10px 22px; }
+    .feature-title { font-size: 26px; margin-bottom: 6px; }
+    .feature-desc { font-size: 14px; }
+    .feature-box { padding: 12px 20px; }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
     .container {
