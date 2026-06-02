@@ -18,22 +18,22 @@
     .service-desc { font-size: 18px; }
 }
 
-/* === Height-based: 150% DPI on 1080p → viewport height ~720px === */
-/* vh-based values: text scales proportionally with viewport height,    */
-/* staying in sync with background-size: cover on the 100vh container.  */
-@media (max-height: 960px) and (max-width: 1800px) and (min-width: 1024px) {
-    .hero-content { padding-top: 8vh; }
-    .hero-title { font-size: 10vh; margin-bottom: 1.2vh; line-height: 1.05; }
-    .hero-description { font-size: 2.2vh; }
-    .hero-description-second { margin-top: 1vh; }
-    .hero-tagline { padding-top: 8vh; }
-    .hero-tagline span { font-size: 2.8vh; }
-    .hero-cta { margin-top: 1.5vh; }
-    .btn-hero-cta { font-size: 2vh; padding: 1vh 2vw; }
-    .feature-box { padding: 1.8vh 1.5vw; }
-    .feature-title { font-size: 3vh; margin-bottom: 0.6vh; }
-    .feature-desc { font-size: 1.8vh; }
-    .feature-box:not(:last-child)::after { height: 8vh; }
+/* === Height-based: 150% DPI → real viewport height ~551px === */
+/* Triggers only when height < 800px (100% view is ~851px → safe).     */
+/* Uses clamp(min, vh, max-original) so values never exceed originals.  */
+@media (max-height: 800px) and (min-width: 1024px) {
+    .hero-content { padding-top: clamp(40px, 10vh, 100px); }
+    .hero-title { font-size: clamp(3rem, 12.5vh, 4.75rem); margin-bottom: clamp(6px, 1.5vh, 20px); }
+    .hero-description { font-size: clamp(0.8rem, 2.8vh, 1.4rem); }
+    .hero-description-second { margin-top: clamp(4px, 1.2vh, 15px); }
+    .hero-tagline { padding-top: clamp(40px, 10vh, 100px); }
+    .hero-tagline span { font-size: clamp(0.8rem, 3.2vh, 1.6rem); }
+    .hero-cta { margin-top: clamp(8px, 2vh, 25px); }
+    .btn-hero-cta { font-size: clamp(12px, 2.5vh, 18px); padding: clamp(6px, 1.2vh, 10px) clamp(14px, 2vw, 25px); }
+    .feature-box { padding: clamp(8px, 2vh, 20px) clamp(12px, 1.5vw, 30px); }
+    .feature-title { font-size: clamp(0.9rem, 3.5vh, 1.6rem); margin-bottom: clamp(3px, 0.8vh, 8px); }
+    .feature-desc { font-size: clamp(0.7rem, 2.2vh, 0.95rem); }
+    .feature-box:not(:last-child)::after { height: clamp(40px, 10vh, 105px); }
 }
 
 /* Windows 150% DPI on 1080p (viewport ~1280px) */
