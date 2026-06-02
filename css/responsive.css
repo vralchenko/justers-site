@@ -68,7 +68,7 @@
 /* clamp(min, vh, max) — scales with viewport height, never exceeds.   */
 @media (max-height: 800px) and (min-width: 1024px) {
     .hero-content { padding-top: clamp(30px, 7vh, 80px); }
-    .hero-title { margin-bottom: clamp(4px, 1vh, 15px); }
+    .hero-title { font-size: clamp(2.5rem, 4.75rem, 5.5rem); margin-bottom: clamp(4px, 1vh, 15px); }
     .hero-description { font-size: clamp(0.85rem, 3.2vh, 1.5rem); }
     .hero-description-second { margin-top: clamp(3px, 0.8vh, 10px); }
     .hero-tagline { padding-top: clamp(30px, 7vh, 80px); }
