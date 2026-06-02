@@ -66,7 +66,7 @@
 /* === 150% DPI: збільшити дрібні шрифти, великі залишити === */
 @media (max-height: 800px) and (min-width: 1024px) {
     .hero-page::before { background-position: 62% 85%; }
-    .hero-content { padding-top: 60px; }
+    .hero-content { padding-top: 12px; }
     .hero-description { font-size: 22px; }
     .hero-description-second { margin-top: 10px; }
     .hero-tagline span { font-size: 22px; }
