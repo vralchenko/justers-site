@@ -21,7 +21,7 @@
 /* === Height-based: 150% DPI on 1080p → viewport height ~720px === */
 /* vh-based values: text scales proportionally with viewport height,    */
 /* staying in sync with background-size: cover on the 100vh container.  */
-@media (max-height: 760px) and (min-width: 1024px) {
+@media (max-height: 960px) and (max-width: 1800px) and (min-width: 1024px) {
     .hero-content { padding-top: 8vh; }
     .hero-title { font-size: 10vh; margin-bottom: 1.2vh; line-height: 1.05; }
     .hero-description { font-size: 2.2vh; }
