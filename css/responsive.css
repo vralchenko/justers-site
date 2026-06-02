@@ -18,24 +18,6 @@
     .service-desc { font-size: 18px; }
 }
 
-/* === Height-based: 150% DPI → real viewport height ~551px === */
-/* Triggers only when height < 800px (100% view is ~851px → safe).     */
-/* Uses clamp(min, vh, max-original) so values never exceed originals.  */
-@media (max-height: 800px) and (min-width: 1024px) {
-    .hero-content { padding-top: clamp(40px, 10vh, 100px); }
-    .hero-title { font-size: clamp(3rem, 12.5vh, 4.75rem); margin-bottom: clamp(6px, 1.5vh, 20px); }
-    .hero-description { font-size: clamp(0.8rem, 2.8vh, 1.4rem); }
-    .hero-description-second { margin-top: clamp(4px, 1.2vh, 15px); }
-    .hero-tagline { padding-top: clamp(40px, 10vh, 100px); }
-    .hero-tagline span { font-size: clamp(0.8rem, 3.2vh, 1.6rem); }
-    .hero-cta { margin-top: clamp(8px, 2vh, 25px); }
-    .btn-hero-cta { font-size: clamp(12px, 2.5vh, 18px); padding: clamp(6px, 1.2vh, 10px) clamp(14px, 2vw, 25px); }
-    .feature-box { padding: clamp(8px, 2vh, 20px) clamp(12px, 1.5vw, 30px); }
-    .feature-title { font-size: clamp(0.9rem, 3.5vh, 1.6rem); margin-bottom: clamp(3px, 0.8vh, 8px); }
-    .feature-desc { font-size: clamp(0.7rem, 2.2vh, 0.95rem); }
-    .feature-box:not(:last-child)::after { height: clamp(40px, 10vh, 105px); }
-}
-
 /* Windows 150% DPI on 1080p (viewport ~1280px) */
 @media (max-width: 1400px) {
     .header { padding: 12px 0; }
@@ -79,6 +61,24 @@
     .feature-title { font-size: 26px; }
     .feature-desc { font-size: 14px; }
     .btn-hero-cta { font-size: 18px; padding: 14px 30px; }
+}
+
+/* === Height-based: 150% DPI → real viewport 1280×551 === */
+/* MUST be after width breakpoints to override their fixed px values.  */
+/* clamp(min, vh, max) — scales with viewport height, never exceeds.   */
+@media (max-height: 800px) and (min-width: 1024px) {
+    .hero-content { padding-top: clamp(40px, 10vh, 100px); }
+    .hero-title { font-size: clamp(3rem, 12.5vh, 4.75rem); margin-bottom: clamp(6px, 1.5vh, 20px); }
+    .hero-description { font-size: clamp(0.8rem, 2.8vh, 1.4rem); }
+    .hero-description-second { margin-top: clamp(4px, 1.2vh, 15px); }
+    .hero-tagline { padding-top: clamp(40px, 10vh, 100px); }
+    .hero-tagline span { font-size: clamp(0.8rem, 3.2vh, 1.6rem); }
+    .hero-cta { margin-top: clamp(8px, 2vh, 25px); }
+    .btn-hero-cta { font-size: clamp(12px, 2.5vh, 18px); padding: clamp(6px, 1.2vh, 10px) clamp(14px, 2vw, 25px); }
+    .feature-box { padding: clamp(8px, 2vh, 20px) clamp(12px, 1.5vw, 30px); }
+    .feature-title { font-size: clamp(0.9rem, 3.5vh, 1.6rem); margin-bottom: clamp(3px, 0.8vh, 8px); }
+    .feature-desc { font-size: clamp(0.7rem, 2.2vh, 0.95rem); }
+    .feature-box:not(:last-child)::after { height: clamp(40px, 10vh, 105px); }
 }
 
 /* Tablet */
