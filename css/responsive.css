@@ -18,6 +18,23 @@
     .service-desc { font-size: 18px; }
 }
 
+/* === Height-based: 150% DPI on 1080p → viewport height ~720px === */
+@media (max-height: 760px) and (min-width: 1024px) {
+    .hero-content { padding-top: 60px; }
+    .hero-title { font-size: 4.5rem; margin-bottom: 10px; }
+    .hero-description { font-size: 1rem; }
+    .hero-description-second { margin-top: 8px; }
+    .hero-tagline { padding-top: 60px; }
+    .hero-tagline span { font-size: 1rem; }
+    .hero-cta { margin-top: 12px; }
+    .btn-hero-cta { font-size: 14px; padding: 8px 18px; }
+    .feature-box { padding: 12px 20px; }
+    .feature-title { font-size: 1.2rem; margin-bottom: 4px; }
+    .feature-desc { font-size: 0.8rem; }
+    .feature-box:not(:last-child)::after { height: 70px; }
+    .hero-page::before { background-position: 62% calc(85% + 30px); }
+}
+
 /* Windows 150% DPI on 1080p (viewport ~1280px) */
 @media (max-width: 1400px) {
     .header { padding: 12px 0; }
