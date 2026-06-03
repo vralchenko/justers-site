@@ -92,9 +92,9 @@
     .services-intro p { font-size: 24px; }
     .services-intro { padding-bottom: 40px; }
     .about-stats { gap: 20px; }
-    .service-title { font-size: 15px; margin-bottom: 8px; }
+    .service-title { font-size: 15px; margin-bottom: 6px; }
     .service-desc { font-size: 15px; }
-    .service-icon { margin-bottom: 8px; }
+    .service-icon { margin-bottom: 6px; }
 }
 
 /* Tablet */
