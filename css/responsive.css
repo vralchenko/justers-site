@@ -72,7 +72,7 @@
     .hero-page::before { background-position: 62% calc(85% + 56px); }
     .hero-content { padding-top: 40px !important; }
     .hero-title { font-size: 50px !important; }
-    .hero-description { font-size: 20px !important; transform: translateY(8px); }
+    .hero-description { font-size: 18px !important; transform: translateY(8px); }
     .hero-description-second { transform: translateY(8px); }
     .hero-cta { transform: translateY(16px); margin-top: 15px; }
     .hero-description-second { margin-top: 10px; }
