@@ -94,7 +94,7 @@
     .about-stats { gap: 20px; }
     .service-title { font-size: 15px; margin-bottom: 6px; }
     .service-desc { font-size: 15px; }
-    .service-icon { margin-bottom: 6px; }
+    .service-icon { margin-bottom: 6px; font-size: 26px; }
 }
 
 /* Tablet */
