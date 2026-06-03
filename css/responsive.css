@@ -95,6 +95,12 @@
     .service-title { font-size: 15px; margin-bottom: 6px; }
     .service-desc { font-size: 15px; }
     .service-icon { margin-bottom: 6px; font-size: 26px; }
+    .review-card { padding: 18px 21px; border-radius: 18px; }
+    .review-text { font-size: 12px; }
+    .review-stars { font-size: 12px; }
+    .review-author { font-size: 12px; }
+    .review-avatar { width: 29px; height: 29px; }
+    .review-footer { gap: 8px; margin-top: 10px; }
 }
 
 /* Tablet */
