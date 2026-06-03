@@ -70,10 +70,9 @@
     .hero-title { font-size: 62px !important; }
     .hero-description { font-size: 22px !important; transform: translateY(8px); }
     .hero-description-second { transform: translateY(8px); }
-    .hero-cta { transform: translateY(32px); }
+    .hero-cta { transform: translateY(32px); margin-top: 15px; }
     .hero-description-second { margin-top: 10px; }
     .hero-tagline span { font-size: 22px; }
-    .hero-cta { margin-top: 15px; }
     .btn-hero-cta { font-size: 18px; padding: 10px 22px; }
     .feature-title { font-size: 26px; margin-bottom: 6px; }
     .feature-desc { font-size: 14px; }
