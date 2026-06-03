@@ -98,6 +98,7 @@
     .contact-text-block p { font-size: 15px; }
     .contact-text-block p i { font-size: 17px; }
     .footer-col a, .footer-col p, .footer-socials-text { font-size: 15px; }
+    .footer-developer { margin-top: 19px; padding-top: 7px; }
     .review-card { padding: 17px 20px; border-radius: 17px; }
     .review-text { font-size: 11px; }
     .review-stars { font-size: 11px; }
