@@ -65,6 +65,7 @@
 
 /* === 150% DPI: збільшити дрібні шрифти, великі залишити === */
 @media (max-height: 800px) and (min-width: 1024px) {
+    .logo-img { height: 32px !important; }
     .hero-page::before { background-position: 62% calc(85% + 56px); }
     .hero-content { padding-top: 40px !important; }
     .hero-title { font-size: 50px !important; }
