@@ -67,7 +67,7 @@
 @media (max-height: 800px) and (min-width: 1024px) {
     .hero-page::before { background-position: 62% calc(85% + 56px); }
     .hero-content { padding-top: 40px !important; }
-    .hero-title { font-size: 54px !important; }
+    .hero-title { font-size: 50px !important; }
     .hero-description { font-size: 22px !important; transform: translateY(8px); }
     .hero-description-second { transform: translateY(8px); }
     .hero-cta { transform: translateY(16px); margin-top: 15px; }
