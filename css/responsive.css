@@ -92,8 +92,8 @@
     .services-intro p { font-size: 24px; }
     .services-intro { padding-bottom: 40px; }
     .about-stats { gap: 20px; }
-    .service-title { font-size: 18px; }
-    .service-desc { font-size: 18px; }
+    .service-title { font-size: 15px; }
+    .service-desc { font-size: 15px; }
 }
 
 /* Tablet */
