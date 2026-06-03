@@ -68,8 +68,8 @@
     .hero-page::before { background-position: 62% calc(85% + 64px); }
     .hero-content { padding-top: 40px !important; }
     .hero-title { font-size: 62px !important; }
-    .hero-description { font-size: 22px !important; transform: translateY(16px); }
-    .hero-description-second { transform: translateY(16px); }
+    .hero-description { font-size: 22px !important; transform: translateY(8px); }
+    .hero-description-second { transform: translateY(8px); }
     .hero-cta { transform: translateY(48px); }
     .hero-description-second { margin-top: 10px; }
     .hero-tagline span { font-size: 22px; }
