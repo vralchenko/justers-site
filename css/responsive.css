@@ -95,6 +95,8 @@
     .service-title { font-size: 15px; margin-bottom: 6px; }
     .service-desc { font-size: 15px; }
     .service-icon { margin-bottom: 6px; font-size: 26px; }
+    .contact-text-block p { font-size: 15px; }
+    .contact-text-block p i { font-size: 17px; }
     .review-card { padding: 17px 20px; border-radius: 17px; }
     .review-text { font-size: 11px; }
     .review-stars { font-size: 11px; }
