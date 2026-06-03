@@ -67,6 +67,8 @@
 @media (max-height: 800px) and (min-width: 1024px) {
     .logo-img { height: 32px !important; }
     .nav a { font-size: 10px !important; }
+    .header-contacts { font-size: 14px !important; }
+    .contact-phones div { font-size: 14px !important; }
     .hero-page::before { background-position: 62% calc(85% + 56px); }
     .hero-content { padding-top: 40px !important; }
     .hero-title { font-size: 50px !important; }
