@@ -1226,10 +1226,32 @@ h6 {
     display: flex;
     flex-direction: column;
     flex: 0 0 calc((100% - 60px) / 3);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.4);
+    filter: blur(145px);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.review-card:hover::before {
+    opacity: 1;
 }
 
 .review-card:hover {
-    background: radial-gradient(circle at center, rgba(212, 175, 104, 0.25) 0%, rgba(79, 87, 101, 0.6) 60%, rgba(79, 87, 101, 0.5) 100%);
+    background: rgba(79, 87, 101, 0.55);
 }
 
 .review-stars {
