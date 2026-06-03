@@ -1229,7 +1229,7 @@ h6 {
 }
 
 .review-card:hover {
-    background: #5a6270;
+    background: radial-gradient(circle at center, rgba(212, 175, 104, 0.12) 0%, rgba(79, 87, 101, 0.6) 60%, rgba(79, 87, 101, 0.5) 100%);
 }
 
 .review-stars {
