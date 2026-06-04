@@ -20,7 +20,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: calc(var(--header-height, 130px) - 48px);
     /* Offset for fixed header */
     overflow-x: hidden;
 }
@@ -960,6 +960,7 @@ h6 {
 /* Services Page (Page 3) */
 .services-page {
     background: #0A1019;
+    scroll-margin-top: -136px;
 }
 
 .services-page .section-title {
@@ -973,7 +974,8 @@ h6 {
 .services-intro p {
     font-size: 32px;
     color: #ffffff;
-    line-height: 1.44;
+    line-height: 1.15;
+    margin-top: 32px;
 }
 
 .services-grid {
@@ -1016,7 +1018,7 @@ h6 {
 }
 
 .service-desc {
-    font-size: 20px;
+    font-size: 15px;
     color: var(--text-muted);
     line-height: 1.5;
 }
@@ -1107,11 +1109,13 @@ h6 {
 }
 
 .socials-centered {
-    justify-content: flex-start;
-    gap: 60px;
+    justify-content: space-between;
+    gap: 24px;
     display: flex;
     margin-top: 38px;
     padding-left: 0;
+    max-width: 360px;
+    transform: translateX(-8px);
 }
 
 .socials-centered a {
@@ -1994,7 +1998,7 @@ h6 {
 .service-sticky-cat {
     display: block;
     position: fixed;
-    top: var(--header-height, 130px);
+    top: calc(var(--header-height, 130px) - 24px);
     width: 100%;
     left: 0;
     text-align: right;
@@ -2002,10 +2006,16 @@ h6 {
     background: transparent;
     color: var(--accent);
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 1px;
-    z-index: 999;
+    z-index: 99;
+    pointer-events: none;
+}
+
+.service-sticky-cat a,
+.service-sticky-cat span {
+    pointer-events: auto;
 }
 
 .service-sticky-cat a {
@@ -2033,12 +2043,12 @@ h6 {
 }
 
 .service-page-container {
-    padding-top: calc(var(--header-height, 130px) + 50px);
+    padding-top: calc(var(--header-height, 130px) - 30px);
     padding-bottom: 80px;
 }
 
 .service-detail-card {
-    max-width: 900px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -2052,7 +2062,7 @@ h6 {
 }
 
 .service-detail-card h1 {
-    font-size: 32px;
+    font-size: 26px;
     color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -2088,7 +2098,7 @@ h6 {
 }
 
 .service-point:hover {
-    border-color: var(--accent);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .service-point-number {
@@ -2106,7 +2116,7 @@ h6 {
 }
 
 .service-point-content h3 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-main);
     margin-bottom: 8px;

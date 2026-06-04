@@ -100,7 +100,7 @@
     .footer-col a, .footer-col p, .footer-socials-text { font-size: 15px; }
     .footer-developer { margin-top: 19px; padding-top: 7px; }
     .site-footer { padding-bottom: 20px; }
-    .socials-centered { justify-content: space-between; max-width: 480px; }
+    .socials-centered { justify-content: space-between; max-width: 464px; }
     .socials-centered a { font-size: 25px; }
     .review-card { padding: 17px 20px; border-radius: 17px; }
     .review-text { font-size: 11px; }
