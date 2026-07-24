@@ -2,9 +2,9 @@
 
 ## Проект
 - Статичний сайт (vanilla HTML/CSS/JS, без фреймворків)
-- Хостинг: MiroHost (ovh14.mirohost.net, IP: 89.184.78.240)
-- Домен: justers.com.ua (реєстратор: imena.ua)
-- Деплой: автоматичний через GitHub Actions (FTP при пуші в master)
+- Хостинг: Namecheap (cPanel, server344.web-hosting.com, shared IP: 66.29.141.114) — перенесено з MiroHost 24.07.2026
+- Домен: justers.com.ua (реєстратор: imena.ua; DNS керується на imena.ua/DNSHosting, A-запис @ і www → 66.29.141.114)
+- Деплой: автоматичний через GitHub Actions (FTP при пуші в master) — FTP-акаунт deploy@justers.com.ua, server-dir `/` (=public_html)
 - Репозиторій: github.com/vralchenko/justers-site
 - Основна гілка: `master`
 
