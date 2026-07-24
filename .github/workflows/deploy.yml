@@ -1,8 +1,9 @@
-name: Deploy to MiroHost via FTP
+name: Deploy to Namecheap via FTP
 
 on:
   push:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -16,15 +17,26 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          server-dir: /justers.com.ua/
+          server-dir: /
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
             .claude/**
             .github/**
+            .idea/**
+            .vercel/**
+            .wrangler/**
+            .expect/**
+            api/**
+            functions/**
+            .env
+            .dev.vars
             package.json
             package-lock.json
             wrangler.toml
             CLAUDE.md
             MIGRATION.md
+            README.md
+            deploy.sh
+            **/*.docx
