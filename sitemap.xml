@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://justers.io/publications.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://justers.io/publication-disability-vlk.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://justers.io/publication-tck-court.html</loc>
