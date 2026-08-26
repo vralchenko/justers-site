@@ -1945,7 +1945,11 @@ h6 {
     font-size: 16px;
 }
 
-/* Підзаголовки підрозділів на сторінці Публікації */
+/* Заголовки на сторінці Публікації — кожен на своєму рядку */
+.publications-page-container .section-title {
+    display: block;
+}
+
 .publications-page-container .pub-section-title {
     font-size: clamp(18px, 4vw, 24px);
     letter-spacing: 2px;
