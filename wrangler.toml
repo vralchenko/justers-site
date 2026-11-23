@@ -1,4 +1,4 @@
-# Cloudflare Pages — justers.io
+# Cloudflare Pages — justers.com.ua
 # Для локальної розробки: npx wrangler pages dev .
 # DATABASE_URL задається через Cloudflare Dashboard → Settings → Environment variables
 

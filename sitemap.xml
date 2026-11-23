@@ -1,63 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://justers.io/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://justers.com.ua/</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://justers.io/publications.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://justers.com.ua/publications.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-disability-vlk.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://justers.com.ua/publication-disability-vlk.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-declared-dead.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://justers.com.ua/publication-declared-dead.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-registration-restoration.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://justers.com.ua/publication-registration-restoration.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-tck-court.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://justers.com.ua/publication-tck-court.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-vlk-referral.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://justers.com.ua/publication-vlk-referral.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-ogd-denial.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://justers.com.ua/publication-ogd-denial.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/publication-personal-column.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://justers.com.ua/publication-personal-column.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justers.io/service-criminal.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <loc>https://justers.com.ua/service-criminal.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/service-appeal.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/service-civil.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/service-commercial.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/service-military.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/service-mobilization.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/prices.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://justers.com.ua/videos.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

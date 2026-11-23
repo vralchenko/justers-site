@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = formData.get('phone');
 
         // Email details
-        const emailTo = 'office@justers.io';
+        const emailTo = 'office@justers.com.ua';
 
         // Show loading state and replace standard alerts with status modal
         const submitBtn = form.querySelector('button[type="submit"]');
